@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heaven Brhanu — Information Science, Data & Community</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+    --ink:#15231F;
+    --ink-soft:#33443E;
+    --paper:#F1ECDE;
+    --paper-alt:#E7DFC9;
+    --paper-deep:#DED2AE;
+    --gold:#BD8A2E;
+    --teal:#2F6F63;
+    --rust:#A8503A;
+    --line: rgba(21,35,31,0.16);
+    --muted:#6B6A57;
+    --display: 'Fraunces', serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --measure: 62ch;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 clamp(20px,4vw,56px);
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(241,236,222,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px clamp(20px,4vw,56px);
+    max-width:1180px; margin:0 auto;
+  }
+  .nav-mark{
+    font-family:var(--display); font-weight:700; font-size:1.05rem;
+    text-decoration:none; letter-spacing:0.01em;
+  }
+  .nav-links{
+    display:flex; gap:clamp(14px,2vw,28px); list-style:none; margin:0; padding:0;
+    font-family:var(--mono); font-size:0.8rem;
+  }
+  .nav-links a{
+    text-decoration:none; color:var(--ink-soft); position:relative; padding-bottom:3px;
+  }
+  .nav-links a.active{ color:var(--ink); }
+  .nav-links a.active::after{
+    content:""; position:absolute; left:0; right:0; bottom:-3px; height:2px; background:var(--gold);
+  }
+  .nav-toggle{ display:none; }
+
+  @media (max-width:720px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: clamp(64px,10vw,120px) 0 clamp(48px,7vw,80px);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:0.82rem; color:var(--teal);
+    margin:0 0 18px;
+  }
+  .hero h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.6rem,6.5vw,4.6rem);
+    line-height:1.02;
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+    animation:rise 0.6s ease-out both;
+  }
+  .hero p.lede{
+    font-size:clamp(1.05rem,2vw,1.28rem);
+    max-width:46ch;
+    color:var(--ink-soft);
+    margin:0 0 40px;
+    animation:rise 0.6s ease-out 0.1s both;
+  }
+  @keyframes rise{ from{ opacity:0.4; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }
+
+  .stat-strip{
+    display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,48px);
+    padding-top:32px; border-top:1px solid var(--line);
+    animation:rise 0.6s ease-out 0.2s both;
+  }
+  .stat{ width:170px; flex:0 0 auto; }
+  .stat .label{ display:block; margin-top:2px; }
+  .stat .num{
+    font-family:var(--display); font-weight:600; font-size:2.1rem; color:var(--ink);
+    display:block;
+  }
+  .stat .label{
+    font-family:var(--mono); font-size:0.78rem; color:var(--muted);
+  }
+
+  .hero-actions{
+    display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;
+    animation:rise 0.6s ease-out 0.2s both;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:0.85rem;
+    padding:11px 20px; border-radius:2px; text-decoration:none;
+    border:1px solid var(--ink);
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .btn.primary{ background:var(--ink); color:var(--paper); }
+  .btn.primary:hover{ background:var(--teal); border-color:var(--teal); }
+  .btn.ghost{ background:transparent; color:var(--ink); }
+  .btn.ghost:hover{ background:var(--ink); color:var(--paper); }
+
+  /* ---------- SECTION SCAFFOLD (notebook margin layout) ---------- */
+  section{
+    padding:clamp(56px,8vw,96px) 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{ border-bottom:none; }
+  .section-grid{
+    display:grid;
+    grid-template-columns: 200px 1fr;
+    gap:clamp(24px,5vw,64px);
+  }
+  @media (max-width:760px){
+    .section-grid{ grid-template-columns:1fr; gap:14px; }
+  }
+  .section-tag{
+    font-family:var(--mono); font-size:0.8rem; color:var(--teal);
+    position:sticky; top:80px; align-self:start;
+  }
+  .section-tag .idx{ color:var(--muted); }
+  .section-body h2{
+    font-family:var(--display); font-weight:600;
+    font-size:clamp(1.7rem,3.2vw,2.3rem);
+    margin:0 0 20px;
+  }
+  .section-body p{
+    max-width:var(--measure); color:var(--ink-soft);
+  }
+
+  /* ---------- ABOUT ---------- */
+  #about .section-body p{ font-size:1.05rem; }
+  .about-langs{
+    display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:28px;
+    font-family:var(--mono); font-size:0.82rem; color:var(--muted);
+  }
+  .about-langs span b{ color:var(--ink); font-weight:500; }
+
+  /* ---------- EXPERIENCE (timeline) ---------- */
+  .timeline{ list-style:none; margin:0; padding:0; }
+  .tl-item{
+    display:grid; grid-template-columns: 150px 1fr; gap:24px;
+    padding:26px 0; border-top:1px solid var(--line);
+  }
+  .tl-item:first-child{ border-top:none; padding-top:0; }
+  @media (max-width:600px){
+    .tl-item{ grid-template-columns:1fr; gap:6px; }
+  }
+  .tl-when{ font-family:var(--mono); font-size:0.82rem; color:var(--muted); padding-top:4px; }
+  .tl-role h3{
+    font-family:var(--body); font-weight:600; font-size:1.12rem; margin:0 0 2px;
+  }
+  .tl-role .org{ color:var(--teal); font-weight:500; }
+  .tl-role ul{ margin:12px 0 0; padding-left:18px; color:var(--ink-soft); }
+  .tl-role li{ margin-bottom:6px; }
+
+  /* ---------- PROJECTS ---------- */
+  .proj{
+    display:grid; grid-template-columns: 1fr 220px; gap:32px;
+    padding:30px 0; border-top:1px solid var(--line); align-items:center;
+  }
+  .proj:first-child{ border-top:none; padding-top:0; }
+  @media (max-width:700px){
+    .proj{ grid-template-columns:1fr; }
+  }
+  .proj h3{ font-family:var(--display); font-weight:600; font-size:1.35rem; margin:0 0 8px; }
+  .proj p{ color:var(--ink-soft); max-width:56ch; margin:0 0 12px; }
+  .proj-link{
+    font-family:var(--mono); font-size:0.82rem; text-decoration:none;
+    border-bottom:1px solid var(--gold); padding-bottom:1px;
+  }
+  .metric-card{
+    background:var(--paper-alt); border:1px solid var(--line);
+    padding:18px 20px; text-align:left;
+  }
+  .metric-card .big{
+    font-family:var(--display); font-weight:700; font-size:2.1rem; color:var(--ink);
+    display:block; line-height:1;
+  }
+  .metric-card .cap{ font-family:var(--mono); font-size:0.75rem; color:var(--muted); margin-top:6px; display:block; }
+  .metric-bar{
+    height:6px; background:var(--paper-deep); margin-top:12px; overflow:hidden;
+  }
+  .metric-bar > i{ display:block; height:100%; background:var(--teal); width:var(--fill,0%); transition:width 1s ease 0.2s; }
+
+  /* ---------- LEADERSHIP ---------- */
+  .lead-item{
+    padding:26px 0; border-top:1px solid var(--line);
+  }
+  .lead-item:first-child{ border-top:none; padding-top:0; }
+  .lead-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;
+  }
+  .lead-head h3{ font-family:var(--body); font-weight:600; font-size:1.1rem; margin:0; }
+  .lead-when{ font-family:var(--mono); font-size:0.8rem; color:var(--muted); white-space:nowrap; }
+  .lead-role{ color:var(--rust); font-weight:500; font-size:0.92rem; margin:2px 0 10px; }
+  .lead-item p{ color:var(--ink-soft); max-width:var(--measure); margin:0; }
+  .member-row{
+    display:flex; gap:28px; flex-wrap:wrap; margin-top:8px;
+    font-family:var(--mono); font-size:0.85rem; color:var(--ink-soft);
+  }
+  .member-row span{ margin-right:24px; display:inline-block; }
+
+  /* ---------- SKILLS ---------- */
+  .skill-group{ margin-bottom:28px; }
+  .skill-group:last-child{ margin-bottom:0; }
+  .skill-group h4{
+    font-family:var(--mono); font-size:0.8rem; color:var(--muted); margin:0 0 12px; font-weight:400;
+  }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .tag{
+    font-family:var(--mono); font-size:0.82rem;
+    border:1px solid var(--line); padding:7px 13px;
+    background:var(--paper-alt);
+  }
+  .coursework{ color:var(--ink-soft); max-width:var(--measure); margin-top:6px; }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{
+    padding:clamp(56px,9vw,100px) 0 48px;
+  }
+  footer h2{
+    font-family:var(--display); font-weight:700; font-size:clamp(2rem,5vw,3.2rem);
+    margin:0 0 24px; max-width:12ch;
+  }
+  .contact-row{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:56px; }
+  .foot-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:var(--mono); font-size:0.78rem; color:var(--muted);
+    border-top:1px solid var(--line); padding-top:20px;
+  }
+
+/* ---------- ABOUT PAGE ---------- */
+.about-hero{
+  padding: clamp(56px,9vw,100px) 0 clamp(40px,6vw,64px);
+  border-bottom:1px solid var(--line);
+}
+.about-hero h1{
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(2.2rem,5.5vw,3.6rem);
+  line-height:1.05; margin:0 0 20px; max-width:16ch;
+}
+.about-hero .lede{
+  font-size:clamp(1.02rem,1.8vw,1.18rem);
+  color:var(--ink-soft); max-width:60ch; margin:0;
+}
+
+.photo-row{
+  display:flex; align-items:center; gap:28px; margin-top:40px; flex-wrap:wrap;
+}
+.photo-frame{
+  width:132px; height:132px; border:1.5px dashed var(--muted);
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  font-family:var(--mono); font-size:0.72rem; color:var(--muted);
+  padding:10px; flex:0 0 auto;
+  background:var(--paper-alt);
+}
+.linkedin-slot{
+  font-family:var(--mono); font-size:0.82rem;
+  border:1.5px dashed var(--muted); color:var(--muted);
+  padding:10px 18px; display:inline-flex; align-items:center; gap:8px;
+  text-decoration:none;
+}
+
+.vignette{
+  padding:28px 0; border-top:1px solid var(--line);
+}
+.vignette:first-child{ border-top:none; padding-top:0; }
+.vignette .v-tag{
+  font-family:var(--mono); font-size:0.78rem; color:var(--rust); margin:0 0 8px;
+}
+.vignette h3{
+  font-family:var(--body); font-weight:600; font-size:1.15rem; margin:0 0 10px;
+}
+.vignette p{ color:var(--ink-soft); max-width:var(--measure); margin:0; }
+
+.callout{
+  background:var(--paper-alt); border:1px solid var(--line);
+  padding:24px 28px; margin-top:8px;
+}
+.callout p{ margin:0; color:var(--ink-soft); max-width:var(--measure); }
+
+.cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top">Heaven Brhanu</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap" style="border-top:none;">
+    <p class="hero-eyebrow">Information Science · University of Maryland, Class of 2026</p>
+    <h1>Data work that starts and ends with people.</h1>
+    <p class="lede">I build models that explain why people act the way they do, and I lead the campus organizations that turn that same curiosity into real support for the Tigray community.</p>
+
+    <div class="stat-strip">
+      <div class="stat"><span class="num">93%</span><span class="label">ROC-AUC — purchase intent model</span></div>
+      <div class="stat"><span class="num">98%</span><span class="label">R² — retail sales forecast</span></div>
+      <div class="stat"><span class="num">$3,000</span><span class="label">raised per semester for two schools in Tigray</span></div>
+      <div class="stat"><span class="num">3</span><span class="label">campus events organized each semester</span></div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="mailto:Heavenbrhanu30@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://github.com/Heavenb20" target="_blank" rel="noopener">View GitHub</a>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section id="about" class="wrap">
+    <div class="section-grid">
+      <div class="section-tag"><span class="idx">01 —</span> About</div>
+      <div class="section-body">
+        <h2>There's more behind these numbers than a spreadsheet.</h2>
+        <p>I'm a UMD senior who moves between two worlds most days — one where I'm cleaning data and building models, and one where I'm running a fundraiser or leading a guided study session for classmates. Both taught me the same thing: stay calm, find the actual problem, and fix that instead of the symptom.</p>
+        <a class="proj-link" href="about.html">Read the full story — how I think, how I work under pressure, what I'm looking for →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="wrap">
+    <div class="section-grid">
+      <div class="section-tag"><span class="idx">02 —</span> Experience</div>
+      <div class="section-body">
+        <h2>Work experience</h2>
+        <ul class="timeline">
+          <li class="tl-item">
+            <div class="tl-when">Oct 2024 — Present</div>
+            <div class="tl-role">
+              <h3>Registered Behavior Technician <span class="org">· Behavioral Framework</span></h3>
+              <ul>
+                <li>Manage a caseload of 3 clients annually, collecting and recording behavioral data during sessions using standardized data-collection systems, maintaining accuracy and confidentiality in compliance with HIPAA.</li>
+                <li>Compile and organize session data into progress reports and charts, working alongside supervising BCBAs to support data-driven adjustments to treatment plans.</li>
+                <li>Apply close attention to detail and consistent documentation practices — the same discipline that carries over into cleaning and validating data for my own analysis projects.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-when">Spring 2025 — Present</div>
+            <div class="tl-role">
+              <h3>Peer Tutor, Guided Study Sessions <span class="org">· University of Maryland</span></h3>
+              <ul>
+                <li>Lead weekly guided study sessions for classmates, breaking down coursework concepts and problem sets into clear, step-by-step explanations.</li>
+                <li>Adapt explanations on the fly to different learning styles — a habit that sharpens how I communicate technical ideas to a non-technical audience.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="tl-item">
+            <div class="tl-when">Jul 2025 — Present</div>
+            <div class="tl-role">
+              <h3>Shift Lead <span class="org">· Starbucks</span></h3>
+              <ul>
+                <li>Manage cash handling, till reconciliation, and inventory tracking while coordinating a team during high-volume shifts.</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="wrap">
+    <div class="section-grid">
+      <div class="section-tag"><span class="idx">03 —</span> Projects</div>
+      <div class="section-body">
+        <h2>Selected projects</h2>
+
+        <div class="proj">
+          <div>
+            <h3>Purchase Intent Classification</h3>
+            <p>A Random Forest model in Python that predicts whether an online shopper will complete a purchase, trained on real session and browsing-behavior data. The goal was to give a business an early signal — while a visitor is still on the site — of who's likely to convert, so that resources like promotions or live chat can be pointed at the sessions where they'd actually change the outcome.</p>
+            <a class="proj-link" href="https://github.com/Heavenb20/purchase-intent-classification" target="_blank" rel="noopener">github.com/Heavenb20/purchase-intent-classification →</a>
+          </div>
+          <div class="metric-card">
+            <span class="big">93%</span>
+            <span class="cap">ROC-AUC</span>
+            <div class="metric-bar"><i data-fill="93" style="--fill:93%"></i></div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div>
+            <h3>Retail Sales & Staffing Forecast</h3>
+            <p>A Random Forest forecasting model trained on 421,000+ real Walmart sales records, built to project weekly sales store by store. The forecast is meant to be used, not just admired — the direct application is staffing: scheduling more hands on the floor ahead of a predicted high-volume week instead of reacting to it after the fact.</p>
+            <a class="proj-link" href="https://github.com/Heavenb20/retail-sales-staffing-forecast" target="_blank" rel="noopener">github.com/Heavenb20/retail-sales-staffing-forecast →</a>
+          </div>
+          <div class="metric-card">
+            <span class="big">98%</span>
+            <span class="cap">R², 421K+ records</span>
+            <div class="metric-bar"><i data-fill="98" style="--fill:98%"></i></div>
+          </div>
+        </div>
+
+        <div class="proj" style="border-top:1px dashed var(--muted); align-items:start;">
+          <div>
+            <h3 style="color:var(--muted);">More on the way</h3>
+            <p style="color:var(--muted);">I'm actively building out this section with additional projects and a certification currently in progress — check back soon.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership" class="wrap">
+    <div class="section-grid">
+      <div class="section-tag"><span class="idx">04 —</span> Leadership</div>
+      <div class="section-body">
+        <h2>Community & leadership</h2>
+
+        <div class="lead-item">
+          <div class="lead-head">
+            <h3>People for Tigray (P4T), University of Maryland</h3>
+            <span class="lead-when">2024 — Present</span>
+          </div>
+          <p class="lead-role">President</p>
+          <p>Lead the organization's fundraising and advocacy for the Tigray community in the wake of the Tigray War and resulting humanitarian crisis, raising approximately $3,000 per semester to support two schools in Tigray. Organize about 3 events per semester, including an art show featuring local Tigrayan artists and a joint cultural showcase with ESSA.</p>
+        </div>
+
+        <div class="lead-item">
+          <div class="lead-head">
+            <h3>Ethiopian Eritrean Student Association (ESSA), University of Maryland</h3>
+            <span class="lead-when">2023 — Present</span>
+          </div>
+          <p class="lead-role">Treasurer (2023) → Internal Vice President (2023 — Present)</p>
+          <p>Managed the organization's budget and financial records as Treasurer before transitioning into the Internal Vice President role. Help build community on campus by organizing cultural programming that connects students with Ethiopian and Eritrean heritage.</p>
+        </div>
+
+        <div class="lead-item">
+          <div class="lead-head">
+            <h3>MCPS ESOL Program</h3>
+            <span class="lead-when">Volunteer</span>
+          </div>
+          <p class="lead-role">Volunteer</p>
+          <p>Volunteer supporting Montgomery County Public Schools' English for Speakers of Other Languages (ESOL) programming, helping multilingual students and families navigate school resources — informed by my own experience growing up speaking Amharic and Tigrigna at home.</p>
+        </div>
+
+        <div class="lead-item">
+          <p class="lead-role" style="margin-bottom:8px;">Also involved with</p>
+          <div class="member-row">
+            <span>Code: Black — Member</span>
+            <span>Association for Women in Computing — Member</span>
+            <span>National Society of Black Engineers (NSBE) — Member</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="wrap">
+    <div class="section-grid">
+      <div class="section-tag"><span class="idx">05 —</span> Skills</div>
+      <div class="section-body">
+        <h2>Skills & coursework</h2>
+
+        <div class="skill-group">
+          <h4>data & programming — familiar with</h4>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">R</span>
+            <span class="tag">Excel</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>how I work</h4>
+          <div class="tag-row">
+            <span class="tag">Problem-solving</span>
+            <span class="tag">Clear communication</span>
+            <span class="tag">Cross-functional teamwork</span>
+            <span class="tag">Attention to detail</span>
+            <span class="tag">Trilingual (English / Amharic / Tigrigna)</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>relevant coursework</h4>
+          <p class="coursework">Database Design and Modeling, Data Sources and Manipulation, Information User Needs & Assessment, User-Centered Design, Organizations Management & Teamwork, Information Organization, Technology Socialpreneur, Special Topics in Information Science: Ethical Hacking.</p>
+        </div>
+
+        <div class="skill-group">
+          <h4>what I bring to the table</h4>
+          <p class="coursework">I move between technical and non-technical audiences comfortably — explaining a model's output to a BCBA, walking a classmate through a problem set, or coordinating logistics with another club's leadership all draw on the same muscle: breaking a complicated thing down into something clear enough to act on. I look for the actual problem before reaching for a solution, and I'm just as comfortable working independently on a model as I am coordinating with a team toward a shared deadline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="wrap">
+    <div class="section-grid">
+      <div class="section-tag"><span class="idx">06 —</span> Certifications</div>
+      <div class="section-body">
+        <h2>Certifications</h2>
+        <div class="proj" style="border-top:1px dashed var(--muted); grid-template-columns:1fr;">
+          <p style="color:var(--muted); margin:0;">Currently working toward a data/analytics certification — details coming soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact" class="wrap">
+    <h2>Let's talk data.</h2>
+    <div class="contact-row">
+      <a class="btn primary" href="mailto:Heavenbrhanu30@gmail.com">Heavenbrhanu30@gmail.com</a>
+      <a class="btn ghost" href="https://github.com/Heavenb20" target="_blank" rel="noopener">github.com/Heavenb20</a>
+    </div>
+    <div class="foot-bottom">
+      <span>Silver Spring, MD</span>
+      <span>Available for data science & business analyst internships, Spring/Summer 2027</span>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // Scroll-spy nav (only for in-page anchor links)
+  const links = document.querySelectorAll('.nav-links a[href^="#"]');
+  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+  function onScroll(){
+    let idx = -1;
+    const y = window.scrollY + 120;
+    sections.forEach((s,i) => { if(s && s.offsetTop <= y) idx = i; });
+    links.forEach((l,i) => l.classList.toggle('active', i === idx));
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Animate metric bars when in view
+  const bars = document.querySelectorAll('.metric-bar > i');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.style.width = e.target.dataset.fill + '%';
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.4});
+  bars.forEach(b => io.observe(b));
+</script>
+
+</body>
+</html>
