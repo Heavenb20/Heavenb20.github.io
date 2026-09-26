@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Heaven Brhanu, Information Science at the University of Maryland. Resume and GitHub.">
+<title>Heaven Brhanu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#F7F4EE; --surface:#FFFFFF; --ink:#1B2A4A; --muted:#4A5468; --line:#DCD6CA;
+  --accent:#B87A24; --btn:#1B2A4A; --btn-ink:#F7F4EE; --btn2:#FFFFFF; --btn2-ink:#1B2A4A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#141D33; --surface:#1B2742; --ink:#F2EEE6; --muted:#B4BACB; --line:#2F3C5C;
+    --accent:#E0A650; --btn:#F2EEE6; --btn-ink:#141D33; --btn2:#1B2742; --btn2-ink:#F2EEE6;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#141D33; --surface:#1B2742; --ink:#F2EEE6; --muted:#B4BACB; --line:#2F3C5C;
+  --accent:#E0A650; --btn:#F2EEE6; --btn-ink:#141D33; --btn2:#1B2742; --btn2-ink:#F2EEE6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.55;padding-inline:20px}
+.wrap{max-width:640px;margin:0 auto}
+.intro{padding-block:56px 40px;display:flex;flex-direction:column;gap:18px}
+.bar{width:36px;height:3px;background:var(--accent);border-radius:2px}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(40px,11vw,60px);line-height:1;letter-spacing:-0.5px;margin:0;text-wrap:balance}
+.role{margin:0;font-size:17px;font-weight:500;color:var(--muted)}
+.role strong{color:var(--ink);font-weight:700}
+.tag{margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:21px;color:var(--ink)}
+.actions{display:flex;flex-direction:column;gap:12px;padding-bottom:48px}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;padding:0 22px;border-radius:14px;text-decoration:none;font-weight:700;font-size:18px;border:1.5px solid var(--ink);transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn.primary{background:var(--btn);color:var(--btn-ink)}
+.btn.secondary{background:var(--btn2);color:var(--btn2-ink)}
+.btn svg{flex-shrink:0}
+.btn small{display:block;font-weight:500;font-size:13px;opacity:.8}
+.resume{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 22px;margin-bottom:48px;display:flex;flex-direction:column;gap:26px}
+.resume header{display:flex;flex-direction:column;gap:4px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent)}
+.resume h2{font-family:'Fraunces',Georgia,serif;font-size:28px;margin:0}
+.contact{margin:0;font-size:14px;color:var(--muted);word-break:break-word}
+section.part{display:flex;flex-direction:column;gap:12px}
+h3{margin:0;font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);padding-bottom:6px;border-bottom:1.5px solid var(--line)}
+.item{display:flex;flex-direction:column;gap:4px}
+.item-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px}
+.item-head b{font-size:16px}
+.item-head span{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.sub{margin:0;font-size:14px;font-style:italic;color:var(--muted)}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+li{font-size:15px}
+p.plain{margin:0;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;font-weight:500;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--ground)}
+.top{align-self:flex-start;font-size:14px;font-weight:700;color:var(--ink)}
+footer{padding-block:0 40px;font-size:13px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="intro">
+    <div class="bar"></div>
+    <h1>Heaven Brhanu</h1>
+    <p class="role"><strong>Information Science</strong> · University of Maryland</p>
+    <p class="tag">Finding the story in data.</p>
+  </div>
+
+  <nav class="actions" aria-label="Choose what to see">
+    <a class="btn primary" href="#resume" id="go-resume">
+      <span>View my resume<small>Projects, experience &amp; leadership</small></span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+    <a class="btn secondary" href="https://github.com/Heavenb20"  id="go-github">
+      <span>See my GitHub<small>github.com/Heavenb20</small></span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    </a>
+  </nav>
+
+  <article class="resume" id="resume">
+    <header>
+      <p class="eyebrow">Resume</p>
+      <h2>Heaven Brhanu</h2>
+      <p class="contact">Silver Spring, MD · Heavenbrhanu30@gmail.com · 667-273-1581</p>
+    </header>
+
+    <section class="part">
+      <h3>Summary</h3>
+      <p class="plain">Information Science student at the University of Maryland who loves finding the story in data and turning it into something people can act on. A natural multitasker who thrives in fast-paced, team-driven environments, stays calm under pressure, and enjoys solving the problems others would rather avoid. Raised across two continents and fluent in three languages, brings curiosity, a strong work ethic, and the ability to connect with just about anyone.</p>
+    </section>
+
+    <section class="part">
+      <h3>Education</h3>
+      <div class="item">
+        <div class="item-head"><b>University of Maryland, College Park</b><span>College Park, MD</span></div>
+        <p class="sub">B.S. Information Science · Minor: Technology Entrepreneurship and Corporate Innovation · GPA 3.5+</p>
+        <p class="plain"><b>Coursework:</b> Statistics for Information Science, Object-Oriented Programming (Python), Database Design (SQL), User-Centered Design, Cybersecurity, Ethical Hacking</p>
+        <p class="plain"><b>Certification:</b> Microsoft Power BI Data Analyst (in progress)</p>
+      </div>
+    </section>
+
+    <section class="part">
+      <h3>Skills</h3>
+      <div class="chips">
+        <span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">Excel</span><span class="chip">Power BI</span><span class="chip">Git/GitHub</span><span class="chip">Random Forest</span><span class="chip">Logistic regression</span><span class="chip">Forecasting</span><span class="chip">Local LLMs (Ollama)</span>
+      </div>
+    </section>
+
+    <section class="part">
+      <h3>Data Projects</h3>
+      <div class="item">
+        <div class="item-head"><b>AI Customer Review Summarizer</b><span>Python, Ollama</span></div>
+        <ul><li>Built a Python tool that condenses large sets of customer reviews into short, readable summaries using a locally run language model, with no paid API costs.</li></ul>
+      </div>
+      <div class="item">
+        <div class="item-head"><b>Purchase Intent Classification</b><span>Python, Random Forest</span></div>
+        <ul><li>Built a Random Forest model that predicts whether online shoppers will buy, based on their browsing behavior.</li></ul>
+      </div>
+      <div class="item">
+        <div class="item-head"><b>Retail Sales Staffing Forecast</b><span>Python, Random Forest</span></div>
+        <ul><li>Forecast weekly Walmart store sales so managers can match staffing levels to expected demand.</li></ul>
+      </div>
+      <div class="item">
+        <div class="item-head"><b>NBA Four Factors Win Analysis</b><span>R, Logistic Regression</span></div>
+        <ul><li>Used logistic regression to measure how shooting, turnovers, rebounding, and free throws drive a team's chance of winning.</li></ul>
+      </div>
+    </section>
+
+    <section class="part">
+      <h3>Experience</h3>
+      <div class="item">
+        <div class="item-head"><b>Registered Behavior Technician</b><span>Oct 2024 – Present</span></div>
+        <p class="sub">Behavioral Framework</p>
+        <ul>
+          <li>Deliver one-on-one behavior therapy to a caseload of about 3 clients, following individualized treatment plans.</li>
+          <li>Collect and record data every session to track progress, giving supervisors the numbers they use to adjust treatment.</li>
+          <li>Communicate progress clearly with families and the clinical team.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head"><b>Shift Leader</b><span>Jul 2025 – Present</span></div>
+        <p class="sub">Starbucks</p>
+        <ul>
+          <li>Plan team positions and breaks around peak traffic, adjusting in real time to keep service fast during rushes.</li>
+          <li>Run cash counts and end-of-shift reconciliations, tracking down and resolving discrepancies.</li>
+          <li>Jump in wherever the team needs support, from the register to the bar, and help new baristas get up to speed.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head"><b>Sales Representative</b><span>Aug 2022 – Oct 2024</span></div>
+        <p class="sub">NYN Media, San Francisco, CA</p>
+        <ul><li>Reached out to prospective clients, presented offerings, and followed up to close sales.</li></ul>
+      </div>
+      <p class="plain"><b>Additional experience:</b> Leasing Office Assistant, Escher Apartments; Cashier, Tropical Smoothie Cafe; Shift Supervisor, Bambu Desserts; Packaging Technician, Mekelle, Ethiopia; Construction Intern, Habcon Construction</p>
+    </section>
+
+    <section class="part">
+      <h3>Leadership &amp; Involvement</h3>
+      <div class="item">
+        <div class="item-head"><b>President, People for Tigray (P4T)</b><span>2024 – Present</span></div>
+        <ul>
+          <li>Lead fundraising that raises about $3,000 per semester to support two schools in Tigray.</li>
+          <li>Organize about 3 events per semester, including an art show with a Tigrayan artist and a joint culture showcase with ESSA.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head"><b>Internal Vice President (prev. Treasurer), Ethiopian Eritrean Student Association</b><span>2023 – Present</span></div>
+      </div>
+      <p class="plain"><b>Also:</b> Peer Tutor, UMD guided study sessions; Volunteer, MCPS ESOL program; Member, Code: Black and Association for Women in Computing; UMD club soccer</p>
+    </section>
+
+    <a class="top" href="#go-resume">Back to top</a>
+  </article>
+
+  <footer>Thanks for stopping by. I'd love to hear from you: Heavenbrhanu30@gmail.com</footer>
+</div>
+
+</body>
+</html>
