@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heaven Brhanu | Projects</title>
+<meta name="description" content="Data project case studies by Heaven Brhanu: AI review analysis, purchase prediction, sales forecasting, and NBA analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+    --ink:#15231F;
+    --ink-soft:#33443E;
+    --paper:#F1ECDE;
+    --paper-alt:#E7DFC9;
+    --paper-deep:#DED2AE;
+    --gold:#BD8A2E;
+    --teal:#2F6F63;
+    --rust:#A8503A;
+    --line: rgba(21,35,31,0.16);
+    --muted:#6B6A57;
+    --display: 'Fraunces', serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --measure: 62ch;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding-inline:clamp(20px,4vw,56px);
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(241,236,222,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px clamp(20px,4vw,56px);
+    max-width:1180px; margin:0 auto;
+  }
+  .nav-mark{
+    font-family:var(--display); font-weight:700; font-size:1.05rem;
+    text-decoration:none; letter-spacing:0.01em;
+  }
+  .nav-links{
+    display:flex; gap:clamp(14px,2vw,28px); list-style:none; margin:0; padding:0;
+    font-family:var(--mono); font-size:0.8rem;
+  }
+  .nav-links a{
+    text-decoration:none; color:var(--ink-soft); position:relative; padding-bottom:3px;
+  }
+  .nav-links a.active{ color:var(--ink); }
+  .nav-links a.active::after{
+    content:""; position:absolute; left:0; right:0; bottom:-3px; height:2px; background:var(--gold);
+  }
+  .nav-toggle{ display:none; }
+
+  @media (max-width:720px){
+    .nav-inner{ flex-direction:column; align-items:flex-start; gap:10px; padding-block:12px; }
+    .nav-links{ width:100%; overflow-x:auto; gap:18px; padding-bottom:4px; scrollbar-width:none; }
+    .nav-links::-webkit-scrollbar{ display:none; }
+    .nav-links a{ white-space:nowrap; }
+    .section-tag{ position:static; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding-block: clamp(64px,10vw,120px) clamp(48px,7vw,80px);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:0.82rem; color:var(--teal);
+    margin:0 0 18px;
+  }
+  .hero h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.6rem,6.5vw,4.6rem);
+    line-height:1.02;
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+    animation:rise 0.6s ease-out both;
+  }
+  .hero p.lede{
+    font-size:clamp(1.05rem,2vw,1.28rem);
+    max-width:46ch;
+    color:var(--ink-soft);
+    margin:0 0 40px;
+    animation:rise 0.6s ease-out 0.1s both;
+  }
+  @keyframes rise{ from{ opacity:0.4; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }
+
+  .stat-strip{
+    display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,48px);
+    padding-top:32px; border-top:1px solid var(--line);
+    animation:rise 0.6s ease-out 0.2s both;
+  }
+  .stat{ width:170px; flex:0 0 auto; }
+  @media (max-width:480px){ .stat-strip{ display:grid; grid-template-columns:1fr 1fr; gap:24px 16px; } .stat{ width:auto; } }
+  .stat .label{ display:block; margin-top:2px; }
+  .stat .num{
+    font-family:var(--display); font-weight:600; font-size:2.1rem; color:var(--ink);
+    display:block;
+  }
+  .stat .label{
+    font-family:var(--mono); font-size:0.78rem; color:var(--muted);
+  }
+
+  .hero-actions{
+    display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;
+    animation:rise 0.6s ease-out 0.2s both;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:0.85rem;
+    padding:11px 20px; border-radius:2px; text-decoration:none;
+    border:1px solid var(--ink);
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .btn.primary{ background:var(--ink); color:var(--paper); }
+  .btn.primary:hover{ background:var(--teal); border-color:var(--teal); }
+  .btn.ghost{ background:transparent; color:var(--ink); }
+  .btn.ghost:hover{ background:var(--ink); color:var(--paper); }
+
+  /* ---------- SECTION SCAFFOLD (notebook margin layout) ---------- */
+  section{
+    padding-block:clamp(56px,8vw,96px);
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{ border-bottom:none; }
+  .section-grid{
+    display:grid;
+    grid-template-columns: 200px 1fr;
+    gap:clamp(24px,5vw,64px);
+  }
+  @media (max-width:760px){
+    .section-grid{ grid-template-columns:1fr; gap:14px; }
+  }
+  .section-tag{
+    font-family:var(--mono); font-size:0.8rem; color:var(--teal);
+    position:sticky; top:80px; align-self:start;
+  }
+  .section-tag .idx{ color:var(--muted); }
+  .section-body h2{
+    font-family:var(--display); font-weight:600;
+    font-size:clamp(1.7rem,3.2vw,2.3rem);
+    margin:0 0 20px;
+  }
+  .section-body p{
+    max-width:var(--measure); color:var(--ink-soft);
+  }
+
+  /* ---------- ABOUT ---------- */
+  #about .section-body p{ font-size:1.05rem; }
+  .about-langs{
+    display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:28px;
+    font-family:var(--mono); font-size:0.82rem; color:var(--muted);
+  }
+  .about-langs span b{ color:var(--ink); font-weight:500; }
+
+  /* ---------- EXPERIENCE (timeline) ---------- */
+  .timeline{ list-style:none; margin:0; padding:0; }
+  .tl-item{
+    display:grid; grid-template-columns: 150px 1fr; gap:24px;
+    padding:26px 0; border-top:1px solid var(--line);
+  }
+  .tl-item:first-child{ border-top:none; padding-top:0; }
+  @media (max-width:600px){
+    .tl-item{ grid-template-columns:1fr; gap:6px; }
+  }
+  .tl-when{ font-family:var(--mono); font-size:0.82rem; color:var(--muted); padding-top:4px; }
+  .tl-role h3{
+    font-family:var(--body); font-weight:600; font-size:1.12rem; margin:0 0 2px;
+  }
+  .tl-role .org{ color:var(--teal); font-weight:500; }
+  .tl-role ul{ margin:12px 0 0; padding-left:18px; color:var(--ink-soft); }
+  .tl-role li{ margin-bottom:6px; }
+
+  /* ---------- PROJECTS ---------- */
+  .proj{
+    display:grid; grid-template-columns: 1fr 220px; gap:32px;
+    padding:30px 0; border-top:1px solid var(--line); align-items:center;
+  }
+  .proj:first-child{ border-top:none; padding-top:0; }
+  @media (max-width:700px){
+    .proj{ grid-template-columns:1fr; }
+  }
+  .proj h3{ font-family:var(--display); font-weight:600; font-size:1.35rem; margin:0 0 8px; }
+  .proj p{ color:var(--ink-soft); max-width:56ch; margin:0 0 12px; }
+  .proj-link{
+    font-family:var(--mono); font-size:0.82rem; text-decoration:none;
+    border-bottom:1px solid var(--gold); padding-bottom:1px;
+  }
+  .metric-card{
+    background:var(--paper-alt); border:1px solid var(--line);
+    padding:18px 20px; text-align:left;
+  }
+  .metric-card .big{
+    font-family:var(--display); font-weight:700; font-size:2.1rem; color:var(--ink);
+    display:block; line-height:1;
+  }
+  .metric-card .cap{ font-family:var(--mono); font-size:0.75rem; color:var(--muted); margin-top:6px; display:block; }
+  .metric-bar{
+    height:6px; background:var(--paper-deep); margin-top:12px; overflow:hidden;
+  }
+  .metric-bar > i{ display:block; height:100%; background:var(--teal); width:var(--fill,0%); transition:width 1s ease 0.2s; }
+
+  .metric-card .note{ font-size:0.82rem; color:var(--ink-soft); margin-top:10px; display:block; line-height:1.4; }
+  .challenge{ font-size:0.95rem; border-left:2px solid var(--gold); padding-left:14px; }
+  .challenge b{ color:var(--ink); font-weight:600; }
+  .proj-links{ display:flex; gap:18px; flex-wrap:wrap; }
+
+  /* ---------- LEADERSHIP ---------- */
+  .lead-item{
+    padding:26px 0; border-top:1px solid var(--line);
+  }
+  .lead-item:first-child{ border-top:none; padding-top:0; }
+  .lead-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;
+  }
+  .lead-head h3{ font-family:var(--body); font-weight:600; font-size:1.1rem; margin:0; }
+  .lead-when{ font-family:var(--mono); font-size:0.8rem; color:var(--muted); white-space:nowrap; }
+  .lead-role{ color:var(--rust); font-weight:500; font-size:0.92rem; margin:2px 0 10px; }
+  .lead-item p{ color:var(--ink-soft); max-width:var(--measure); margin:0; }
+  .member-row{
+    display:flex; gap:28px; flex-wrap:wrap; margin-top:8px;
+    font-family:var(--mono); font-size:0.85rem; color:var(--ink-soft);
+  }
+  .member-row span{ margin-right:24px; display:inline-block; }
+
+  /* ---------- SKILLS ---------- */
+  .skill-group{ margin-bottom:28px; }
+  .skill-group:last-child{ margin-bottom:0; }
+  .skill-group h4{
+    font-family:var(--mono); font-size:0.8rem; color:var(--muted); margin:0 0 12px; font-weight:400;
+  }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .tag{
+    font-family:var(--mono); font-size:0.82rem;
+    border:1px solid var(--line); padding:7px 13px;
+    background:var(--paper-alt);
+  }
+  .coursework{ color:var(--ink-soft); max-width:var(--measure); margin-top:6px; }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{
+    padding-block:clamp(56px,9vw,100px) 48px;
+  }
+  footer h2{
+    font-family:var(--display); font-weight:700; font-size:clamp(2rem,5vw,3.2rem);
+    margin:0 0 24px; max-width:12ch;
+  }
+  .contact-row{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:56px; }
+  .foot-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:var(--mono); font-size:0.78rem; color:var(--muted);
+    border-top:1px solid var(--line); padding-top:20px;
+  }
+
+/* ---------- ABOUT PAGE ---------- */
+.about-hero{
+  padding-block: clamp(56px,9vw,100px) clamp(40px,6vw,64px);
+  border-bottom:1px solid var(--line);
+}
+.about-hero h1{
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(2.2rem,5.5vw,3.6rem);
+  line-height:1.05; margin:0 0 20px; max-width:16ch;
+}
+.about-hero .lede{
+  font-size:clamp(1.02rem,1.8vw,1.18rem);
+  color:var(--ink-soft); max-width:60ch; margin:0;
+}
+
+.photo-row{
+  display:flex; align-items:center; gap:28px; margin-top:40px; flex-wrap:wrap;
+}
+.photo-frame{
+  width:132px; height:132px; border:1.5px dashed var(--muted);
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  font-family:var(--mono); font-size:0.72rem; color:var(--muted);
+  padding:10px; flex:0 0 auto;
+  background:var(--paper-alt);
+}
+.linkedin-slot{
+  font-family:var(--mono); font-size:0.82rem;
+  border:1.5px dashed var(--muted); color:var(--muted);
+  padding:10px 18px; display:inline-flex; align-items:center; gap:8px;
+  text-decoration:none;
+}
+
+.vignette{
+  padding:28px 0; border-top:1px solid var(--line);
+}
+.vignette:first-child{ border-top:none; padding-top:0; }
+.vignette .v-tag{
+  font-family:var(--mono); font-size:0.78rem; color:var(--rust); margin:0 0 8px;
+}
+.vignette h3{
+  font-family:var(--body); font-weight:600; font-size:1.15rem; margin:0 0 10px;
+}
+.vignette p{ color:var(--ink-soft); max-width:var(--measure); margin:0; }
+
+.callout{
+  background:var(--paper-alt); border:1px solid var(--line);
+  padding:24px 28px; margin-top:8px;
+}
+.callout p{ margin:0; color:var(--ink-soft); max-width:var(--measure); }
+
+.cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+
+
+  /* ---------- PROJECTS PAGE ---------- */
+  .page-hero{ padding-block: clamp(56px,9vw,100px) clamp(36px,5vw,56px); border-bottom:1px solid var(--line); }
+  .page-hero h1{ font-family:var(--display); font-weight:700; font-size:clamp(2.2rem,5.5vw,3.6rem); line-height:1.05; margin:0 0 18px; max-width:18ch; text-wrap:balance; }
+  .page-hero .lede{ font-size:clamp(1.02rem,1.8vw,1.18rem); color:var(--ink-soft); max-width:60ch; margin:0; }
+  .jump{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:40px; }
+  @media (max-width:900px){ .jump{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:480px){ .jump{ grid-template-columns:1fr; } }
+  .jump a{ display:flex; flex-direction:column; gap:6px; text-decoration:none; padding:16px 18px; border:1px solid var(--line); background:var(--paper-alt); transition:border-color .15s ease, transform .15s ease; }
+  .jump a:hover{ border-color:var(--ink); transform:translateY(-1px); }
+  .jump .j-num{ font-family:var(--display); font-weight:700; font-size:1.6rem; line-height:1; }
+  .jump .j-name{ font-weight:600; font-size:0.98rem; }
+  .jump .j-tool{ font-family:var(--mono); font-size:0.74rem; color:var(--muted); }
+
+  .case{ padding-block:clamp(56px,8vw,96px); border-bottom:1px solid var(--line); scroll-margin-top:70px; }
+  .case:last-of-type{ border-bottom:none; }
+  .case-head{ display:flex; flex-direction:column; gap:12px; max-width:760px; }
+  .case-eyebrow{ font-family:var(--mono); font-size:0.8rem; color:var(--teal); margin:0; }
+  .case-head h2{ font-family:var(--display); font-weight:700; font-size:clamp(1.9rem,4vw,2.8rem); line-height:1.08; margin:0; text-wrap:balance; }
+  .case-head .lede{ font-size:1.1rem; color:var(--ink-soft); margin:0; max-width:62ch; }
+  .case-links{ display:flex; gap:12px; flex-wrap:wrap; margin-top:6px; }
+  .case-stats{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin:36px 0 12px; }
+  @media (max-width:600px){ .case-stats{ grid-template-columns:1fr; } }
+  .case-stats div{ background:var(--paper-alt); padding:18px 20px; }
+  .case-stats b{ display:block; font-family:var(--display); font-weight:700; font-size:2rem; line-height:1.05; font-variant-numeric:tabular-nums; }
+  .case-stats span{ font-family:var(--mono); font-size:0.76rem; color:var(--muted); }
+  .row{ display:grid; grid-template-columns:200px 1fr; gap:clamp(20px,4vw,56px); padding:28px 0; border-top:1px solid var(--line); }
+  .row:first-of-type{ border-top:none; }
+  @media (max-width:760px){ .row{ grid-template-columns:1fr; gap:10px; } }
+  .row-label{ font-family:var(--mono); font-size:0.8rem; color:var(--rust); padding-top:3px; }
+  .row-body{ max-width:68ch; color:var(--ink-soft); min-width:0; }
+  .row > *, .figs > *, .case-head{ min-width:0; }
+  .row-body p{ margin:0 0 12px; } .row-body p:last-child{ margin-bottom:0; }
+  .row-body ul, .row-body ol{ margin:0; padding-left:20px; display:flex; flex-direction:column; gap:8px; }
+  .row-body b{ color:var(--ink); font-weight:600; }
+  .row-body code{ font-family:var(--mono); font-size:0.85em; background:var(--paper-alt); padding:1px 5px; }
+  .table-wrap{ overflow-x:auto; margin-top:4px; }
+  table.data{ border-collapse:collapse; width:100%; min-width:420px; font-size:0.92rem; }
+  table.data th, table.data td{ text-align:left; padding:9px 12px; border-bottom:1px solid var(--line); }
+  table.data th{ font-family:var(--mono); font-size:0.74rem; font-weight:500; color:var(--muted); border-bottom:1.5px solid var(--ink); }
+  table.data td.n, table.data th.n{ text-align:right; font-variant-numeric:tabular-nums; }
+  table.data tr.win td{ background:var(--paper-alt); font-weight:600; color:var(--ink); }
+  .figs{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin-top:28px; }
+  @media (max-width:760px){ .figs{ grid-template-columns:1fr; } }
+  figure{ margin:0; background:#fff; border:1px solid var(--line); padding:12px; display:flex; flex-direction:column; gap:10px; }
+  figure img{ width:100%; height:auto; display:block; }
+  figcaption{ font-size:0.86rem; color:var(--ink-soft); line-height:1.45; }
+  figcaption b{ color:var(--ink); }
+  .back-top{ font-family:var(--mono); font-size:0.8rem; display:inline-block; margin-top:28px; }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="portfolio.html">Heaven Brhanu</a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html#strengths">What I bring</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="portfolio.html#experience">Experience</a></li>
+      <li><a href="portfolio.html#leadership">Leadership</a></li>
+      <li><a href="portfolio.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+<main id="top">
+
+  <section class="page-hero wrap" style="border-top:none;">
+    <p class="hero-eyebrow">Projects</p>
+    <h1>Four projects, and the thinking behind them.</h1>
+    <p class="lede">Every project here starts with a real question and real data. For each one, I walk through what I built, what I found, and what went wrong along the way. Honestly, the things that went wrong taught me the most.</p>
+    <nav class="jump" aria-label="Jump to a project">
+      <a href="#ai-review-insights"><span class="j-num">22,600+</span><span class="j-name">AI Review Insights Tool</span><span class="j-tool">Python · pandas · generative AI</span></a>
+      <a href="#purchase-intent"><span class="j-num">0.93</span><span class="j-name">Purchase Intent Classification</span><span class="j-tool">Python · scikit-learn</span></a>
+      <a href="#sales-forecast"><span class="j-num">4.8%</span><span class="j-name">Retail Sales &amp; Staffing Forecast</span><span class="j-tool">Python · scikit-learn</span></a>
+      <a href="#okc-four-factors"><span class="j-num">329</span><span class="j-name">OKC Thunder Four Factors</span><span class="j-tool">R · tidyverse · hoopR</span></a>
+    </nav>
+  </section>
+
+  <!-- ================= AI REVIEW INSIGHTS ================= -->
+  <article class="case wrap" id="ai-review-insights">
+    <header class="case-head">
+      <p class="case-eyebrow">Python · pandas · regex · generative AI · matplotlib</p>
+      <h2>AI Review Insights Tool</h2>
+      <p class="lede">Turning thousands of customer reviews into short insight reports with AI, and checking the AI's work with code.</p>
+      <div class="case-links"><a class="btn primary" href="https://github.com/Heavenb20/ai-review-insights" target="_blank" rel="noopener">View code on GitHub</a></div>
+    </header>
+
+    <div class="case-stats">
+      <div><b>22,628</b><span>reviews analyzed</span></div>
+      <div><b>5</b><span>themes tagged in every review</span></div>
+      <div><b>$0</b><span>API cost, model runs on a laptop</span></div>
+    </div>
+
+    <div class="row"><div class="row-label">The problem</div><div class="row-body">
+      <p>Apparel brands get thousands of reviews. Reading them by hand to find what's going wrong, and what customers love, takes days. I wanted to automate that: let code measure the patterns, and let an AI model read the reviews and explain them in plain language for each product department.</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">The data</div><div class="row-body">
+      <p>The <b>Women's E-Commerce Clothing Reviews</b> dataset from Kaggle: 23,486 anonymized reviews with text, star ratings, and product departments. After removing reviews with no text, 22,628 remained. About 10.5% are negative (1 to 2 stars).</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
+      <ol>
+        <li><b>Explored and cleaned</b> the reviews with pandas.</li>
+        <li><b>Tagged five themes</b> with keyword matching: fit &amp; sizing, fabric &amp; quality, comfort, color &amp; style, and price &amp; value.</li>
+        <li><b>Built a fit check.</b> Code counts how many negative reviews in each department say an item runs small versus large.</li>
+        <li><b>Generated AI summaries.</b> For each department, the tool sends 20 negative and 10 positive reviews to an AI model running on my own laptop and asks for top complaints, what customers love, and a recommendation.</li>
+        <li><b>Compared the AI's claims to the fit check</b> and charted the results.</li>
+      </ol>
+    </div></div>
+
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
+      <ul>
+        <li><b>The clothes run large, not small.</b> In most departments, negative reviews are about twice as likely to say "too large" (Tops: 26% vs. 9%, Jackets: 27% vs. 15%, Dresses: 23% vs. 13%).</li>
+        <li><b>Fabric quality is the clearest complaint signal.</b> It appears in 59% of negative reviews vs. 40% of positive ones, the biggest gap of any theme.</li>
+        <li><b>Comfort drives positive reviews:</b> 35% of positive reviews vs. 11% of negative ones.</li>
+        <li><b>Fit comes up in about 70% of all reviews</b>, good and bad, so keyword counts alone can't tell praise from complaints. That's why the fit check and the AI step exist.</li>
+      </ul>
+    </div></div>
+
+    <div class="row"><div class="row-label">Checking the AI</div><div class="row-body">
+      <p>I treated the AI's output as a draft to verify, not a final answer. Comparing its claims to the fit check showed where it went wrong:</p>
+      <div class="table-wrap"><table class="data">
+        <thead><tr><th>Department</th><th>AI said</th><th>Data shows</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>Jackets</td><td>"Mostly run too small"</td><td>27% large vs. 15% small</td><td>Wrong</td></tr>
+          <tr><td>Dresses</td><td>Runs "too small" and "too large"</td><td>23% large vs. 13% small</td><td>Contradictory</td></tr>
+          <tr><td>Trend</td><td>"Swimming in the XS" means it runs small</td><td>Swimming in a size means too big</td><td>Misread</td></tr>
+          <tr><td>Tops, Bottoms</td><td>Advice written for customers</td><td>Should be written for the brand</td><td>Wrong audience</td></tr>
+        </tbody>
+      </table></div>
+    </div></div>
+
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
+      <ul>
+        <li><b>The first version was generic.</b> Every department got nearly the same complaints, and the AI said items "run large or small" without saying which. When I gave it statistics, it often repeated them back. I rewrote the prompt to ask for department-specific details, and the summaries got much sharper: loose buttons on jackets, a chemical smell on Trend items, holes and snags on bottoms.</li>
+        <li><b>The AI was unreliable with numbers and direction.</b> That's what the fit check caught. The design I landed on: <b>code handles the measurements, AI handles the qualitative details, and a person reviews both</b> before anything reaches a decision-maker.</li>
+        <li><b>Keyword tagging can't read context.</b> "I ordered a small and it fits perfectly" still counts as a sizing mention. And small departments like Trend (118 reviews, 21 negative) give less reliable results.</li>
+      </ul>
+    </div></div>
+
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
+      <ul>
+        <li>Try a larger AI model and score its accuracy against the fit check.</li>
+        <li>Have code write every numeric claim, and let the AI write only the qualitative details.</li>
+        <li>Build a dashboard so teams can filter insights by department and theme.</li>
+      </ul>
+    </div></div>
+
+    <div class="figs">
+      <figure><img src="https://raw.githubusercontent.com/Heavenb20/ai-review-insights/main/review-insights/fit_check.png" alt="Bar chart of negative reviews saying items run small versus large, by department. Most departments run large." loading="lazy" width="1350" height="750"><figcaption><b>The fit check.</b> Most departments get far more "runs large" complaints than "runs small." This is the chart the AI got wrong.</figcaption></figure>
+      <figure><img src="https://raw.githubusercontent.com/Heavenb20/ai-review-insights/main/review-insights/theme_mentions.png" alt="Bar chart of how often each theme appears in negative versus positive reviews." loading="lazy" width="1350" height="750"><figcaption><b>Themes by sentiment.</b> Fabric and quality lean negative; comfort leans strongly positive.</figcaption></figure>
+    </div>
+    <a class="back-top proj-link" href="#top">Back to all projects ↑</a>
+  </article>
+
+  <!-- ================= PURCHASE INTENT ================= -->
+  <article class="case wrap" id="purchase-intent">
+    <header class="case-head">
+      <p class="case-eyebrow">Python · pandas · scikit-learn · matplotlib · seaborn</p>
+      <h2>Purchase Intent Classification</h2>
+      <p class="lede">Can you tell whether a shopper will buy, just from how they browse, before they check out or leave?</p>
+      <div class="case-links"><a class="btn primary" href="https://github.com/Heavenb20/purchase-intent-classification" target="_blank" rel="noopener">View code on GitHub</a></div>
+    </header>
+
+    <div class="case-stats">
+      <div><b>0.93</b><span>ROC-AUC, Random Forest</span></div>
+      <div><b>77%</b><span>of real buyers caught (recall)</span></div>
+      <div><b>12,330</b><span>real browsing sessions</span></div>
+    </div>
+
+    <div class="row"><div class="row-label">The problem</div><div class="row-body">
+      <p>If a site could spot likely buyers while they're still browsing, it could decide who sees a discount pop-up or a live-chat offer, putting effort where it changes the outcome. This is a <b>classification</b> problem: predict "purchase" or "no purchase" for each session.</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">The data</div><div class="row-body">
+      <p>The <b>Online Shoppers Purchasing Intention</b> dataset from the UCI Machine Learning Repository: 12,330 real sessions from an e-commerce site over one year. Each session records pages viewed and time spent by page type, Google Analytics bounce and exit rates, Page Values, month, weekend, and new vs. returning visitor. The target is whether the session ended in a purchase.</p>
+      <p>Only <b>15.5%</b> of sessions ended in a purchase. That imbalance shaped every decision after this.</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
+      <ol>
+        <li><b>Cleaned the data:</b> removed 125 exact duplicate rows. There were no missing values.</li>
+        <li><b>Explored</b> what separates buyers from non-buyers: Page Values, bounce and exit rates, time on product pages, and purchase rate by month and visitor type.</li>
+        <li><b>Engineered features:</b> one-hot encoded month and visitor type.</li>
+        <li><b>Split 80/20, stratified</b> so the training and test sets kept the same 15.5% purchase rate.</li>
+        <li><b>Trained two models</b>, Logistic Regression and Random Forest, both with <code>class_weight="balanced"</code> so the rare buyers weren't ignored.</li>
+        <li><b>Evaluated</b> with precision, recall, F1, and ROC-AUC instead of accuracy.</li>
+      </ol>
+    </div></div>
+
+    <div class="row"><div class="row-label">Results</div><div class="row-body">
+      <div class="table-wrap"><table class="data">
+        <thead><tr><th>Model</th><th class="n">Accuracy</th><th class="n">Precision</th><th class="n">Recall</th><th class="n">F1</th><th class="n">ROC-AUC</th></tr></thead>
+        <tbody>
+          <tr><td>Logistic Regression</td><td class="n">0.851</td><td class="n">0.516</td><td class="n">0.785</td><td class="n">0.623</td><td class="n">0.911</td></tr>
+          <tr class="win"><td>Random Forest</td><td class="n">0.885</td><td class="n">0.605</td><td class="n">0.767</td><td class="n">0.677</td><td class="n">0.931</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px;">On the test set, the Random Forest caught <b>293 of 382 real buyers</b>. It won on every metric except recall, where Logistic Regression was slightly higher but raised far more false alarms.</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
+      <ul>
+        <li><b>Page Values was the strongest predictor by far</b> (0.49 correlation with purchasing, and the top feature in the model).</li>
+        <li><b>New visitors converted more often than returning ones</b>, 25% vs. 14%. I expected the opposite.</li>
+        <li><b>November had the highest purchase rate</b> (25%), in line with holiday shopping. February was the lowest (1.7%).</li>
+        <li>Weekend sessions converted slightly better than weekday sessions (17.5% vs. 15.1%).</li>
+      </ul>
+    </div></div>
+
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
+      <ul>
+        <li><b>Accuracy was misleading.</b> A model that always guesses "no purchase" scores 84.4% accuracy and is useless. I judged the models on how well they found the minority class instead.</li>
+        <li><b>Choosing between precision and recall.</b> For a discount pop-up, missing a real buyer usually costs more than a wasted pop-up, so recall matters a lot. Random Forest gave up a little recall (77% vs. 79%) in exchange for far fewer false alarms (191 vs. 281), which made it the better trade-off.</li>
+      </ul>
+    </div></div>
+
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
+      <ul>
+        <li><b>Check Page Values for leakage.</b> It's calculated from pages that lead to purchases, so it may make the model look stronger than it would be in real time. I'd retrain without it and compare.</li>
+        <li>Properly encode browser, operating system, region, and traffic type, which I left as numeric IDs.</li>
+        <li>Tune hyperparameters, and add product price and category data if available.</li>
+      </ul>
+    </div></div>
+
+    <div class="figs">
+      <figure><img src="https://raw.githubusercontent.com/Heavenb20/purchase-intent-classification/main/purchase-intent-classification/charts/10_roc_curve.png" alt="ROC curves for logistic regression (AUC 0.911) and random forest (AUC 0.931) against a random-guess diagonal." loading="lazy" width="720" height="720"><figcaption><b>ROC curves.</b> Both models far outperform random guessing; Random Forest edges ahead at every threshold.</figcaption></figure>
+      <figure><img src="https://raw.githubusercontent.com/Heavenb20/purchase-intent-classification/main/purchase-intent-classification/charts/09_confusion_matrices.png" alt="Confusion matrices for both models on the test set." loading="lazy" width="1320" height="540"><figcaption><b>Confusion matrices.</b> Random Forest caught 293 buyers with 191 false alarms; Logistic Regression caught 300 but with 281 false alarms.</figcaption></figure>
+    </div>
+    <a class="back-top proj-link" href="#top">Back to all projects ↑</a>
+  </article>
+
+  <!-- ================= SALES FORECAST ================= -->
+  <article class="case wrap" id="sales-forecast">
+    <header class="case-head">
+      <p class="case-eyebrow">Python · pandas · scikit-learn · matplotlib · seaborn</p>
+      <h2>Retail Sales &amp; Staffing Forecast</h2>
+      <p class="lede">Predicting busy weeks ahead of time, so staffing can be planned instead of scrambled.</p>
+      <div class="case-links"><a class="btn primary" href="https://github.com/Heavenb20/retail-sales-staffing-forecast" target="_blank" rel="noopener">View code on GitHub</a></div>
+    </header>
+
+    <div class="case-stats">
+      <div><b>4.8%</b><span>average forecast error (MAPE)</span></div>
+      <div><b>421,570</b><span>weekly sales records</span></div>
+      <div><b>45</b><span>stores forecast, each with its own staffing tiers</span></div>
+    </div>
+
+    <div class="row"><div class="row-label">Why I built it</div><div class="row-body">
+      <p>As a Starbucks shift leader, I noticed that staffing is mostly reactive. You make a guess from past experience, then scramble if it's busier or slower than expected. I wanted to test whether busy weeks can be predicted instead, using a real retail dataset.</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">The data</div><div class="row-body">
+      <p>The <b>Walmart Store Sales Forecasting</b> dataset from Kaggle: 421,570 weekly sales records across 45 stores and 81 departments, February 2010 to October 2012. It comes in three files: sales, store size and type, and weekly outside factors like temperature, fuel price, CPI, and unemployment.</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
+      <ol>
+        <li><b>Merged</b> the three files into one table.</li>
+        <li><b>Handled missing promotion data.</b> Markdown columns were empty before November 2011 because Walmart hadn't run those promotions yet, so blanks meant "no promotion." I filled them with 0 instead of dropping rows.</li>
+        <li><b>Explored</b> trends, seasonality, holidays, store types, and outside factors.</li>
+        <li><b>Built lag features:</b> last week's sales and a rolling 4-week average, using only past weeks, which is what a manager would already know going into a week.</li>
+        <li><b>Split by time:</b> trained on older weeks and tested on the most recent 20%.</li>
+        <li><b>Compared</b> Linear Regression (baseline) with Random Forest.</li>
+        <li><b>Turned forecasts into staffing tiers</b> by comparing each predicted week to that store's own median, so small stores aren't always labeled "low."</li>
+      </ol>
+    </div></div>
+
+    <div class="row"><div class="row-label">Results</div><div class="row-body">
+      <div class="table-wrap"><table class="data">
+        <thead><tr><th>Model</th><th class="n">MAE</th><th class="n">R²</th><th class="n">MAPE</th></tr></thead>
+        <tbody>
+          <tr><td>Linear Regression</td><td class="n">$55,896</td><td class="n">0.981</td><td class="n">6.1%</td></tr>
+          <tr class="win"><td>Random Forest</td><td class="n">$48,992</td><td class="n">0.983</td><td class="n">4.8%</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:18px;">Staffing recommendations for the 1,260 store-weeks in the test period:</p>
+      <div class="table-wrap"><table class="data">
+        <thead><tr><th>Tier</th><th class="n">Store-weeks</th><th>Recommendation</th></tr></thead>
+        <tbody>
+          <tr><td>High</td><td class="n">28</td><td>Staff 20–25% above normal</td></tr>
+          <tr><td>Medium</td><td class="n">477</td><td>Staff about 10% above normal</td></tr>
+          <tr><td>Standard</td><td class="n">712</td><td>Normal staffing</td></tr>
+          <tr><td>Low</td><td class="n">43</td><td>Cut back about 10%</td></tr>
+        </tbody>
+      </table></div>
+    </div></div>
+
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
+      <ul>
+        <li><b>December is the biggest month by far</b>; January and February are the lowest.</li>
+        <li><b>Holiday weeks run about 8% higher</b> in sales.</li>
+        <li><b>Type A stores average roughly 3× the sales</b> of Type C stores.</li>
+        <li><b>Outside factors barely mattered.</b> Temperature, fuel price, CPI, and unemployment all had correlations under 0.11. A store's own recent sales mattered far more than anything else.</li>
+      </ul>
+    </div></div>
+
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
+      <ul>
+        <li><b>Keeping the model from cheating.</b> A random split would let the model learn from weeks after the ones it's tested on. Splitting by time, and building lag features only from past weeks, makes this a real forecast.</li>
+        <li><b>An R² of 0.98 looks too good.</b> Weekly store sales are very stable, so last week already explains most of this week. That's why I report the 4.8% error on unseen future weeks as the number that matters.</li>
+        <li><b>Fairness across store sizes.</b> A single threshold would flag big stores as "high" every week, so each store is compared to its own history.</li>
+      </ul>
+    </div></div>
+
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
+      <ul>
+        <li>Add real labor-hour data to translate predicted sales into how many people to schedule.</li>
+        <li>Retrain regularly as new weeks come in; I tested on about seven months of future weeks.</li>
+        <li>Test whether weather matters more for other businesses, like an outdoor venue.</li>
+      </ul>
+    </div></div>
+
+    <div class="figs">
+      <figure><img src="https://raw.githubusercontent.com/Heavenb20/retail-sales-staffing-forecast/main/retail-sales-forecasting/charts/09_predicted_vs_actual.png" alt="Scatter plot of predicted versus actual store-week sales for the test weeks, tightly clustered along the diagonal." loading="lazy" width="720" height="720"><figcaption><b>Predicted vs. actual sales</b> for unseen test weeks. Points close to the dashed line mean accurate forecasts.</figcaption></figure>
+      <figure><img src="https://raw.githubusercontent.com/Heavenb20/retail-sales-staffing-forecast/main/retail-sales-forecasting/charts/10_staffing_tiers.png" alt="Bar chart of recommended staffing tiers across store-weeks in the test period." loading="lazy" width="960" height="540"><figcaption><b>Staffing tiers.</b> Most weeks need standard or slightly higher staffing; a few need a big boost or a cutback.</figcaption></figure>
+    </div>
+    <a class="back-top proj-link" href="#top">Back to all projects ↑</a>
+  </article>
+
+  <!-- ================= OKC ================= -->
+  <article class="case wrap" id="okc-four-factors">
+    <header class="case-head">
+      <p class="case-eyebrow">R · tidyverse (dplyr, tidyr, ggplot2) · hoopR · broom</p>
+      <h2>What Wins Games for the OKC Thunder?</h2>
+      <p class="lede">A Four Factors analysis of every Thunder regular-season game from 2022–23 through 2025–26.</p>
+      <div class="case-links"><a class="btn primary" href="https://github.com/Heavenb20/okc-four-factors" target="_blank" rel="noopener">View code on GitHub</a></div>
+    </header>
+
+    <div class="case-stats">
+      <div><b>329</b><span>games modeled</span></div>
+      <div><b>8</b><span>factors, OKC and opponents</span></div>
+      <div><b>10,582</b><span>team box scores pulled</span></div>
+    </div>
+
+    <div class="row"><div class="row-label">The question</div><div class="row-body">
+      <p>Basketball analyst Dean Oliver showed that winning mostly comes down to four things: <b>shooting</b>, <b>turnovers</b>, <b>offensive rebounding</b>, and <b>free throws</b>. I wanted to know which of these matters most for the Thunder, on both offense and defense.</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
+      <ol>
+        <li><b>Pulled the data:</b> NBA team box scores for 2022–23 to 2025–26 with the hoopR package (10,582 team-game rows).</li>
+        <li><b>Reshaped it:</b> kept regular-season games and joined each team's box score to its opponent's, so both sides of every game are in one row.</li>
+        <li><b>Validated it</b> against official standings.</li>
+        <li><b>Calculated the Four Factors</b> for OKC and its opponents: eFG% = (FGM + 0.5 × 3PM) / FGA; TOV% = TOV / (FGA + 0.44 × FTA + TOV); ORB% = ORB / (ORB + opponent DRB); FT rate = FTM / FGA.</li>
+        <li><b>Modeled wins</b> with logistic regression on all eight factors, each standardized so their effects can be compared directly.</li>
+      </ol>
+    </div></div>
+
+    <div class="row"><div class="row-label">Results</div><div class="row-body">
+      <div class="table-wrap"><table class="data">
+        <thead><tr><th>Factor</th><th class="n">Coefficient (log-odds per 1 SD)</th></tr></thead>
+        <tbody>
+          <tr><td>OKC shooting (eFG%)</td><td class="n">+7.8</td></tr>
+          <tr><td>Opponent shooting</td><td class="n">−7.3</td></tr>
+          <tr><td>Turnovers OKC forces</td><td class="n">+4.5</td></tr>
+          <tr><td>OKC turnovers</td><td class="n">−3.4</td></tr>
+          <tr><td>Opponent free throws</td><td class="n">−3.1</td></tr>
+          <tr><td>Opponent offensive rebounding</td><td class="n">−2.4</td></tr>
+          <tr><td>OKC offensive rebounding</td><td class="n">+2.4</td></tr>
+          <tr><td>OKC free throws</td><td class="n">+1.9</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:14px;">All eight effects are statistically significant (p &lt; 0.001).</p>
+    </div></div>
+
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
+      <ul>
+        <li><b>Shooting on both ends matters most, and defense matters almost as much as offense.</b> OKC's eFG% is 57.7% in wins vs. 51.2% in losses. Opponents shoot 51.0% in OKC wins vs. 57.2% in OKC losses.</li>
+        <li><b>Forcing turnovers is the third-biggest driver:</b> 14.4% of opponent possessions in wins vs. 12.8% in losses.</li>
+        <li><b>Some factors only show up when everything else is held equal.</b> OKC's own turnover and offensive rebounding rates barely differ between wins and losses on average, but the model shows both still matter once shooting is held constant. Simple averages would have missed this.</li>
+        <li><b>Fouling less helps.</b> Opponents reach the free-throw line less in OKC wins (20.0% FT rate) than in losses (22.4%).</li>
+      </ul>
+    </div></div>
+
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
+      <ul>
+        <li><b>An extra game in the data.</b> Checking against official standings, 2024–25 had 83 games instead of 82. I traced it to the NBA Cup championship, which is played during the regular season but doesn't count in the standings. I kept it because it's a real game with real stats.</li>
+        <li><b>Being honest about accuracy.</b> The model classifies 96.4% of games correctly, but that's in-sample, and the Four Factors nearly determine the score anyway. The real value is the <b>relative weight</b> of each factor, not the prediction.</li>
+      </ul>
+    </div></div>
+
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
+      <ul>
+        <li>Test the model on a season it has never seen.</li>
+        <li>Account for opponent strength, home vs. away, rest, and lineups.</li>
+        <li>Compare OKC's profile to the rest of the league, and build a Shiny dashboard to explore it.</li>
+      </ul>
+    </div></div>
+
+    <div class="figs">
+      <figure><img src="https://raw.githubusercontent.com/Heavenb20/okc-four-factors/main/four_factors_impact.png" alt="Bar chart of each factor's logistic regression coefficient; OKC shooting and opponent shooting have the largest effects." loading="lazy" width="2700" height="1500"><figcaption><b>What drives wins.</b> Each bar is a factor's effect on winning when it rises by one standard deviation.</figcaption></figure>
+      <figure><img src="https://raw.githubusercontent.com/Heavenb20/okc-four-factors/main/four_factors_by_season.png" alt="Line chart of OKC's Four Factors averages by season from 2023 to 2026." loading="lazy" width="2700" height="1500"><figcaption><b>OKC's Four Factors by season.</b> Shooting efficiency has stayed well above the other factors every season.</figcaption></figure>
+    </div>
+    <a class="back-top proj-link" href="#top">Back to all projects ↑</a>
+  </article>
+
+</main>
+
+<footer class="wrap" id="contact" style="border-top:1px solid var(--line);">
+  <h2>Want to talk through a project?</h2>
+  <div class="contact-row">
+    <a class="btn primary" href="mailto:Heavenbrhanu30@gmail.com">Heavenbrhanu30@gmail.com</a>
+    <a class="btn ghost" href="https://github.com/Heavenb20" target="_blank" rel="noopener">github.com/Heavenb20</a>
+    <a class="btn ghost" href="index.html#resume">View resume</a>
+  </div>
+  <div class="foot-bottom">
+    <span>Silver Spring, MD</span>
+    <span>Open to data analyst, BI, and data science roles: internships and full-time</span>
+  </div>
+</footer>
+
+</body>
+</html>
