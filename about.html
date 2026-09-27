@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Heaven Brhanu</title>
+<title>Heaven Brhanu | About</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
   .wrap{
     max-width:1180px;
     margin:0 auto;
-    padding:0 clamp(20px,4vw,56px);
+    padding-inline:clamp(20px,4vw,56px);
   }
 
   /* ---------- NAV ---------- */
@@ -80,12 +80,16 @@
   .nav-toggle{ display:none; }
 
   @media (max-width:720px){
-    .nav-links{ display:none; }
+    .nav-inner{ flex-direction:column; align-items:flex-start; gap:10px; padding-block:12px; }
+    .nav-links{ width:100%; overflow-x:auto; gap:18px; padding-bottom:4px; scrollbar-width:none; }
+    .nav-links::-webkit-scrollbar{ display:none; }
+    .nav-links a{ white-space:nowrap; }
+    .section-tag{ position:static; }
   }
 
   /* ---------- HERO ---------- */
   .hero{
-    padding: clamp(64px,10vw,120px) 0 clamp(48px,7vw,80px);
+    padding-block: clamp(64px,10vw,120px) clamp(48px,7vw,80px);
     border-bottom:1px solid var(--line);
   }
   .hero-eyebrow{
@@ -144,7 +148,7 @@
 
   /* ---------- SECTION SCAFFOLD (notebook margin layout) ---------- */
   section{
-    padding:clamp(56px,8vw,96px) 0;
+    padding-block:clamp(56px,8vw,96px);
     border-bottom:1px solid var(--line);
   }
   section:last-of-type{ border-bottom:none; }
@@ -259,7 +263,7 @@
 
   /* ---------- CONTACT / FOOTER ---------- */
   footer{
-    padding:clamp(56px,9vw,100px) 0 48px;
+    padding-block:clamp(56px,9vw,100px) 48px;
   }
   footer h2{
     font-family:var(--display); font-weight:700; font-size:clamp(2rem,5vw,3.2rem);
@@ -274,7 +278,7 @@
 
 /* ---------- ABOUT PAGE ---------- */
 .about-hero{
-  padding: clamp(56px,9vw,100px) 0 clamp(40px,6vw,64px);
+  padding-block: clamp(56px,9vw,100px) clamp(40px,6vw,64px);
   border-bottom:1px solid var(--line);
 }
 .about-hero h1{
@@ -322,6 +326,9 @@
 }
 .callout p{ margin:0; color:var(--ink-soft); max-width:var(--measure); }
 
+.about-top{ display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:clamp(28px,5vw,72px); align-items:end; }
+.about-photo{ width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:center 20%; display:block; border:1px solid var(--line); }
+@media (max-width:760px){ .about-top{ grid-template-columns:1fr; } .about-photo{ width:160px; order:-1; } }
 .cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
 
 </style>
@@ -330,103 +337,102 @@
 
 <header class="site-nav">
   <div class="nav-inner">
-    <a class="nav-mark" href="index.html#top">Heaven Brhanu</a>
+    <a class="nav-mark" href="portfolio.html">Heaven Brhanu</a>
     <ul class="nav-links">
       <li><a href="about.html" class="active">About</a></li>
-      <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
-      <li><a href="index.html#leadership">Leadership</a></li>
-      <li><a href="index.html#skills">Skills</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="portfolio.html#strengths">What I bring</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="portfolio.html#experience">Experience</a></li>
+      <li><a href="portfolio.html#leadership">Leadership</a></li>
+      <li><a href="portfolio.html#contact">Contact</a></li>
     </ul>
   </div>
 </header>
 
 <main>
 
-  <!-- ABOUT HERO -->
   <section class="about-hero wrap">
     <p class="hero-eyebrow">About</p>
     <h1>The story behind the stats.</h1>
-    <p class="lede">A resume tells you what I've done. This page is closer to how I actually think and work — under a deadline, under pressure, and everywhere in between.</p>
-
-    <div class="photo-row">
-      <div class="photo-frame">Professional photo<br>coming soon</div>
-      <a class="linkedin-slot" href="#">+ Add LinkedIn URL</a>
-    </div>
+    <p class="lede">A resume shows what I've done. This page shows how I think, how I work with people, and what I'd bring to your team.</p>
   </section>
 
-  <!-- WHO I AM -->
   <section class="wrap">
     <div class="section-grid">
-      <div class="section-tag"><span class="idx">01 —</span> Who I am</div>
+      <div class="section-tag">Who I am</div>
       <div class="section-body">
-        <h2>Raised across three languages, working toward one goal.</h2>
-        <p>I'm a senior at the University of Maryland finishing a B.S. in Information Science with a minor in Technology Entrepreneurship and Corporate Innovation. I grew up speaking English, Amharic, and Tigrigna, and I'm currently picking up Arabic — which probably explains why I'm drawn to work that's really about translation: turning messy data into something a business can act on, or turning a fundraiser into something a community actually feels.</p>
-        <p>I didn't come into data science through a straight line. Some of it came from coursework — database design, data manipulation, user-centered design. Some of it came from working directly with people: as a Registered Behavior Technician, where every session lives or dies on accurate data collection, and as a peer tutor, where I have to translate a concept until it actually lands for someone else. Leading two student organizations taught me the rest — that the numbers only matter if you can get people to act on them, and that means communicating clearly with a team, not just writing clean code.</p>
+        <h2>The oldest of five, and the family organizer.</h2>
+        <p>I moved to Maryland from Ethiopia with my family, and I'm the oldest of five girls. When your family is starting over in a new country, the oldest sibling ends up keeping things on track. For me, that meant planning ahead, staying on top of what needed to get done, and looking out for my younger sisters. Being organized wasn't something I learned in a class. It's who I had to be.</p>
+        <p>That's a big part of why I love data. Most of the work is taking something messy and making it make sense for someone else, and I've been doing some version of that my whole life.</p>
+        <p>My path into data wasn't a straight line, and I think that's one of my strengths. As a behavior technician, I learned that good decisions depend on careful, honest data. As a Starbucks shift leader, I learned how to keep a team calm and moving during a rush. As a peer tutor, I learned how to explain something until it clicks. And leading People for Tigray taught me that a plan only works if people believe in it enough to show up.</p>
+        <p>I speak English, Amharic, and Tigrigna, and I volunteer helping multilingual students and families in Montgomery County schools, because I remember what it's like to be new to a system.</p>
       </div>
     </div>
   </section>
 
-  <!-- HOW I SOLVE PROBLEMS -->
   <section class="wrap">
     <div class="section-grid">
-      <div class="section-tag"><span class="idx">02 —</span> How I work</div>
+      <div class="section-tag">How I work</div>
       <div class="section-body">
-        <h2>Problem-solving, in practice — not just on a slide.</h2>
+        <h2>How I work, in real situations.</h2>
 
         <div class="vignette">
-          <p class="v-tag">On a data project</p>
-          <h3>Purchase Intent Classification</h3>
-          <p>The hard part of this project was never the algorithm — Random Forest is well-documented. The hard part was the data: real browsing sessions are messy, inconsistent, and nothing like a cleaned-up textbook dataset. Getting to a 93% ROC-AUC meant slowing down, testing features methodically, and being willing to throw out an approach that looked good on paper but didn't hold up.</p>
+          <p class="v-tag">Solving problems</p>
+          <h3>When the AI got it wrong</h3>
+          <p>In my review analysis project, the AI's summaries sounded confident, and some of them were wrong. It said jackets run small when customers were actually saying the opposite. I built a simple check in code that counted the real complaints, caught the mistake, and redesigned the tool so code handles the numbers and AI only writes the descriptions. I'd rather find a problem myself than have someone else find it later.</p>
         </div>
 
         <div class="vignette">
-          <p class="v-tag">As a club president</p>
-          <h3>Running People for Tigray (P4T)</h3>
-          <p>Planning three events a semester on a student-org budget means something is always at risk of falling through — a venue, a vendor, a timeline. As President, my job is to catch that early: lining up logistics for an art show with a local Tigrayan artist, coordinating a joint showcase with ESSA, and making sure fundraising still lands around $3,000 a semester no matter what changed that week.</p>
+          <p class="v-tag">Leading a team</p>
+          <h3>Running People for Tigray</h3>
+          <p>Planning about three events a semester on a student budget means something is always at risk: a venue, a vendor, a timeline. My job as president is to catch those problems early and keep everyone moving. Whether it's an art show with a Tigrayan artist or a joint showcase with EESA, we still land around $3,000 a semester for two schools in Tigray, and that only happens because the whole team shows up.</p>
         </div>
 
         <div class="vignette">
-          <p class="v-tag">As a peer tutor</p>
-          <h3>Guided Study Sessions</h3>
-          <p>Explaining a concept to a classmate who's stuck is a different skill than solving the problem yourself — you have to find the actual gap in understanding before you can fix it, the same instinct I use debugging a model that isn't performing the way it should. It's made me a more patient, more precise communicator on both sides of that equation.</p>
+          <p class="v-tag">Communicating clearly</p>
+          <h3>Tutoring, and talking with families</h3>
+          <p>Explaining a concept to a classmate who's stuck is a different skill than solving the problem yourself. You have to find exactly where the confusion is before you can fix it. I use the same skill as a behavior technician when I share progress with families, and it's the same instinct I use when a model isn't doing what I expected: find the real gap, then fix that.</p>
+        </div>
+
+        <div class="vignette">
+          <p class="v-tag">Working hard</p>
+          <h3>Showing up, every week</h3>
+          <p>Right now I'm balancing school, a behavior technician job, shifts at Starbucks, leading People for Tigray, and a Power BI certification. It keeps me organized and honest about my time. When I say I'll get something done, I get it done.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMMUNITY & COMMUNICATION -->
   <section class="wrap">
     <div class="section-grid">
-      <div class="section-tag"><span class="idx">03 —</span> Community</div>
+      <div class="section-tag">Community</div>
       <div class="section-body">
-        <h2>Communication is the part of "data" that doesn't show up in a notebook.</h2>
+        <h2>The people part matters most to me.</h2>
         <div class="vignette">
-          <p class="v-tag">As a volunteer</p>
+          <p class="v-tag">Volunteering</p>
           <h3>MCPS ESOL Program</h3>
-          <p>I volunteer with Montgomery County Public Schools' English for Speakers of Other Languages program, helping multilingual students and families navigate school resources. Growing up speaking Amharic and Tigrigna at home made this personal before it was ever a resume line — I know what it's like to need someone to translate a system, not just a sentence.</p>
+          <p>I help multilingual students and families find their way around school resources in Montgomery County. Coming here from Ethiopia, I know what it's like to need someone to explain a whole system, not just translate a sentence. That's why this one matters to me.</p>
         </div>
         <div class="vignette">
           <p class="v-tag">Also involved with</p>
-          <h3>National Society of Black Engineers (NSBE) · Code: Black · Association for Women in Computing</h3>
-          <p>Member of three organizations that support Black and women students in tech — spaces I show up to both for the community and for the reminder that the technical skills mean more when the room around you is invested in your growth too.</p>
+          <h3>Code: Black · Association for Women in Computing · NSBE</h3>
+          <p>I'm a member of three organizations that support Black students and women in tech. They're where I find community, and a reminder that I'm not building my career alone.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT I'M LOOKING FOR -->
   <section class="wrap">
     <div class="section-grid">
-      <div class="section-tag"><span class="idx">04 —</span> Looking ahead</div>
+      <div class="section-tag">Looking ahead</div>
       <div class="section-body">
         <h2>What I'm looking for</h2>
         <div class="callout">
-          <p>I'm graduating this December and looking for a data science or business analyst internship where I can keep building models that hold up outside of a notebook, and keep working with people who have to act on what those models say. I pick things up quickly, I'm comfortable being the newest person in the room, and I'd rather ask a clarifying question early than guess wrong later.</p>
+          <p>I'm looking for a data analyst, BI, or entry-level data science role, internship or full-time, on a team where I can keep learning and make a real contribution. I pick things up fast, I'm comfortable being the newest person in the room, and I'd rather ask a good question early than guess wrong later.</p>
         </div>
         <div class="cta-row" style="margin-top:28px;">
-          <a class="btn primary" href="index.html#projects">See my projects</a>
+          <a class="btn primary" href="projects.html">See my projects</a>
+          <a class="btn ghost" href="index.html#resume">View resume</a>
           <a class="btn ghost" href="mailto:Heavenbrhanu30@gmail.com">Email me</a>
         </div>
       </div>
