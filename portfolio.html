@@ -3,718 +3,718 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heaven Brhanu | Portfolio</title>
-<meta name="description" content="Heaven Brhanu, Information Science at the University of Maryland. Data projects, experience, and leadership.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Heaven Brhanu | Data Portfolio</title>
+<meta name="description" content="Heaven Brhanu, Information Science senior at the University of Maryland. Data projects in Python and R, with real results: 22,628 reviews analyzed, 0.93 ROC-AUC, 4.8% forecast error, 329 NBA games modeled.">
+<meta name="theme-color" content="#D4E3FA">
+<meta property="og:title" content="Heaven Brhanu | Data Portfolio">
+<meta property="og:description" content="Data projects with real results, and an interactive look at 329 OKC Thunder games.">
+<meta property="og:image" content="https://heavenb20.github.io/images/charts/okc-impact.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23D4E3FA'/%3E%3Crect x='12' y='34' width='9' height='18' fill='%23F8EAB9'/%3E%3Crect x='27' y='22' width='9' height='30' fill='%23F6DCE5'/%3E%3Crect x='42' y='12' width='9' height='40' fill='%231D1C24'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/chivo-var.woff" as="font" type="font/woff" crossorigin>
+<script>document.documentElement.classList.add('js')</script>
 <style>
+@font-face{font-family:"Chivo";src:url("fonts/chivo-var.woff") format("woff");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Chivo";src:url("fonts/chivo-italic-var.woff") format("woff");font-weight:100 900;font-style:italic;font-display:swap}
 :root{
-    --ink:#15231F;
-    --ink-soft:#33443E;
-    --paper:#F1ECDE;
-    --paper-alt:#E7DFC9;
-    --paper-deep:#DED2AE;
-    --gold:#BD8A2E;
-    --teal:#2F6F63;
-    --rust:#A8503A;
-    --line: rgba(21,35,31,0.16);
-    --muted:#6B6A57;
-    --display: 'Fraunces', serif;
-    --body: 'IBM Plex Sans', sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
-    --measure: 62ch;
-  }
-
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--body);
-    font-size:16px;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
-  }
-
-  a{color:inherit;}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
-
-  .wrap{
-    max-width:1180px;
-    margin:0 auto;
-    padding-inline:clamp(20px,4vw,56px);
-  }
-
-  /* ---------- NAV ---------- */
-  header.site-nav{
-    position:sticky; top:0; z-index:40;
-    background:rgba(241,236,222,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px clamp(20px,4vw,56px);
-    max-width:1180px; margin:0 auto;
-  }
-  .nav-mark{
-    font-family:var(--display); font-weight:700; font-size:1.05rem;
-    text-decoration:none; letter-spacing:0.01em;
-  }
-  .nav-links{
-    display:flex; gap:clamp(14px,2vw,28px); list-style:none; margin:0; padding:0;
-    font-family:var(--mono); font-size:0.8rem;
-  }
-  .nav-links a{
-    text-decoration:none; color:var(--ink-soft); position:relative; padding-bottom:3px;
-  }
-  .nav-links a.active{ color:var(--ink); }
-  .nav-links a.active::after{
-    content:""; position:absolute; left:0; right:0; bottom:-3px; height:2px; background:var(--gold);
-  }
-  .nav-toggle{ display:none; }
-
-  @media (max-width:720px){
-    .nav-inner{ flex-direction:column; align-items:flex-start; gap:10px; padding-block:12px; }
-    .nav-links{ width:100%; overflow-x:auto; gap:18px; padding-bottom:4px; scrollbar-width:none; }
-    .nav-links::-webkit-scrollbar{ display:none; }
-    .nav-links a{ white-space:nowrap; }
-    .section-tag{ position:static; }
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    padding-block: clamp(64px,10vw,120px) clamp(48px,7vw,80px);
-    border-bottom:1px solid var(--line);
-  }
-  .hero-eyebrow{
-    font-family:var(--mono); font-size:0.82rem; color:var(--teal);
-    margin:0 0 18px;
-  }
-  .hero h1{
-    font-family:var(--display);
-    font-weight:700;
-    font-size:clamp(2.6rem,6.5vw,4.6rem);
-    line-height:1.02;
-    margin:0 0 20px;
-    letter-spacing:-0.01em;
-    max-width:14ch;
-    animation:rise 0.6s ease-out both;
-  }
-  .hero p.lede{
-    font-size:clamp(1.05rem,2vw,1.28rem);
-    max-width:46ch;
-    color:var(--ink-soft);
-    margin:0 0 40px;
-    animation:rise 0.6s ease-out 0.1s both;
-  }
-  @keyframes rise{ from{ opacity:0.4; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }
-
-  .stat-strip{
-    display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,48px);
-    padding-top:32px; border-top:1px solid var(--line);
-    animation:rise 0.6s ease-out 0.2s both;
-  }
-  .stat{ width:170px; flex:0 0 auto; }
-  @media (max-width:480px){ .stat-strip{ display:grid; grid-template-columns:1fr 1fr; gap:24px 16px; } .stat{ width:auto; } }
-  .stat .label{ display:block; margin-top:2px; }
-  .stat .num{
-    font-family:var(--display); font-weight:600; font-size:2.1rem; color:var(--ink);
-    display:block;
-  }
-  .stat .label{
-    font-family:var(--mono); font-size:0.78rem; color:var(--muted);
-  }
-
-  .hero-grid{ display:grid; grid-template-columns:minmax(0,1fr) 280px; gap:clamp(28px,5vw,72px); align-items:center; }
-  .hero-photo{ width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:center 20%; display:block; border:1px solid var(--line); }
-  @media (max-width:760px){ .hero-grid{ grid-template-columns:1fr; } .hero-photo{ width:160px; order:-1; } }
-  .lead-photo{ margin:18px 0 0; max-width:560px; background:transparent; border:none; padding:0; }
-  .lead-photo img{ width:100%; height:auto; display:block; border:1px solid var(--line); }
-  .lead-photo figcaption{ font-family:var(--mono); font-size:0.76rem; color:var(--muted); margin-top:8px; }
-  .case-cta{ font-family:var(--mono); font-size:0.82rem; text-decoration:none; border-bottom:1px solid var(--teal); color:var(--teal); padding-bottom:1px; }
-
-  .hero-actions{
-    display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;
-    animation:rise 0.6s ease-out 0.2s both;
-  }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:var(--mono); font-size:0.85rem;
-    padding:11px 20px; border-radius:2px; text-decoration:none;
-    border:1px solid var(--ink);
-    transition:background 0.15s ease, color 0.15s ease;
-  }
-  .btn.primary{ background:var(--ink); color:var(--paper); }
-  .btn.primary:hover{ background:var(--teal); border-color:var(--teal); }
-  .btn.ghost{ background:transparent; color:var(--ink); }
-  .btn.ghost:hover{ background:var(--ink); color:var(--paper); }
-
-  /* ---------- SECTION SCAFFOLD (notebook margin layout) ---------- */
-  section{
-    padding-block:clamp(56px,8vw,96px);
-    border-bottom:1px solid var(--line);
-  }
-  section:last-of-type{ border-bottom:none; }
-  .section-grid{
-    display:grid;
-    grid-template-columns: 200px 1fr;
-    gap:clamp(24px,5vw,64px);
-  }
-  @media (max-width:760px){
-    .section-grid{ grid-template-columns:1fr; gap:14px; }
-  }
-  .section-tag{
-    font-family:var(--mono); font-size:0.8rem; color:var(--teal);
-    position:sticky; top:80px; align-self:start;
-  }
-  .section-tag .idx{ color:var(--muted); }
-  .section-body h2{
-    font-family:var(--display); font-weight:600;
-    font-size:clamp(1.7rem,3.2vw,2.3rem);
-    margin:0 0 20px;
-  }
-  .section-body p{
-    max-width:var(--measure); color:var(--ink-soft);
-  }
-
-  /* ---------- ABOUT ---------- */
-  #about .section-body p{ font-size:1.05rem; }
-  .about-langs{
-    display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:28px;
-    font-family:var(--mono); font-size:0.82rem; color:var(--muted);
-  }
-  .about-langs span b{ color:var(--ink); font-weight:500; }
-
-  /* ---------- EXPERIENCE (timeline) ---------- */
-  .timeline{ list-style:none; margin:0; padding:0; }
-  .tl-item{
-    display:grid; grid-template-columns: 150px 1fr; gap:24px;
-    padding:26px 0; border-top:1px solid var(--line);
-  }
-  .tl-item:first-child{ border-top:none; padding-top:0; }
-  @media (max-width:600px){
-    .tl-item{ grid-template-columns:1fr; gap:6px; }
-  }
-  .tl-when{ font-family:var(--mono); font-size:0.82rem; color:var(--muted); padding-top:4px; }
-  .tl-role h3{
-    font-family:var(--body); font-weight:600; font-size:1.12rem; margin:0 0 2px;
-  }
-  .tl-role .org{ color:var(--teal); font-weight:500; }
-  .tl-role ul{ margin:12px 0 0; padding-left:18px; color:var(--ink-soft); }
-  .tl-role li{ margin-bottom:6px; }
-
-  /* ---------- PROJECTS ---------- */
-  .proj{
-    display:grid; grid-template-columns: 1fr 220px; gap:32px;
-    padding:30px 0; border-top:1px solid var(--line); align-items:center;
-  }
-  .proj:first-child{ border-top:none; padding-top:0; }
-  @media (max-width:700px){
-    .proj{ grid-template-columns:1fr; }
-  }
-  .proj h3{ font-family:var(--display); font-weight:600; font-size:1.35rem; margin:0 0 8px; }
-  .proj p{ color:var(--ink-soft); max-width:56ch; margin:0 0 12px; }
-  .proj-link{
-    font-family:var(--mono); font-size:0.82rem; text-decoration:none;
-    border-bottom:1px solid var(--gold); padding-bottom:1px;
-  }
-  .metric-card{
-    background:var(--paper-alt); border:1px solid var(--line);
-    padding:18px 20px; text-align:left;
-  }
-  .metric-card .big{
-    font-family:var(--display); font-weight:700; font-size:2.1rem; color:var(--ink);
-    display:block; line-height:1;
-  }
-  .metric-card .cap{ font-family:var(--mono); font-size:0.75rem; color:var(--muted); margin-top:6px; display:block; }
-  .metric-bar{
-    height:6px; background:var(--paper-deep); margin-top:12px; overflow:hidden;
-  }
-  .metric-bar > i{ display:block; height:100%; background:var(--teal); width:var(--fill,0%); transition:width 1s ease 0.2s; }
-
-  .metric-card .note{ font-size:0.82rem; color:var(--ink-soft); margin-top:10px; display:block; line-height:1.4; }
-  .challenge{ font-size:0.95rem; border-left:2px solid var(--gold); padding-left:14px; }
-  .challenge b{ color:var(--ink); font-weight:600; }
-  .proj-links{ display:flex; gap:18px; flex-wrap:wrap; }
-
-  /* ---------- LEADERSHIP ---------- */
-  .lead-item{
-    padding:26px 0; border-top:1px solid var(--line);
-  }
-  .lead-item:first-child{ border-top:none; padding-top:0; }
-  .lead-head{
-    display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;
-  }
-  .lead-head h3{ font-family:var(--body); font-weight:600; font-size:1.1rem; margin:0; }
-  .lead-when{ font-family:var(--mono); font-size:0.8rem; color:var(--muted); white-space:nowrap; }
-  .lead-role{ color:var(--rust); font-weight:500; font-size:0.92rem; margin:2px 0 10px; }
-  .lead-item p{ color:var(--ink-soft); max-width:var(--measure); margin:0; }
-  .member-row{
-    display:flex; gap:28px; flex-wrap:wrap; margin-top:8px;
-    font-family:var(--mono); font-size:0.85rem; color:var(--ink-soft);
-  }
-  .member-row span{ margin-right:24px; display:inline-block; }
-
-  /* ---------- SKILLS ---------- */
-  .skill-group{ margin-bottom:28px; }
-  .skill-group:last-child{ margin-bottom:0; }
-  .skill-group h4{
-    font-family:var(--mono); font-size:0.8rem; color:var(--muted); margin:0 0 12px; font-weight:400;
-  }
-  .tag-row{ display:flex; flex-wrap:wrap; gap:10px; }
-  .tag{
-    font-family:var(--mono); font-size:0.82rem;
-    border:1px solid var(--line); padding:7px 13px;
-    background:var(--paper-alt);
-  }
-  .coursework{ color:var(--ink-soft); max-width:var(--measure); margin-top:6px; }
-
-  /* ---------- CONTACT / FOOTER ---------- */
-  footer{
-    padding-block:clamp(56px,9vw,100px) 48px;
-  }
-  footer h2{
-    font-family:var(--display); font-weight:700; font-size:clamp(2rem,5vw,3.2rem);
-    margin:0 0 24px; max-width:12ch;
-  }
-  .contact-row{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:56px; }
-  .foot-bottom{
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-    font-family:var(--mono); font-size:0.78rem; color:var(--muted);
-    border-top:1px solid var(--line); padding-top:20px;
-  }
-
-/* ---------- ABOUT PAGE ---------- */
-.about-hero{
-  padding-block: clamp(56px,9vw,100px) clamp(40px,6vw,64px);
-  border-bottom:1px solid var(--line);
+  /* three soft colours: baby blue, blush pink, butter. Deep tones only for small text and chart marks. */
+  --ground:#F8F7F4; --surface:#EFEDE8; --ink:#1D1C24; --muted:#4A4952;
+  --blue:#D4E3FA; --pink:#F6DCE5; --butter:#F8EAB9;
+  --blue-deep:#3A5DA6; --pink-deep:#A8456A;
+  --face:"Chivo",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --step-small:clamp(0.8125rem,0.79rem + 0.1vw,0.875rem);
+  --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
+  --step-head:clamp(2.5rem,1.2rem + 5vw,5.5rem);
+  --margin:clamp(16px,2.4vw,32px);
+  --gap-section:clamp(96px,12vw,200px);
+  --ease-out:cubic-bezier(0.22,1,0.36,1); --ease-in-out:cubic-bezier(0.76,0,0.24,1); --ease-soft:cubic-bezier(0.33,1,0.68,1);
+  --t-press:140ms; --t-hover:180ms; --t-reveal:800ms;
+  --z-nav:10; --z-skip:20;
 }
-.about-hero h1{
-  font-family:var(--display); font-weight:700;
-  font-size:clamp(2.2rem,5.5vw,3.6rem);
-  line-height:1.05; margin:0 0 20px; max-width:16ch;
-}
-.about-hero .lede{
-  font-size:clamp(1.02rem,1.8vw,1.18rem);
-  color:var(--ink-soft); max-width:60ch; margin:0;
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+@media (pointer:fine){html{overscroll-behavior:none}}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--face);font-size:var(--step-body);line-height:1.5;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased;font-kerning:normal;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;-webkit-tap-highlight-color:transparent}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{margin:0;font-weight:900;text-wrap:balance}
+h2{font-size:var(--step-head);line-height:0.92;letter-spacing:-0.045em;text-transform:uppercase}
+h3{font-size:var(--step-lead);line-height:1.15;letter-spacing:-0.02em}
+p{margin:0;text-wrap:pretty}
+section[id],[id]{scroll-margin-top:24px}
+.wrap{padding-inline:var(--margin);max-width:1600px;margin-inline:auto}
+.skip{position:absolute;left:var(--margin);top:-80px;background:var(--butter);color:var(--ink);padding:12px 16px;font-weight:700;z-index:var(--z-skip);text-decoration:none}
+.skip:focus{top:12px}
+.num{font-variant-numeric:tabular-nums}
+
+/* buttons and links */
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--ink);color:var(--ground);font-weight:700;text-decoration:none;border:0;border-radius:0;cursor:pointer;touch-action:manipulation;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease,color var(--t-hover) ease}
+.button:active{transform:scale(0.97)}
+.link{font-weight:700;text-decoration:underline;text-decoration-thickness:0.08em;text-underline-offset:0.22em;text-decoration-color:currentColor;transition:text-decoration-color var(--t-hover) ease,color var(--t-hover) ease}
+@media (hover:hover) and (pointer:fine){
+  .button:hover{background:var(--blue-deep);color:#fff}
+  .link:hover{text-decoration-color:transparent}
 }
 
-.photo-row{
-  display:flex; align-items:center; gap:28px; margin-top:40px; flex-wrap:wrap;
-}
-.photo-frame{
-  width:132px; height:132px; border:1.5px dashed var(--muted);
-  display:flex; align-items:center; justify-content:center; text-align:center;
-  font-family:var(--mono); font-size:0.72rem; color:var(--muted);
-  padding:10px; flex:0 0 auto;
-  background:var(--paper-alt);
-}
-.linkedin-slot{
-  font-family:var(--mono); font-size:0.82rem;
-  border:1.5px dashed var(--muted); color:var(--muted);
-  padding:10px 18px; display:inline-flex; align-items:center; gap:8px;
-  text-decoration:none;
+/* nav */
+.nav{position:absolute;inset:0 0 auto 0;z-index:var(--z-nav);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--margin);color:var(--ink)}
+.nav .mark{font-weight:900;text-decoration:none;letter-spacing:-0.02em}
+.nav ul{display:flex;gap:clamp(16px,2.6vw,40px);list-style:none;margin:0;padding:0;font-size:var(--step-small);font-weight:700}
+.nav ul a{text-decoration:none;padding:12px 0;display:inline-block;transition:opacity var(--t-hover) ease}
+@media (hover:hover) and (pointer:fine){.nav ul a:hover{opacity:0.7}}
+@media (max-width:720px){.nav .wide{display:none}}
+
+/* hero */
+.hero{background:var(--blue);color:var(--ink);min-height:100svh;display:grid;grid-template-rows:1fr auto 1fr;padding:0 var(--margin);position:relative}
+.monument{grid-row:2;display:flex;align-items:baseline;justify-content:center;gap:0.25em;font-size:clamp(56px,10.5vw,190px);line-height:0.88;letter-spacing:-0.05em;text-transform:uppercase;white-space:nowrap;margin:0}
+.hero-foot{grid-row:3;align-self:end;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:end;padding-bottom:28px}
+.hero-copy{grid-column:1 / span 7;display:grid;gap:12px}
+.hero-copy p{max-width:48ch}
+.hero-copy .scan{font-weight:700;font-size:var(--step-small);max-width:none}
+.hero-foot .actions{grid-column:9 / -1;display:flex;gap:24px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+@media (max-width:720px){
+  .hero{grid-template-rows:auto 1fr auto;padding-top:84px}
+  .monument{grid-row:2;flex-direction:column;align-items:flex-start;justify-content:center;font-size:19vw;line-height:0.9;gap:0.12em}
+  .monument .w2{order:3}
+  .hero-foot{grid-row:3;grid-template-columns:1fr;gap:20px}
+  .hero-copy,.hero-foot .actions{grid-column:1/-1;justify-content:flex-start}
 }
 
-.vignette{
-  padding:28px 0; border-top:1px solid var(--line);
+/* signature move + reveals */
+.shutter{overflow:hidden}
+@media (prefers-reduced-motion:no-preference){
+  .js .shutter{clip-path:inset(0 0 100% 0);animation:shutter 1100ms var(--ease-in-out) 350ms forwards}
+  .js .shutter img{transform:scale(1.12);animation:settle 1500ms var(--ease-soft) 350ms forwards}
+  .js [data-rise]{opacity:0;transform:translateY(18px);animation:rise var(--t-reveal) var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 90ms + 120ms)}
+  .js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity 700ms var(--ease-out),transform 900ms var(--ease-out);transition-delay:calc(var(--i,0) * 75ms)}
+  .js [data-reveal].is-in{opacity:1;transform:none}
+  .js [data-pic]{opacity:0;transform:scale(1.04);transition:opacity 900ms var(--ease-out),transform 1400ms var(--ease-soft);transition-delay:calc(var(--i,0) * 75ms)}
+  .js [data-pic].is-in{opacity:1;transform:none}
 }
-.vignette:first-child{ border-top:none; padding-top:0; }
-.vignette .v-tag{
-  font-family:var(--mono); font-size:0.78rem; color:var(--rust); margin:0 0 8px;
-}
-.vignette h3{
-  font-family:var(--body); font-weight:600; font-size:1.15rem; margin:0 0 10px;
-}
-.vignette p{ color:var(--ink-soft); max-width:var(--measure); margin:0; }
+@keyframes shutter{to{clip-path:inset(0)}}
+@keyframes settle{to{transform:none}}
+@keyframes rise{to{opacity:1;transform:none}}
 
-.callout{
-  background:var(--paper-alt); border:1px solid var(--line);
-  padding:24px 28px; margin-top:8px;
+/* facts */
+.facts{display:flex;justify-content:space-between;gap:32px;margin:0 auto;padding-block:8px clamp(72px,8vw,120px);list-style:none}
+.facts li{max-width:24ch}
+.facts .fig{display:block;font-size:clamp(2.25rem,1.6rem + 2.4vw,3.5rem);font-weight:900;letter-spacing:-0.04em;line-height:1}
+.facts .what{margin-top:10px}
+@media (max-width:860px){.facts{display:grid;grid-template-columns:1fr 1fr;row-gap:36px}}
+
+/* story */
+.story{padding-block:var(--gap-section) clamp(80px,9vw,140px)}
+.story-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:32px 16px;align-items:start}
+.story h2{grid-column:1 / span 6;font-size:clamp(3rem,1.4rem + 6.4vw,7.5rem)}
+.story-text{grid-column:8 / -1;display:grid;gap:20px;max-width:52ch}
+.lede{font-size:var(--step-lead);line-height:1.35;letter-spacing:-0.015em;font-weight:700}
+.why{padding-block:clamp(80px,9vw,140px)}
+.statement{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.25rem);line-height:1.2;letter-spacing:-0.025em;font-weight:700;max-width:30ch}
+.path{padding-block:var(--gap-section)}
+.path-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:48px 16px}
+.path-head{grid-column:1 / span 5;display:grid;gap:20px;align-content:start}
+.path-head p{max-width:42ch}
+.lessons{grid-column:7 / -1;margin:0;display:grid;gap:28px}
+.lessons div{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:24px;align-items:baseline}
+.lessons dt{font-weight:900;letter-spacing:-0.01em}
+.lessons dd{margin:0;max-width:48ch}
+.people{padding-block:var(--gap-section)}
+.people-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px 16px;align-items:end}
+.people-head h2{grid-column:1 / span 7}
+.people-head .lede{grid-column:8 / -1;max-width:44ch;font-weight:400}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px clamp(32px,6vw,96px);margin-top:clamp(56px,7vw,96px)}
+.cases h3{font-size:var(--step-lead)}
+.cases p{margin-top:10px;max-width:56ch}
+.people .process{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:clamp(64px,8vw,112px)}
+@media (max-width:860px){
+  .story h2,.story-text,.path-head,.lessons,.people-head h2,.people-head .lede{grid-column:1/-1}
+  .cases{grid-template-columns:1fr}
+  .lessons div{grid-template-columns:1fr;gap:4px}
 }
-.callout p{ margin:0; color:var(--ink-soft); max-width:var(--measure); }
 
-.cta-row{ display:flex; gap:14px; flex-wrap:wrap; margin-top:8px; }
+/* projects */
+.project{padding-block:clamp(72px,9vw,140px)}
+.project .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px 16px;align-items:start}
+.project .text{grid-column:1 / span 5}
+.project .pics{grid-column:7 / -1;display:grid;gap:16px}
+.project.flip .text{grid-column:8 / -1;grid-row:1}
+.project.flip .pics{grid-column:1 / span 6;grid-row:1}
+.project h3{font-size:clamp(2rem,1.3rem + 2.6vw,3.5rem);line-height:0.95;letter-spacing:-0.04em;text-transform:uppercase}
+.project .tools{margin-top:14px;font-weight:700}
+.project .text>p{margin-top:20px;max-width:52ch}
+.project .hard{margin-top:20px;max-width:52ch}
+.project .hard strong,.project .sowhat strong{font-weight:900}
+.project .sowhat{margin-top:20px;max-width:52ch}
+.project .big{display:flex;align-items:baseline;gap:16px;margin-top:32px;flex-wrap:wrap}
+.project .big b{font-size:clamp(3.5rem,2rem + 6vw,7.5rem);font-weight:900;letter-spacing:-0.05em;line-height:0.9}
+.project .big span{max-width:22ch;font-weight:700}
+.project .links{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.project .links a{display:inline-block;padding-block:10px}
+.project figure{margin:0;background:#fff}
+.project figure img{width:100%}
+.f-blue{background:var(--blue);color:var(--ink)}
+.f-pink{background:var(--pink);color:var(--ink)}
+.f-butter{background:var(--butter);color:var(--ink)}
+.projects-head{padding-block:var(--gap-section) 64px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:end}
+.projects-head h2{grid-column:1 / span 7}
+.projects-head p{grid-column:9 / -1;max-width:40ch}
+@media (max-width:860px){
+  .project .text,.project .pics,.project.flip .text,.project.flip .pics{grid-column:1/-1;grid-row:auto}
+  .project .pics{margin-top:32px}
+  .projects-head h2,.projects-head p{grid-column:1/-1}
+  .projects-head{row-gap:20px}
+}
 
-  /* ---------- HELLO + STRENGTHS ---------- */
-  .hero h1.hello{ max-width:none; margin-bottom:10px; }
-  .hello em{ font-style:italic; font-weight:600; color:var(--teal); }
-  .tagline{ font-family:var(--display); font-weight:600; font-size:clamp(1.3rem,2.6vw,1.75rem); color:var(--ink); margin:0 0 22px; animation:rise 0.6s ease-out 0.05s both; }
-  .hero p.lede{ max-width:60ch; }
-  .strengths{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
-  @media (max-width:700px){ .strengths{ grid-template-columns:1fr; } }
-  .strength{ background:var(--paper); padding:22px 24px; }
-  .strength h3{ font-family:var(--display); font-weight:600; font-size:1.3rem; margin:0 0 8px; color:var(--ink); }
-  .strength h3::before{ content:""; display:block; width:24px; height:2px; background:var(--gold); margin-bottom:12px; }
-  .strength p{ margin:0; font-size:0.97rem; }
-  .sub-head{ font-family:var(--mono); font-size:0.8rem; font-weight:400; color:var(--rust); margin:44px 0 16px; }
-  .process{ list-style:none; counter-reset:step; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; }
-  @media (max-width:900px){ .process{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-  @media (max-width:480px){ .process{ grid-template-columns:1fr; } }
-  .process li{ counter-increment:step; color:var(--ink-soft); font-size:0.94rem; border-top:1.5px solid var(--ink); padding-top:12px; }
-  .process li::before{ content:counter(step,decimal-leading-zero); display:block; font-family:var(--mono); font-size:0.76rem; color:var(--muted); margin-bottom:6px; }
-  .process b{ display:block; color:var(--ink); font-weight:600; margin-bottom:4px; }
+/* explorer */
+.explore{padding-block:var(--gap-section) clamp(80px,8vw,120px)}
+.explore-head{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:end}
+.explore-head h2{grid-column:1 / span 8}
+.explore-head p{grid-column:9 / -1;max-width:42ch}
+.factor-picker{border:0;margin:48px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.factor-picker legend{font-weight:700;margin-bottom:14px;padding:0}
+.factor-picker label{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--surface);font-weight:700;font-size:var(--step-small);cursor:pointer;transition:background-color var(--t-hover) ease,color var(--t-hover) ease,transform var(--t-press) var(--ease-out);touch-action:manipulation}
+.factor-picker label:active{transform:scale(0.97)}
+.factor-picker input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.factor-picker label:has(input:checked){background:var(--ink);color:var(--ground)}
+.factor-picker label:has(input:focus-visible){outline:3px solid var(--blue-deep);outline-offset:2px}
+@media (hover:hover) and (pointer:fine){.factor-picker label:hover{background:var(--butter);color:var(--ink)}.factor-picker label:has(input:checked):hover{background:var(--ink);color:var(--ground)}}
+.readout{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:16px clamp(32px,6vw,96px);margin-top:40px}
+.readout div b{display:block;font-size:clamp(2.25rem,1.6rem + 2.4vw,3.5rem);font-weight:900;letter-spacing:-0.04em;line-height:1}
+.readout div span{display:block;margin-top:8px;color:var(--muted);font-weight:700}
+.chart{margin:32px 0 0;background:#fff;padding:clamp(12px,2vw,24px)}
+.chart{overflow-x:auto;overscroll-behavior-x:contain}
+.chart svg{display:block;width:100%;min-width:640px;height:auto;overflow:visible}
+.chart svg text{font-family:var(--face);font-size:13px;fill:var(--ink)}
+.chart .dot{transition:opacity var(--t-hover) ease}
+.chart-note{margin-top:14px;min-height:1.5em;font-weight:700}
+.explore .static{margin-top:32px;border-collapse:collapse;width:100%;max-width:720px}
+.explore .static th,.explore .static td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--surface)}
+.explore .static td{font-variant-numeric:tabular-nums}
+.js .explore .static{display:none}
+.explore .method{margin-top:24px;max-width:70ch}
+@media (max-width:860px){.explore-head h2,.explore-head p{grid-column:1/-1}.explore-head{row-gap:20px}.readout{grid-template-columns:1fr 1fr}}
+
+/* process */
+.process h3{grid-column:1 / span 5;font-size:var(--step-lead)}
+.process ol{grid-column:7 / -1;margin:0;padding-left:1.4em;display:grid;gap:20px}
+.process li::marker{font-weight:900}
+.process li b{font-weight:900}
+@media (max-width:860px){.process h3,.process ol{grid-column:1/-1}}
+
+/* internship case study */
+.nlc{padding-block:var(--gap-section)}
+.nlc-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px 16px;align-items:end}
+.nlc-head h2{grid-column:1 / span 6}
+.nlc-head .lede{grid-column:8 / -1;max-width:44ch;font-weight:400}
+.nlc-body{display:grid;grid-template-columns:repeat(12,1fr);gap:48px 16px;margin-top:clamp(56px,7vw,96px)}
+.nlc-q{grid-column:1 / span 5}
+.nlc-q h3{font-size:var(--step-lead)}
+.nlc-q p{margin-top:10px;max-width:46ch}
+.nlc-steps{grid-column:7 / -1;grid-row:1 / span 2;margin:0;padding-left:1.4em;display:grid;gap:24px;align-content:start}
+.nlc-steps li::marker{font-weight:900}
+.nlc-steps b{font-weight:900}
+@media (max-width:860px){.nlc-head h2,.nlc-head .lede,.nlc-q,.nlc-steps{grid-column:1/-1;grid-row:auto}}
+
+/* experience */
+.experience{padding-block:var(--gap-section)}
+.exp-col{max-width:760px;container-type:inline-size}
+.giant{font-size:31cqw;line-height:0.8;letter-spacing:-0.05em;text-transform:uppercase;font-weight:900;margin:0 0 24px -0.04em}
+.exp-col details{background:var(--surface);margin-top:6px;transition:background-color var(--t-hover) ease}
+.exp-col details[open]{background:var(--butter)}
+.exp-col summary{list-style:none;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;min-height:64px;padding:14px 18px;cursor:pointer;touch-action:manipulation}
+.exp-col summary::-webkit-details-marker{display:none}
+.exp-col summary .role{font-weight:900}
+.exp-col summary .when{font-variant-numeric:tabular-nums;font-weight:700;text-align:right}
+.exp-col summary .org{grid-column:1/-1;font-size:var(--step-small);font-weight:700}
+.exp-col summary .plus{grid-column:2;grid-row:1;display:none}
+.exp-col details ul{margin:0;padding:4px 18px 22px 2.2em;display:grid;gap:10px;max-width:64ch}
+@media (hover:hover) and (pointer:fine){.exp-col details:not([open]):hover{background:#DCD8CD}}
+.exp-wrap{display:grid;grid-template-columns:minmax(0,760px) 1fr;gap:16px clamp(32px,6vw,96px);align-items:start}
+.exp-aside{position:sticky;top:32px;padding-top:12cqw}
+.exp-aside p{max-width:34ch;font-size:var(--step-lead);line-height:1.3;font-weight:700;letter-spacing:-0.02em}
+.exp-aside p+p{margin-top:20px;font-size:var(--step-body);font-weight:400;line-height:1.5}
+@media (max-width:980px){.exp-wrap{grid-template-columns:1fr}.exp-aside{position:static;padding-top:24px}}
+
+/* leadership */
+.leadership{padding-block:var(--gap-section)}
+.leadership h2{max-width:12ch}
+.lead-row{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:clamp(56px,7vw,100px);align-items:start}
+.lead-row figure{margin:0;grid-column:1 / span 6}
+.lead-row figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.lead-row .copy{grid-column:8 / -1}
+.lead-row.flip figure{grid-column:7 / -1;grid-row:1}
+.lead-row.flip .copy{grid-column:1 / span 5;grid-row:1}
+.lead-row h3{font-size:clamp(1.75rem,1.2rem + 2vw,2.75rem);text-transform:uppercase;letter-spacing:-0.04em;line-height:0.95}
+.lead-row .meta{margin-top:12px;font-weight:700;color:var(--blue-deep)}
+.lead-row .copy p:not(.meta){margin-top:18px;max-width:52ch}
+.also{margin-top:clamp(56px,7vw,100px);display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.also h3{grid-column:1 / span 5;font-size:var(--step-lead);text-transform:none;letter-spacing:-0.02em}
+.also .copy{grid-column:7 / -1;max-width:56ch}
+.also .copy p+p{margin-top:12px}
+@media (max-width:860px){.lead-row figure,.lead-row .copy,.lead-row.flip figure,.lead-row.flip .copy,.also h3,.also .copy{grid-column:1/-1;grid-row:auto}.lead-row .copy{margin-top:20px}}
+
+/* skills */
+.skills{padding-block:var(--gap-section)}
+.skills .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:48px 16px}
+.skills h2{grid-column:1 / span 5}
+.skills .lists{grid-column:7 / -1;display:grid;gap:36px}
+.skills h3{font-size:var(--step-body);font-weight:900;letter-spacing:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:12px 0 0;padding:0}
+.chips li{background:var(--surface);padding:10px 14px;font-weight:700}
+.chips.c li:nth-child(3n+1){background:var(--blue)}
+.chips.c li:nth-child(3n+2){background:var(--pink)}
+.chips.c li:nth-child(3n+3){background:var(--butter)}
+.skills .lists p{margin-top:10px;max-width:60ch}
+@media (max-width:860px){.skills h2,.skills .lists{grid-column:1/-1}}
+
+/* contact + footer */
+.contact{background:var(--pink);color:var(--ink);min-height:90svh;display:grid;grid-template-rows:auto 1fr;padding:clamp(32px,4vw,56px) var(--margin) 28px}
+.ask-wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.contact .ask{grid-column:1 / span 5}
+.contact .looking{grid-column:7 / -1;max-width:52ch;font-size:var(--step-lead);line-height:1.35;letter-spacing:-0.015em}
+@media (max-width:860px){.contact .ask,.contact .looking{grid-column:1/-1}}
+.contact .mail{align-self:end;margin-bottom:12vh;display:block;font-size:clamp(28px,6.6vw,124px);font-weight:400;letter-spacing:-0.05em;line-height:0.95;text-decoration:none;overflow-wrap:anywhere;transition:color var(--t-hover) ease}
+@media (hover:hover) and (pointer:fine){.contact .mail:hover{color:var(--pink-deep)}}
+.contact .corners{display:flex;justify-content:flex-end;gap:24px;flex-wrap:wrap;font-size:var(--step-small);font-weight:700}
+.contact .corners ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+.contact .corners a{display:inline-block;padding-block:8px}
+.footer{background:var(--butter);color:var(--ink);padding:32px var(--margin) 0;overflow:hidden}
+.footer .name{font-size:12.4vw;font-weight:900;letter-spacing:-0.06em;line-height:0.78;text-transform:uppercase;white-space:nowrap;margin:0 0 24px -0.04em}
+.footer .row .links{display:flex;gap:24px;flex-wrap:wrap}
+.footer .row a{display:inline-block;padding-block:8px}
+.footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:var(--step-small);font-weight:700;margin-bottom:28px}
+@media (max-width:720px){.contact .mail{font-size:9.8vw}.contact .corners{flex-direction:column}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:0.001ms !important;animation-delay:0ms !important;transition-duration:0.001ms !important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <a class="nav-mark" href="#top">Heaven Brhanu</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="about.html">About</a></li>
-      <li><a href="#strengths">What I bring</a></li>
+<header class="hero" id="top">
+  <nav class="nav" aria-label="Main">
+    <a class="mark" href="#top">Heaven Brhanu</a>
+    <ul>
+      <li class="wide"><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#leadership">Leadership</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li class="wide"><a href="#explore">Explore the data</a></li>
+      <li class="wide"><a href="#internship">Internship</a></li>
+      <li><a href="Heaven-Brhanu-Resume.pdf">Resume</a></li>
     </ul>
+  </nav>
+
+  <h1 class="monument" aria-label="Heaven Brhanu">
+    <span class="w1" aria-hidden="true">Heaven</span>
+    <span class="w2" aria-hidden="true">Brhanu</span>
+  </h1>
+
+  <div class="hero-foot">
+    <div class="hero-copy" data-rise style="--i:0">
+      <p>Information Science senior at the University of Maryland. I find out why things happen, then explain it so people can act on it.</p>
+      <p class="scan">Looking for data analyst, BI, and entry-level data science roles &middot; Full-time or internship &middot; DMV area or remote</p>
+    </div>
+    <div class="actions" data-rise style="--i:1">
+      <a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a>
+      <a class="button" href="#about">Start with my story</a>
+    </div>
   </div>
 </header>
 
-<main id="top">
+<main id="main">
 
-  <!-- HERO -->
-  <section class="hero wrap" style="border-top:none;">
-    <p class="hero-eyebrow">Information Science · University of Maryland</p>
-    <h1 class="hello">Hi, I'm <em>Heaven.</em></h1>
-    <p class="tagline">Data work that starts and ends with people.</p>
-    <p class="lede">I like figuring out why things happen, then explaining it in a way people can actually use. I've built projects that predict which online shoppers will buy, forecast busy weeks so stores can plan staffing, and turn thousands of customer reviews into clear takeaways. Away from the laptop, I lead a student organization, run shifts at Starbucks, and work one-on-one with clients as a behavior technician. Every one of those taught me the same thing: numbers only matter when they help real people make better decisions.</p>
-
-    <div class="hero-actions">
-      <a class="btn primary" href="index.html#resume">View resume</a>
-      <a class="btn ghost" href="https://github.com/Heavenb20" target="_blank" rel="noopener">View GitHub</a>
-      <a class="btn ghost" href="mailto:Heavenbrhanu30@gmail.com">Email me</a>
+<section class="story wrap" id="about" aria-labelledby="about-h">
+  <div class="story-grid">
+    <h2 id="about-h" data-reveal>The oldest of five</h2>
+    <div class="story-text">
+      <p class="lede" data-reveal style="--i:1">I moved to Maryland from Ethiopia with my family, and I'm the oldest of five girls.</p>
+      <p data-reveal style="--i:2">When your family is starting over in a new country, the oldest sibling ends up keeping things on track. For me, that meant planning ahead, staying on top of what needed to get done, and looking out for my younger sisters. Being organized wasn't something I learned in a class. It's who I had to be.</p>
+      <p data-reveal style="--i:3">That's a big part of why I love data. I remember what it's like to be new to a system that wasn't built with you in mind, and I want to help make systems work better for the people inside them.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT TEASER -->
-  <section id="about" class="wrap">
-    <div class="section-grid">
-      <div class="section-tag">About</div>
-      <div class="section-body">
-        <h2>The short version.</h2>
-        <p>I moved to Maryland from Ethiopia with my family, and I'm the oldest of five sisters. Growing up, I was the one keeping everyone organized, and that habit is a big reason I love data. Most data work is taking something messy and making it make sense for someone else. I do that with code, at work, and in the organizations I lead.</p>
-        <a class="proj-link" href="about.html">Read my full story →</a>
+<section class="why f-butter" aria-label="Why I do data work">
+  <div class="wrap">
+    <p class="statement" data-reveal>Data work is taking something messy and making it make sense for someone else. I&rsquo;ve been doing that my whole life.</p>
+  </div>
+</section>
+
+<section class="path wrap" id="path" aria-labelledby="path-h">
+  <div class="path-grid">
+    <div class="path-head">
+      <h2 id="path-h" data-reveal>My path into data</h2>
+      <p data-reveal style="--i:1">It wasn't a straight line, and I think that's one of my strengths. Every job taught me the same thing: numbers only matter when they help real people make better decisions.</p>
+    </div>
+    <dl class="lessons">
+      <div data-reveal><dt>Behavior technician</dt><dd>Good decisions depend on careful, honest data. I record it every session so the clinical team can see what's working.</dd></div>
+      <div data-reveal style="--i:1"><dt>Starbucks shift leader</dt><dd>How to keep a team calm and moving during a rush.</dd></div>
+      <div data-reveal style="--i:2"><dt>Peer tutor</dt><dd>How to explain something until it clicks, by finding exactly where the confusion is first.</dd></div>
+      <div data-reveal style="--i:3"><dt>President, People for Tigray</dt><dd>A plan only works if people believe in it enough to show up.</dd></div>
+      <div data-reveal style="--i:4"><dt>Data analyst intern</dt><dd>At the National League of Cities, I saw how much better decisions get when reports are organized, trusted, and easy to use.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="people f-pink" id="strengths" aria-labelledby="people-h">
+  <div class="wrap">
+    <div class="people-head">
+      <h2 id="people-h" data-reveal>I love working with people</h2>
+      <p class="lede" data-reveal style="--i:1">I do my best work on a team. I like hearing how other people see a problem, figuring out where I can help most, and making sure nobody is carrying the hard part alone. Here's what that looks like in real situations.</p>
+    </div>
+    <div class="cases">
+      <div data-reveal><h3>Leading a team</h3><p>Planning about three events a semester on a student budget means something is always at risk: a venue, a vendor, a timeline. As president of People for Tigray, my job is to catch those problems early and keep everyone moving. We still land around $3,000 a semester for two schools in Tigray, and that only happens because the whole team shows up.</p></div>
+      <div data-reveal style="--i:1"><h3>Keeping a rush on track</h3><p>At Starbucks, I plan who's where during the rush, adjust in real time, and jump in wherever the team is short, from the register to the bar. I also help new baristas get up to speed.</p></div>
+      <div data-reveal style="--i:2"><h3>Communicating clearly</h3><p>Explaining a concept to a classmate who's stuck is a different skill than solving the problem yourself. I use the same skill as a behavior technician when I share progress with families, and when I turn model results into plain-language takeaways. I speak English, Amharic, and Tigrigna.</p></div>
+      <div data-reveal style="--i:3"><h3>Solving problems</h3><p>In my review project, the AI said jackets run small when customers were saying the opposite. I built a check in code, caught the mistake, and redesigned the tool so code handles the numbers and AI only writes the descriptions. I'd rather find a problem myself than have someone else find it later.</p></div>
+      <div data-reveal style="--i:4"><h3>Showing up, every week</h3><p>Right now I'm balancing school, a behavior technician job, shifts at Starbucks, leading People for Tigray, and a Power BI certification. When I say I'll get something done, I get it done.</p></div>
+    </div>
+    <div class="process">
+      <h3 data-reveal>How I work through a data problem</h3>
+      <ol>
+        <li data-reveal><b>Ask the real question.</b> Before touching the data, I figure out what decision the answer will help someone make.</li>
+        <li data-reveal style="--i:1"><b>Check the data before trusting it.</b> Duplicates, missing values, an extra game in a season. The small stuff changes the answer.</li>
+        <li data-reveal style="--i:2"><b>Build it, then try to break it.</b> I test on data the model hasn't seen and look for the ways it could be fooling me.</li>
+        <li data-reveal style="--i:3"><b>Explain it plainly.</b> A result nobody understands doesn't help anyone, so I finish with what it means and what to do next.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div id="projects">
+<div class="projects-head wrap">
+  <h2 data-reveal>What I&rsquo;ve built</h2>
+  <p data-reveal style="--i:1">Every project starts with a real question and real data. Each one also had something go wrong, and that part taught me the most. <a class="link" href="projects.html">Read every case study</a></p>
+</div>
+<ul class="facts wrap" aria-label="Project results">
+  <li data-reveal style="--i:0"><span class="fig num">22,628</span><p class="what">customer reviews tagged and summarized with Python and a local AI model</p></li>
+  <li data-reveal style="--i:1"><span class="fig num">0.93</span><p class="what">ROC-AUC predicting which online shoppers will buy</p></li>
+  <li data-reveal style="--i:2"><span class="fig num">4.8%</span><p class="what">average error forecasting weekly sales on 7 unseen months</p></li>
+  <li data-reveal style="--i:3"><span class="fig num">329</span><p class="what">OKC Thunder games modeled in R to find what wins</p></li>
+</ul>
+
+<article class="project f-blue" aria-labelledby="p1">
+  <div class="wrap grid">
+    <div class="text">
+      <h3 id="p1" data-reveal>AI review insights tool</h3>
+      <p class="tools" data-reveal style="--i:1">Python, pandas, regex, a local AI model</p>
+      <p data-reveal style="--i:2">Apparel brands get thousands of reviews and no time to read them. I built a pipeline that tags 22,628 clothing reviews by theme, then sends samples from each department to an AI model running on my own laptop, which writes short reports: top complaints, what customers love, and one recommendation.</p>
+      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> the AI said jackets run small. I added a code-based check that counts &ldquo;too small&rdquo; versus &ldquo;too large&rdquo; complaints, and the data said they run large. The final design: code handles the numbers, AI handles the text, and a person reviews both.</p>
+      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> a brand could fix fabric quality first, and update size guides in departments that run large, instead of guessing from a few angry reviews.</p>
+      <div class="big" data-reveal style="--i:5"><b class="num">6</b><span>departments, each with its own AI report checked by code</span></div>
+      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#ai-review-insights">Read the case study</a><a class="link" href="https://github.com/Heavenb20/ai-review-insights">View the code</a></div>
+    </div>
+    <div class="pics">
+      <figure data-pic><img src="images/charts/review-themes.webp" alt="Bar chart: fabric and quality come up in 59% of negative reviews but 40% of positive ones; comfort comes up far more in positive reviews." width="1800" height="1040" loading="lazy"></figure>
+      <figure data-pic style="--i:1"><img src="images/charts/review-fit-check.webp" alt="Bar chart of fit complaints by department: in five of six departments, more negative reviews say items run large than run small." width="1800" height="1040" loading="lazy"></figure>
+    </div>
+  </div>
+</article>
+
+<article class="project f-butter flip" aria-labelledby="p2">
+  <div class="wrap grid">
+    <div class="text">
+      <h3 id="p2" data-reveal>Purchase intent classification</h3>
+      <p class="tools" data-reveal style="--i:1">Python, scikit-learn, Random Forest, logistic regression</p>
+      <p data-reveal style="--i:2">Using 12,330 real browsing sessions from an online store, I predicted whether a visitor will buy based only on how they browse. Random Forest beat logistic regression on nearly every metric. Page Values was by far the strongest signal, and new visitors converted more often than returning ones (25% vs. 14%).</p>
+      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> only 15.5% of sessions ended in a purchase, so a model that always guesses &ldquo;no&rdquo; is 84% accurate and useless. I balanced the classes in training and judged the models on precision, recall, F1, and ROC-AUC instead.</p>
+      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> a store could show offers only to the visitors most likely to buy, instead of to everyone.</p>
+      <div class="big" data-reveal style="--i:5"><b class="num">77%</b><span>of real buyers caught, with a 0.93 ROC-AUC</span></div>
+      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#purchase-intent">Read the case study</a><a class="link" href="https://github.com/Heavenb20/purchase-intent-classification">View the code</a></div>
+    </div>
+    <div class="pics">
+      <figure data-pic><img src="images/charts/purchase-roc.webp" alt="ROC curve for the Random Forest model, AUC 0.93, far above the random-guess line." width="1400" height="1240" loading="lazy"></figure>
+      <figure data-pic style="--i:1"><img src="images/charts/purchase-features.webp" alt="Bar chart: purchase rate rises from 4% of sessions with zero Page Values to 78% of sessions with Page Values above 50." width="1600" height="1120" loading="lazy"></figure>
+    </div>
+  </div>
+</article>
+
+<article class="project f-pink" aria-labelledby="p3">
+  <div class="wrap grid">
+    <div class="text">
+      <h3 id="p3" data-reveal>Retail sales &amp; staffing forecast</h3>
+      <p class="tools" data-reveal style="--i:1">Python, scikit-learn, time-based validation</p>
+      <p data-reveal style="--i:2">As a Starbucks shift leader, I saw how reactive staffing is, so I tested whether busy weeks can be predicted. Using 421,000+ weekly Walmart sales records across 45 stores, I forecast each store's sales and grouped the results into four staffing tiers, each based on that store's own average so smaller stores aren't always marked &ldquo;low.&rdquo;</p>
+      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> a random train/test split would let the model learn from weeks after the ones it's tested on. I split by time instead, training on older weeks and testing on the newest 20%.</p>
+      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> a manager could add staff before a busy week and cut hours in slow ones, instead of reacting during the rush.</p>
+      <div class="big" data-reveal style="--i:5"><b class="num">4.8%</b><span>average forecast error (MAPE) on 7 months of unseen weeks</span></div>
+      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#sales-forecast">Read the case study</a><a class="link" href="https://github.com/Heavenb20/retail-sales-staffing-forecast">View the code</a></div>
+    </div>
+    <div class="pics">
+      <figure data-pic><img src="images/charts/sales-pred-actual.webp" alt="Scatter plot of predicted versus actual weekly sales for 1,260 unseen store-weeks; points sit close to the diagonal, 4.8% average error." width="1400" height="1240" loading="lazy"></figure>
+      <figure data-pic style="--i:1"><img src="images/charts/sales-tiers.webp" alt="Bar chart of recommended staffing tiers: 43 low, 712 standard, 477 medium, and 28 high store-weeks." width="1600" height="1040" loading="lazy"></figure>
+    </div>
+  </div>
+</article>
+
+<article class="project f-blue flip" aria-labelledby="p4">
+  <div class="wrap grid">
+    <div class="text">
+      <h3 id="p4" data-reveal>OKC Thunder four factors</h3>
+      <p class="tools" data-reveal style="--i:1">R, tidyverse, hoopR, logistic regression</p>
+      <p data-reveal style="--i:2">Which of basketball's Four Factors (shooting, turnovers, rebounding, free throws) actually drive wins? I analyzed every Thunder regular-season game from 2022&ndash;23 through 2025&ndash;26, using standardized factors so their effects can be compared directly. Shooting on both ends mattered most, and defense mattered almost as much as offense.</p>
+      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> checking the data against official standings turned up an 83rd game in 2024&ndash;25. I traced it to the NBA Cup final, which doesn't count in the standings, and kept it because it's a real game with real stats.</p>
+      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> for a coaching staff, contesting the other team&rsquo;s shots is worth almost as much as making your own.</p>
+      <div class="big" data-reveal style="--i:5"><b class="num">329</b><span>games modeled. Explore them yourself below.</span></div>
+      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#okc-four-factors">Read the case study</a><a class="link" href="https://github.com/Heavenb20/okc-four-factors">View the code</a></div>
+    </div>
+    <div class="pics">
+      <figure data-pic><img src="images/charts/okc-impact.webp" alt="Bar chart of each factor's effect on OKC's odds of winning: OKC shooting +7.8 and opponent shooting −7.3 are the largest." width="1800" height="1040" loading="lazy"></figure>
+      <figure data-pic style="--i:1"><img src="images/charts/okc-by-season.webp" alt="Line chart: OKC's effective field goal percentage has been above its opponents' every season since 2023–24." width="1800" height="1040" loading="lazy"></figure>
+    </div>
+  </div>
+</article>
+</div>
+
+<section class="explore wrap" id="explore" aria-labelledby="explore-h">
+  <div class="explore-head">
+    <h2 id="explore-h" data-reveal>Explore 329 Thunder games</h2>
+    <p data-reveal style="--i:1">Pick a factor. Every dot is one game from my OKC dataset, blue for a win and pink for a loss. Hover or tap a dot to see the game.</p>
+  </div>
+
+  <div class="explorer" data-ui>
+  <fieldset class="factor-picker" id="picker">
+    <legend>Factor</legend>
+  </fieldset>
+
+  <div class="readout" aria-live="polite" id="readout"></div>
+  <figure class="chart" data-ui id="chart" role="group" aria-label="Dot plot of the chosen factor for every game, wins and losses"></figure>
+  <p class="chart-note" id="note" aria-live="polite"></p>
+  </div>
+
+  <table class="static">
+    <caption class="sr-only" style="position:absolute;left:-9999px">Average of each factor in OKC wins and losses</caption>
+    <thead><tr><th scope="col">Factor</th><th scope="col">In wins</th><th scope="col">In losses</th><th scope="col">Model effect</th></tr></thead>
+    <tbody>
+      <tr><td>OKC shooting (eFG%)</td><td>57.7%</td><td>51.2%</td><td>+7.8</td></tr>
+      <tr><td>Opponent shooting</td><td>51.0%</td><td>57.2%</td><td>&minus;7.3</td></tr>
+      <tr><td>Turnovers OKC forces</td><td>14.3%</td><td>12.8%</td><td>+4.5</td></tr>
+      <tr><td>OKC turnovers</td><td>10.4%</td><td>10.7%</td><td>&minus;3.4</td></tr>
+      <tr><td>Opponent free throws</td><td>20.0%</td><td>22.4%</td><td>&minus;3.1</td></tr>
+      <tr><td>Opponent off. rebounding</td><td>24.7%</td><td>28.8%</td><td>&minus;2.4</td></tr>
+      <tr><td>OKC off. rebounding</td><td>23.0%</td><td>22.6%</td><td>+2.4</td></tr>
+      <tr><td>OKC free throws</td><td>20.6%</td><td>19.3%</td><td>+1.9</td></tr>
+    </tbody>
+  </table>
+  <p class="method">Data: NBA team box scores via hoopR, 2022&ndash;23 to 2025&ndash;26 regular seasons. Model effect is the logistic regression coefficient for a one standard deviation change, in log-odds.</p>
+</section>
+
+<section class="nlc f-butter" id="internship" aria-labelledby="nlc-h">
+  <div class="wrap">
+    <div class="nlc-head">
+      <h2 id="nlc-h" data-reveal>Inside my internship</h2>
+      <p class="lede" data-reveal style="--i:1">Data Analyst Intern, National League of Cities, Summer 2026. NLC serves city leaders across the country, and its teams rely on Power BI and SharePoint reports to track website traffic and internal work.</p>
+    </div>
+    <div class="nlc-body">
+      <div class="nlc-q" data-reveal>
+        <h3>The question</h3>
+        <p>Do NLC&rsquo;s reports give each team what it needs to make decisions, and what would keep them organized and up to date over time?</p>
+      </div>
+      <ol class="nlc-steps">
+        <li data-reveal><b>Listened first.</b> I interviewed stakeholders across teams to understand and document their business intelligence needs for website traffic and internal SharePoint reporting.</li>
+        <li data-reveal style="--i:1"><b>Reviewed what existed.</b> I went through the organization&rsquo;s Power BI environment, looking at how reports were organized and how easy they were to use for decision-making.</li>
+        <li data-reveal style="--i:2"><b>Designed a fix that lasts.</b> I built a data stewardship process, with an organizational strategy and change management steps, so reports stay organized and up to date after I leave.</li>
+        <li data-reveal style="--i:3"><b>Made the case to leadership.</b> I presented an executive summary of my findings and recommendations to leadership, and delivered a final report on the project.</li>
+      </ol>
+      <div class="nlc-q" data-reveal style="--i:1">
+        <h3>What I took from it</h3>
+        <p>The tool is rarely the hard part. Good reporting depends on knowing who uses each report, who owns it, and how it stays current. That&rsquo;s why I start every project by asking what decision the data needs to support.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHAT I BRING -->
-  <section id="strengths" class="wrap">
-    <div class="section-grid">
-      <div class="section-tag">What I bring</div>
-      <div class="section-body">
-        <h2>What I bring to a team.</h2>
-        <div class="strengths">
-          <div class="strength">
-            <h3>Problem solving</h3>
-            <p>I don't stop at the first answer. When an AI model told me jackets run small, I built a check in code and showed they actually run large. When my sales forecast looked almost too accurate, I tested it only on weeks it had never seen before trusting it.</p>
-          </div>
-          <div class="strength">
-            <h3>Teamwork</h3>
-            <p>At Starbucks, I plan who's where during the rush and jump in wherever the team is short. In People for Tigray, nothing happens alone. Every event, from an art show to a joint showcase with EESA, comes together because a team shows up for it.</p>
-          </div>
-          <div class="strength">
-            <h3>Communication</h3>
-            <p>I explain things to very different people every week: walking classmates through tough material as a peer tutor, sharing client progress with families as a behavior technician, and turning model results into plain-language takeaways. I also speak English, Amharic, and Tigrigna.</p>
-          </div>
-          <div class="strength">
-            <h3>Work ethic</h3>
-            <p>I've been working alongside school for years, from a packaging job in Ethiopia to leading shifts at Starbucks. Right now I'm balancing classes, two jobs, leading People for Tigray, and a Power BI certification. I show up, and I follow through.</p>
-          </div>
-        </div>
-
-        <h3 class="sub-head">How I work through a data problem</h3>
-        <ol class="process">
-          <li><b>Ask the real question.</b> Before touching the data, I figure out what decision the answer will actually help someone make.</li>
-          <li><b>Check the data before trusting it.</b> Duplicates, missing values, an extra game in a season. The small stuff changes the answer.</li>
-          <li><b>Build it, then try to break it.</b> I test on data the model hasn't seen and look for the ways it could be fooling me.</li>
-          <li><b>Explain it plainly.</b> A result nobody understands doesn't help anyone, so I finish with what it means and what to do next.</li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="wrap">
-    <div class="section-grid">
-      <div class="section-tag">Projects</div>
-      <div class="section-body">
-        <h2>Selected projects</h2>
-        <p style="margin:-8px 0 28px;"><a class="case-cta" href="projects.html">See every project in depth: the data, the method, the results, and what went wrong →</a></p>
-
-        <div class="proj">
-          <div>
-            <h3>AI Review Insights Tool</h3>
-            <p>Apparel brands get thousands of reviews and no time to read them. I built a Python pipeline that tags 22,600+ clothing reviews by theme, then sends samples from each department to an AI model running on my own laptop, which writes short insight reports: top complaints, what customers love, and a recommendation.</p>
-            <p class="challenge"><b>The hard part:</b> the first version gave every department nearly the same generic summary. After rewriting the prompt, I added a code-based fact check that counts "too small" versus "too large" complaints, and it caught the AI saying jackets run small when the data showed they run large. The takeaway I built the final design around: code handles the numbers, AI handles the text, and a person reviews both.</p>
-            <div class="proj-links"><a class="case-cta" href="projects.html#ai-review-insights">Read the full case study →</a><a class="proj-link" href="https://github.com/Heavenb20/ai-review-insights" target="_blank" rel="noopener">View code on GitHub →</a></div>
-          </div>
-          <div class="metric-card">
-            <span class="big">22.6K</span>
-            <span class="cap">reviews analyzed</span>
-            <span class="note">Python, pandas, and a local AI model. No paid API costs.</span>
-          </div>
-        </div>
-
-        <div class="proj">
-          <div>
-            <h3>Purchase Intent Classification</h3>
-            <p>Using 12,330 real browsing sessions from an online store, I predicted whether a visitor will buy based only on how they browse. Random Forest beat Logistic Regression on nearly every metric. Page Values was by far the strongest signal, and new visitors converted more often than returning ones (25% vs. 14%).</p>
-            <p class="challenge"><b>The hard part:</b> only 15.5% of sessions ended in a purchase, so a model that always guesses "no" is 84% accurate and useless. I balanced the classes during training and judged the models on precision, recall, F1, and ROC-AUC instead of accuracy.</p>
-            <div class="proj-links"><a class="case-cta" href="projects.html#purchase-intent">Read the full case study →</a><a class="proj-link" href="https://github.com/Heavenb20/purchase-intent-classification" target="_blank" rel="noopener">View code on GitHub →</a></div>
-          </div>
-          <div class="metric-card">
-            <span class="big">0.93</span>
-            <span class="cap">ROC-AUC (1.0 is perfect)</span>
-            <div class="metric-bar"><i data-fill="93" style="--fill:93%"></i></div>
-            <span class="note">Caught 77% of real buyers. Python, scikit-learn.</span>
-          </div>
-        </div>
-
-        <div class="proj">
-          <div>
-            <h3>Retail Sales &amp; Staffing Forecast</h3>
-            <p>As a Starbucks shift leader, I saw how reactive staffing is. So I tested whether busy weeks can be predicted instead. Using 421,000+ weekly Walmart sales records across 45 stores, I forecast each store's sales and grouped the results into four staffing tiers, each based on that store's own average so smaller stores aren't always marked "low."</p>
-            <p class="challenge"><b>The hard part:</b> a random train/test split would let the model learn from weeks after the ones it's tested on. I split by time instead, training on older weeks and testing on the newest 20%. I also filled missing promotion data with zeros, since those promotions didn't exist before late 2011.</p>
-            <div class="proj-links"><a class="case-cta" href="projects.html#sales-forecast">Read the full case study →</a><a class="proj-link" href="https://github.com/Heavenb20/retail-sales-staffing-forecast" target="_blank" rel="noopener">View code on GitHub →</a></div>
-          </div>
-          <div class="metric-card">
-            <span class="big">4.8%</span>
-            <span class="cap">average forecast error (MAPE)</span>
-            <span class="note">Tested on 7 months of unseen weeks. Python, scikit-learn.</span>
-          </div>
-        </div>
-
-        <div class="proj">
-          <div>
-            <h3>OKC Thunder Four Factors Analysis</h3>
-            <p>Which of basketball's Four Factors (shooting, turnovers, rebounding, free throws) actually drive wins? I analyzed all 329 Thunder regular-season games from 2022–23 through 2025–26 in R, using logistic regression with standardized factors so their effects could be compared directly. Shooting on both ends mattered most, and defense mattered almost as much as offense.</p>
-            <p class="challenge"><b>The hard part:</b> checking the data against official standings turned up an 83rd game in 2024–25. I traced it to the NBA Cup final, which doesn't count in the standings, and kept it because it's a real game with real stats.</p>
-            <div class="proj-links"><a class="case-cta" href="projects.html#okc-four-factors">Read the full case study →</a><a class="proj-link" href="https://github.com/Heavenb20/okc-four-factors" target="_blank" rel="noopener">View code on GitHub →</a></div>
-          </div>
-          <div class="metric-card">
-            <span class="big">329</span>
-            <span class="cap">games modeled</span>
-            <span class="note">R, tidyverse, hoopR. Logistic regression on 8 factors.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="wrap">
-    <div class="section-grid">
-      <div class="section-tag">Experience</div>
-      <div class="section-body">
-        <h2>Work experience</h2>
-        <ul class="timeline">
-          <li class="tl-item">
-            <div class="tl-when">Summer 2026</div>
-            <div class="tl-role">
-              <h3>Data Analyst Intern <span class="org">· National League of Cities</span></h3>
-              <ul>
-                <li>Interviewed stakeholders to understand and document their business intelligence needs for website traffic and internal SharePoint reporting.</li>
-                <li>Reviewed the organization's Power BI environment, looking at how reports were organized and how easy they were to use for decision-making.</li>
-                <li>Built a data stewardship process, including an organizational strategy and change management steps, to keep reports organized and up to date.</li>
-                <li>Presented an executive summary of findings and recommendations to leadership, and delivered a final report on the project.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="tl-item">
-            <div class="tl-when">Oct 2024 – Present</div>
-            <div class="tl-role">
-              <h3>Registered Behavior Technician <span class="org">· Behavioral Framework</span></h3>
-              <ul>
-                <li>Work one-on-one with a caseload of about 3 clients, following each person's treatment plan.</li>
-                <li>Record data every session and help turn it into progress reports, so supervising BCBAs can see what's working and adjust the plan.</li>
-                <li>Keep careful, confidential records under HIPAA, and share progress clearly with families.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="tl-item">
-            <div class="tl-when">Jul 2025 – Present</div>
-            <div class="tl-role">
-              <h3>Shift Leader <span class="org">· Starbucks</span></h3>
-              <ul>
-                <li>Plan team positions and breaks around peak traffic, adjusting in real time to keep service fast during rushes.</li>
-                <li>Run cash counts and end-of-shift reconciliations, tracking down and resolving discrepancies.</li>
-                <li>Jump in wherever the team needs support, from the register to the bar, and help new baristas get up to speed.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="tl-item">
-            <div class="tl-when">Spring 2025 – Present</div>
-            <div class="tl-role">
-              <h3>Peer Tutor, Guided Study Sessions <span class="org">· University of Maryland</span></h3>
-              <ul>
-                <li>Lead study sessions where I break tough course material into steps that click.</li>
-                <li>Adjust how I explain things for each person, which has made me much better at explaining technical ideas to non-technical people.</li>
-              </ul>
-            </div>
-          </li>
+<section class="experience wrap" id="experience" aria-labelledby="exp-h">
+  <div class="exp-wrap">
+    <div class="exp-col">
+      <h2 class="giant" id="exp-h">Work</h2>
+      <details open data-reveal>
+        <summary><span class="role">Data Analyst Intern</span><span class="when">Summer 2026</span><span class="org">National League of Cities</span></summary>
+        <ul>
+          <li>Interviewed stakeholders, reviewed the Power BI environment, built a data stewardship process, and presented recommendations to leadership. <a class="link" href="#internship">Read the full story</a></li>
         </ul>
+      </details>
+      <details data-reveal style="--i:1">
+        <summary><span class="role">Registered Behavior Technician</span><span class="when">Oct 2024 &ndash; now</span><span class="org">Behavioral Framework</span></summary>
+        <ul>
+          <li>Work one-on-one with a caseload of about 3 clients, following each person's treatment plan.</li>
+          <li>Record data every session and help turn it into progress reports, so supervising BCBAs can see what's working and adjust the plan.</li>
+          <li>Keep careful, confidential records under HIPAA, and share progress clearly with families.</li>
+        </ul>
+      </details>
+      <details data-reveal style="--i:2">
+        <summary><span class="role">Shift Leader</span><span class="when">Jul 2025 &ndash; now</span><span class="org">Starbucks</span></summary>
+        <ul>
+          <li>Plan team positions and breaks around peak traffic, adjusting in real time to keep service fast during rushes.</li>
+          <li>Run cash counts and end-of-shift reconciliations, tracking down and resolving discrepancies.</li>
+          <li>Jump in wherever the team needs support, from the register to the bar, and help new baristas get up to speed.</li>
+        </ul>
+      </details>
+      <details data-reveal style="--i:3">
+        <summary><span class="role">Peer Tutor, Guided Study Sessions</span><span class="when">Spring 2025 &ndash; now</span><span class="org">University of Maryland</span></summary>
+        <ul>
+          <li>Lead study sessions where I break tough course material into steps that click.</li>
+          <li>Adjust how I explain things for each person, which has made me much better at explaining technical ideas to non-technical people.</li>
+        </ul>
+      </details>
+      <details data-reveal style="--i:4">
+        <summary><span class="role">Operations Intern</span><span class="when">Spring 2024</span><span class="org">Byte Back, Washington, DC</span></summary>
+        <ul>
+          <li>Supported the finance department at a tech education nonprofit providing free digital literacy and IT training to adults.</li>
+        </ul>
+      </details>
+    </div>
+    <div class="exp-aside" data-reveal style="--i:2">
+      <p>Every job taught me the same thing: numbers only matter when they help real people make better decisions.</p>
+      <p>Open a role to see what I did there. My full resume has dates, coursework, and earlier jobs. <a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="leadership f-blue" id="leadership" aria-labelledby="lead-h">
+  <div class="wrap">
+    <h2 id="lead-h" data-reveal>Community &amp; leadership</h2>
+    <div class="lead-row">
+      <figure data-pic><img src="images/p4t.webp" alt="People for Tigray members holding the Tigray flag on the University of Maryland campus" width="520" height="515" loading="lazy"></figure>
+      <div class="copy">
+        <h3 data-reveal>People for Tigray</h3>
+        <p class="meta" data-reveal style="--i:1">President &middot; 2024 &ndash; now</p>
+        <p data-reveal style="--i:2">I lead fundraising and advocacy for the Tigray community after the war and humanitarian crisis there. Together we raise about $3,000 each semester for two schools in Tigray and host about three events a semester, including an art show with a Tigrayan artist and a joint culture showcase with EESA.</p>
       </div>
     </div>
-  </section>
-
-  <!-- LEADERSHIP -->
-  <section id="leadership" class="wrap">
-    <div class="section-grid">
-      <div class="section-tag">Leadership</div>
-      <div class="section-body">
-        <h2>Community &amp; leadership</h2>
-
-        <div class="lead-item">
-          <div class="lead-head">
-            <h3>People for Tigray (P4T), University of Maryland</h3>
-            <span class="lead-when">2024 – Present</span>
-          </div>
-          <p class="lead-role">President</p>
-          <p>I lead fundraising and advocacy for the Tigray community after the war and humanitarian crisis there. Together we raise about $3,000 each semester for two schools in Tigray and host about three events a semester, including an art show with a Tigrayan artist and a joint culture showcase with EESA.</p>
-          <figure class="lead-photo"><img src="images/p4t.webp" alt="People for Tigray members holding the Tigray flag on the University of Maryland campus" loading="lazy" width="520" height="515"></figure>
-        </div>
-
-        <div class="lead-item">
-          <div class="lead-head">
-            <h3>Ethiopian Eritrean Student Association (EESA), University of Maryland</h3>
-            <span class="lead-when">2023 – Present</span>
-          </div>
-          <p class="lead-role">Treasurer (2023) → Internal Vice President (2023 – Present)</p>
-          <p>I started as treasurer, managing the budget and financial records, and now serve as Internal Vice President, planning cultural programs that bring Ethiopian and Eritrean students together on campus.</p>
-          <figure class="lead-photo"><img src="images/essa.webp" alt="The EESA executive board holding the Ethiopian flag" loading="lazy" width="640" height="442"></figure>
-        </div>
-
-        <div class="lead-item">
-          <div class="lead-head">
-            <h3>MCPS ESOL Program</h3>
-            <span class="lead-when">Volunteer</span>
-          </div>
-          <p class="lead-role">Volunteer</p>
-          <p>I help multilingual students and families find their way around school resources in Montgomery County. As someone who came here from another country, this one is personal.</p>
-        </div>
-
-        <div class="lead-item">
-          <p class="lead-role" style="margin-bottom:8px;">Also involved with</p>
-          <div class="member-row">
-            <span>Code: Black</span>
-            <span>Association for Women in Computing</span>
-            <span>National Society of Black Engineers (NSBE)</span>
-          </div>
-        </div>
-
+    <div class="lead-row flip">
+      <figure data-pic><img src="images/essa.webp" alt="The EESA executive board holding the Ethiopian flag" width="640" height="442" loading="lazy"></figure>
+      <div class="copy">
+        <h3 data-reveal>Ethiopian Eritrean Student Association</h3>
+        <p class="meta" data-reveal style="--i:1">Treasurer (2023) &rarr; Internal Vice President (2023 &ndash; now)</p>
+        <p data-reveal style="--i:2">I started as treasurer, managing the budget and financial records, and now serve as Internal Vice President, planning cultural programs that bring Ethiopian and Eritrean students together on campus.</p>
       </div>
     </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="wrap">
-    <div class="section-grid">
-      <div class="section-tag">Skills</div>
-      <div class="section-body">
-        <h2>Skills &amp; coursework</h2>
-
-        <div class="skill-group">
-          <h4>data &amp; programming</h4>
-          <div class="tag-row">
-            <span class="tag">Python</span>
-            <span class="tag">R</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Excel</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Git / GitHub</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h4>libraries &amp; methods used in my projects</h4>
-          <div class="tag-row">
-            <span class="tag">pandas</span>
-            <span class="tag">scikit-learn</span>
-            <span class="tag">tidyverse</span>
-            <span class="tag">Random Forest</span>
-            <span class="tag">Logistic regression</span>
-            <span class="tag">Forecasting</span>
-            <span class="tag">Generative AI</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h4>how I work</h4>
-          <div class="tag-row">
-            <span class="tag">Problem solving</span>
-            <span class="tag">Clear communication</span>
-            <span class="tag">Teamwork</span>
-            <span class="tag">Attention to detail</span>
-            <span class="tag">Trilingual (English / Amharic / Tigrigna)</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <h4>relevant coursework</h4>
-          <p class="coursework">Database Design and Modeling, Data Sources and Manipulation, Information User Needs &amp; Assessment, User-Centered Design, Organizations Management &amp; Teamwork, Information Organization, Technology Socialpreneur, Ethical Hacking.</p>
-        </div>
-
-        <div class="skill-group">
-          <h4>certification</h4>
-          <p class="coursework" style="margin-top:0;"><b style="color:var(--ink); font-weight:600;">Microsoft Power BI Data Analyst</b> · in progress</p>
-        </div>
+    <div class="also">
+      <h3 data-reveal>Also involved</h3>
+      <div class="copy" data-reveal style="--i:1">
+        <p><b>MCPS ESOL Program, volunteer.</b> I help multilingual students and families find their way around school resources in Montgomery County. Coming here from Ethiopia, I know what it&rsquo;s like to need someone to explain a whole system, not just translate a sentence. That&rsquo;s why this one matters to me.</p>
+        <p>I&rsquo;m also a member of Code: Black, the Association for Women in Computing, and the National Society of Black Engineers (NSBE). They&rsquo;re where I find community, and a reminder that I&rsquo;m not building my career alone.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <footer id="contact" class="wrap">
-    <h2>Let's talk data.</h2>
-    <p class="coursework" style="margin:0 0 24px;">I'm open to data analyst, BI, and data science roles, internships and full-time. The easiest way to reach me is email.</p>
-    <div class="contact-row">
-      <a class="btn primary" href="mailto:Heavenbrhanu30@gmail.com">Heavenbrhanu30@gmail.com</a>
-      <a class="btn ghost" href="https://github.com/Heavenb20" target="_blank" rel="noopener">github.com/Heavenb20</a>
-      <a class="btn ghost" href="index.html#resume">View resume</a>
+<section class="skills wrap" id="skills" aria-labelledby="sk-h">
+  <div class="grid">
+    <h2 id="sk-h" data-reveal>Skills &amp; coursework</h2>
+    <div class="lists">
+      <div data-reveal><h3>Data and programming</h3><ul class="chips c"><li>Python</li><li>R</li><li>SQL</li><li>Excel</li><li>Power BI</li><li>Git &amp; GitHub</li></ul></div>
+      <div data-reveal style="--i:1"><h3>Libraries and methods from my projects</h3><ul class="chips"><li>pandas</li><li>scikit-learn</li><li>tidyverse</li><li>Random Forest</li><li>Logistic regression</li><li>Forecasting</li><li>Generative AI</li></ul></div>
+      <div data-reveal style="--i:2"><h3>How I work</h3><ul class="chips"><li>Problem solving</li><li>Clear communication</li><li>Teamwork</li><li>Attention to detail</li><li>English, Amharic, Tigrigna</li></ul></div>
+      <div data-reveal style="--i:3"><h3>Relevant coursework</h3><p>Database Design and Modeling, Data Sources and Manipulation, Information User Needs &amp; Assessment, User-Centered Design, Organizations Management &amp; Teamwork, Information Organization, Technology Socialpreneur, Ethical Hacking.</p></div>
+      <div data-reveal style="--i:4"><h3>Certification</h3><p>Microsoft Power BI Data Analyst, in progress.</p></div>
     </div>
-    <div class="foot-bottom">
-      <span>Silver Spring, MD</span>
-      <span>© Heaven Brhanu</span>
-    </div>
-  </footer>
+  </div>
+</section>
 
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="ask-wrap"><h2 class="ask" id="contact-h">What I&rsquo;m looking for</h2><p class="looking">A data analyst, BI, or entry-level data science role, internship or full-time, on a team where I can keep learning and make a real contribution. I pick things up fast, I&rsquo;m comfortable being the newest person in the room, and I&rsquo;d rather ask a good question early than guess wrong later.</p></div>
+  <a class="mail" href="mailto:Heavenbrhanu30@gmail.com?subject=Hi%20Heaven" translate="no">Heavenbrhanu30@<br>gmail.com</a>
+</section>
 </main>
 
+<footer class="footer">
+  <p class="name" aria-hidden="true">Heaven Brhanu</p>
+  <div class="row"><span>667-273-1581 &middot; Silver Spring, MD &middot; Open to full-time roles and internships</span><span class="links"><a class="link" href="https://github.com/Heavenb20">GitHub</a><a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a><a class="link" href="#top">Back to top</a></span></div>
+</footer>
+<script>window.OKC_GAMES=[["2023-04-09","MEM",1,0.567,0.126,0.2,0.144,0.473,0.107,0.212,0.141],["2023-04-06","UTAH",1,0.479,0.1,0.309,0.216,0.524,0.174,0.175,0.133],["2023-04-04","GS",0,0.532,0.084,0.271,0.28,0.6,0.107,0.432,0.232],["2023-04-02","PHX",0,0.472,0.07,0.283,0.398,0.648,0.122,0.152,0.284],["2023-03-31","IND",0,0.5,0.089,0.234,0.33,0.52,0.12,0.37,0.194],["2023-03-29","DET",1,0.506,0.084,0.238,0.218,0.6,0.165,0.263,0.125],["2023-03-28","CHA",0,0.578,0.092,0.159,0.24,0.628,0.144,0.319,0.202],["2023-03-26","POR",1,0.5,0.094,0.31,0.255,0.561,0.161,0.216,0.244],["2023-03-24","LAL",0,0.511,0.091,0.245,0.185,0.527,0.096,0.327,0.22],["2023-03-23","LAC",0,0.511,0.125,0.277,0.108,0.667,0.123,0.229,0.179],["2023-03-21","LAC",1,0.473,0.1,0.261,0.14,0.512,0.12,0.255,0.14],["2023-03-19","PHX",1,0.565,0.131,0.162,0.345,0.56,0.12,0.191,0.185],["2023-03-16","TOR",0,0.495,0.112,0.216,0.191,0.557,0.084,0.404,0.206],["2023-03-14","BKN",1,0.51,0.076,0.286,0.202,0.5,0.149,0.229,0.305],["2023-03-12","SA",1,0.432,0.079,0.231,0.211,0.432,0.157,0.189,0.159],["2023-03-11","NO",1,0.519,0.105,0.103,0.338,0.494,0.198,0.19,0.198],["2023-03-08","PHX",0,0.46,0.141,0.149,0.227,0.628,0.122,0.318,0.149],["2023-03-07","GS",1,0.622,0.125,0.342,0.213,0.64,0.179,0.205,0.157],["2023-03-05","UTAH",1,0.586,0.106,0.289,0.31,0.551,0.138,0.279,0.25],["2023-03-03","UTAH",1,0.582,0.06,0.224,0.087,0.545,0.221,0.256,0.231],["2023-03-01","LAL",0,0.544,0.098,0.279,0.198,0.575,0.118,0.25,0.388],["2023-02-28","SAC",0,0.495,0.084,0.218,0.204,0.616,0.166,0.211,0.268],["2023-02-26","SAC",0,0.57,0.127,0.205,0.198,0.635,0.166,0.317,0.188],["2023-02-24","PHX",0,0.511,0.079,0.264,0.189,0.544,0.096,0.312,0.289],["2023-02-23","UTAH",0,0.438,0.075,0.328,0.188,0.485,0.158,0.333,0.23],["2023-02-15","HOU",1,0.534,0.085,0.233,0.46,0.393,0.139,0.264,0.292],["2023-02-13","NO",0,0.472,0.14,0.326,0.167,0.588,0.18,0.121,0.216],["2023-02-10","POR",1,0.639,0.092,0.303,0.386,0.658,0.167,0.321,0.382],["2023-02-07","LAL",1,0.612,0.105,0.167,0.191,0.659,0.172,0.167,0.212],["2023-02-06","GS",0,0.544,0.099,0.171,0.165,0.711,0.138,0.275,0.031],["2023-02-04","HOU",1,0.686,0.069,0.265,0.206,0.562,0.129,0.214,0.236],["2023-02-01","HOU",0,0.427,0.082,0.369,0.175,0.473,0.136,0.462,0.245],["2023-01-30","GS",0,0.554,0.136,0.174,0.183,0.622,0.132,0.146,0.178],["2023-01-27","CLE",1,0.592,0.139,0.278,0.289,0.489,0.094,0.234,0.159],["2023-01-25","ATL",0,0.593,0.092,0.255,0.108,0.661,0.14,0.306,0.31],["2023-01-22","DEN",1,0.489,0.077,0.304,0.157,0.5,0.085,0.217,0.207],["2023-01-20","SAC",0,0.57,0.084,0.167,0.075,0.54,0.131,0.317,0.276],["2023-01-18","IND",1,0.591,0.143,0.317,0.172,0.479,0.18,0.408,0.17],["2023-01-15","BKN",1,0.511,0.073,0.229,0.222,0.495,0.131,0.264,0.132],["2023-01-13","CHI",1,0.571,0.09,0.273,0.207,0.518,0.143,0.227,0.259],["2023-01-12","PHI",1,0.593,0.099,0.143,0.36,0.506,0.145,0.209,0.284],["2023-01-10","MIA",0,0.533,0.152,0.333,0.154,0.456,0.164,0.302,0.506],["2023-01-08","DAL",1,0.547,0.072,0.295,0.168,0.521,0.116,0.186,0.452],["2023-01-06","WSH",1,0.597,0.08,0.239,0.102,0.525,0.174,0.268,0.342],["2023-01-04","ORL",0,0.489,0.081,0.2,0.315,0.599,0.142,0.351,0.358],["2023-01-03","BOS",1,0.694,0.108,0.25,0.143,0.523,0.143,0.239,0.284],["2022-12-31","PHI",0,0.446,0.136,0.263,0.152,0.52,0.109,0.286,0.121],["2022-12-29","CHA",0,0.48,0.1,0.216,0.182,0.607,0.149,0.286,0.226],["2022-12-27","SA",1,0.61,0.107,0.342,0.291,0.515,0.117,0.333,0.121],["2022-12-23","NO",0,0.525,0.137,0.192,0.176,0.505,0.158,0.26,0.351],["2022-12-21","POR",1,0.519,0.17,0.25,0.273,0.582,0.178,0.243,0.076],["2022-12-19","POR",1,0.517,0.088,0.262,0.364,0.591,0.141,0.333,0.193],["2022-12-17","MEM",1,0.516,0.086,0.173,0.217,0.444,0.078,0.182,0.322],["2022-12-16","MIN",0,0.528,0.185,0.22,0.193,0.563,0.14,0.234,0.161],["2022-12-14","MIA",0,0.555,0.132,0.179,0.207,0.57,0.131,0.159,0.14],["2022-12-12","DAL",0,0.534,0.118,0.227,0.227,0.538,0.119,0.333,0.226],["2022-12-10","CLE",0,0.518,0.098,0.163,0.193,0.541,0.102,0.267,0.212],["2022-12-07","MEM",0,0.446,0.15,0.259,0.217,0.585,0.122,0.227,0.138],["2022-12-05","ATL",1,0.516,0.132,0.275,0.242,0.495,0.141,0.327,0.127],["2022-12-03","MIN",1,0.575,0.162,0.289,0.301,0.584,0.184,0.293,0.27],["2022-11-30","SA",1,0.559,0.096,0.326,0.149,0.5,0.088,0.26,0.207],["2022-11-28","NO",0,0.435,0.157,0.34,0.228,0.5,0.187,0.326,0.207],["2022-11-26","HOU",0,0.443,0.123,0.276,0.196,0.628,0.207,0.306,0.116],["2022-11-25","CHI",1,0.5,0.106,0.233,0.295,0.495,0.119,0.259,0.188],["2022-11-23","DEN",0,0.526,0.076,0.24,0.247,0.557,0.138,0.386,0.375],["2022-11-21","NY",0,0.534,0.121,0.244,0.284,0.582,0.109,0.341,0.165],["2022-11-18","MEM",0,0.526,0.09,0.167,0.094,0.495,0.09,0.327,0.312],["2022-11-16","WSH",1,0.642,0.14,0.231,0.21,0.61,0.169,0.282,0.174],["2022-11-14","BOS",0,0.536,0.151,0.217,0.173,0.531,0.114,0.196,0.25],["2022-11-13","NY",1,0.722,0.164,0.154,0.205,0.546,0.104,0.277,0.299],["2022-11-11","TOR",1,0.64,0.159,0.375,0.14,0.494,0.134,0.326,0.295],["2022-11-09","MIL",0,0.532,0.098,0.267,0.126,0.552,0.122,0.22,0.179],["2022-11-07","DET",0,0.451,0.084,0.276,0.108,0.468,0.115,0.348,0.269],["2022-11-05","MIL",0,0.5,0.141,0.196,0.119,0.517,0.156,0.383,0.167],["2022-11-03","DEN",0,0.516,0.09,0.204,0.151,0.643,0.165,0.211,0.167],["2022-11-01","ORL",1,0.526,0.126,0.178,0.168,0.506,0.2,0.3,0.23],["2022-10-29","DAL",1,0.522,0.128,0.196,0.27,0.442,0.127,0.24,0.284],["2022-10-27","LAC",1,0.584,0.1,0.277,0.074,0.591,0.174,0.303,0.159],["2022-10-25","LAC",1,0.4,0.04,0.344,0.182,0.482,0.165,0.152,0.169],["2022-10-23","MIN",0,0.484,0.096,0.208,0.16,0.58,0.133,0.279,0.159],["2022-10-22","DEN",0,0.527,0.103,0.213,0.191,0.612,0.154,0.196,0.212],["2022-10-19","MIN",0,0.455,0.107,0.281,0.182,0.468,0.114,0.255,0.287],["2024-04-14","DAL",1,0.629,0.119,0.275,0.134,0.371,0.118,0.203,0.144],["2024-04-12","MIL",1,0.601,0.093,0.19,0.202,0.559,0.158,0.211,0.141],["2024-04-10","SA",1,0.545,0.098,0.14,0.168,0.38,0.125,0.068,0.167],["2024-04-09","SAC",1,0.556,0.122,0.146,0.287,0.448,0.137,0.368,0.198],["2024-04-07","CHA",1,0.621,0.145,0.256,0.149,0.645,0.168,0.212,0.133],["2024-04-05","IND",0,0.535,0.134,0.225,0.233,0.608,0.118,0.211,0.216],["2024-04-03","BOS",0,0.463,0.122,0.125,0.309,0.636,0.091,0.297,0.196],["2024-04-02","PHI",0,0.5,0.126,0.267,0.207,0.551,0.152,0.225,0.295],["2024-03-31","NY",1,0.616,0.115,0.225,0.146,0.484,0.085,0.306,0.25],["2024-03-29","PHX",1,0.655,0.097,0.212,0.161,0.523,0.13,0.295,0.138],["2024-03-27","HOU",0,0.562,0.151,0.277,0.188,0.553,0.123,0.308,0.163],["2024-03-26","NO",1,0.622,0.115,0.179,0.14,0.535,0.086,0.116,0.233],["2024-03-24","MIL",0,0.427,0.108,0.192,0.191,0.592,0.14,0.357,0.098],["2024-03-22","TOR",1,0.568,0.127,0.295,0.158,0.599,0.244,0.132,0.158],["2024-03-20","UTAH",1,0.545,0.09,0.217,0.261,0.5,0.133,0.239,0.189],["2024-03-16","MEM",1,0.586,0.103,0.216,0.184,0.568,0.132,0.159,0.247],["2024-03-14","DAL",1,0.616,0.119,0.211,0.233,0.583,0.166,0.278,0.25],["2024-03-12","IND",0,0.505,0.102,0.25,0.111,0.59,0.085,0.098,0.18],["2024-03-10","MEM",1,0.64,0.095,0.205,0.054,0.481,0.151,0.174,0.231],["2024-03-08","MIA",1,0.539,0.087,0.2,0.124,0.53,0.1,0.163,0.159],["2024-03-06","POR",1,0.642,0.165,0.219,0.446,0.593,0.155,0.179,0.296],["2024-03-04","LAL",0,0.473,0.09,0.232,0.16,0.613,0.18,0.324,0.225],["2024-03-03","PHX",1,0.525,0.044,0.222,0.108,0.516,0.175,0.326,0.176],["2024-02-29","SA",0,0.545,0.092,0.171,0.236,0.632,0.099,0.268,0.187],["2024-02-27","HOU",1,0.527,0.114,0.261,0.151,0.437,0.127,0.218,0.126],["2024-02-25","HOU",1,0.562,0.08,0.213,0.144,0.495,0.149,0.255,0.194],["2024-02-23","WSH",1,0.707,0.129,0.229,0.185,0.438,0.11,0.25,0.144],["2024-02-22","LAC",1,0.65,0.11,0.205,0.133,0.516,0.124,0.234,0.118],["2024-02-13","ORL",1,0.625,0.104,0.105,0.262,0.511,0.136,0.341,0.22],["2024-02-11","SAC",1,0.618,0.085,0.143,0.259,0.578,0.158,0.244,0.1],["2024-02-10","DAL",0,0.474,0.085,0.218,0.184,0.665,0.102,0.282,0.275],["2024-02-06","UTAH",0,0.583,0.101,0.214,0.133,0.596,0.148,0.395,0.202],["2024-02-04","TOR",1,0.577,0.081,0.275,0.073,0.545,0.091,0.262,0.168],["2024-02-02","CHA",1,0.7,0.156,0.097,0.28,0.522,0.125,0.146,0.109],["2024-01-31","DEN",1,0.489,0.101,0.3,0.23,0.478,0.074,0.24,0.118],["2024-01-29","MIN",0,0.532,0.119,0.182,0.215,0.566,0.127,0.231,0.157],["2024-01-28","DET",0,0.522,0.093,0.224,0.087,0.553,0.08,0.319,0.158],["2024-01-26","NO",1,0.534,0.105,0.154,0.148,0.445,0.185,0.17,0.122],["2024-01-24","SA",1,0.656,0.127,0.381,0.146,0.552,0.157,0.279,0.221],["2024-01-23","POR",1,0.522,0.106,0.227,0.202,0.535,0.166,0.267,0.198],["2024-01-20","MIN",1,0.444,0.077,0.18,0.37,0.507,0.193,0.243,0.28],["2024-01-18","UTAH",1,0.64,0.132,0.206,0.279,0.556,0.118,0.262,0.337],["2024-01-16","LAC",0,0.602,0.116,0.25,0.205,0.655,0.085,0.316,0.161],["2024-01-15","LAL",0,0.495,0.098,0.265,0.104,0.571,0.156,0.229,0.19],["2024-01-13","ORL",1,0.5,0.072,0.235,0.191,0.506,0.137,0.244,0.179],["2024-01-11","POR",1,0.645,0.105,0.216,0.204,0.332,0.077,0.203,0.099],["2024-01-10","MIA",1,0.674,0.114,0.118,0.14,0.545,0.09,0.174,0.258],["2024-01-08","WSH",1,0.67,0.124,0.278,0.205,0.579,0.121,0.286,0.281],["2024-01-05","BKN",0,0.589,0.121,0.184,0.19,0.527,0.124,0.408,0.308],["2024-01-03","ATL",0,0.648,0.113,0.209,0.22,0.579,0.091,0.349,0.326],["2024-01-02","BOS",1,0.626,0.092,0.25,0.143,0.538,0.118,0.378,0.261],["2023-12-31","BKN",1,0.651,0.124,0.143,0.193,0.44,0.05,0.293,0.2],["2023-12-29","DEN",1,0.571,0.101,0.244,0.165,0.482,0.149,0.109,0.129],["2023-12-27","NY",1,0.622,0.039,0.088,0.189,0.585,0.159,0.273,0.293],["2023-12-26","MIN",1,0.716,0.111,0.103,0.16,0.548,0.194,0.235,0.356],["2023-12-23","LAL",0,0.553,0.08,0.234,0.158,0.611,0.082,0.205,0.211],["2023-12-21","LAC",1,0.678,0.104,0.176,0.184,0.565,0.132,0.273,0.108],["2023-12-18","MEM",1,0.516,0.105,0.208,0.228,0.465,0.189,0.14,0.212],["2023-12-16","DEN",1,0.554,0.093,0.231,0.298,0.516,0.08,0.34,0.226],["2023-12-14","SAC",0,0.485,0.102,0.308,0.235,0.589,0.14,0.282,0.168],["2023-12-11","UTAH",1,0.615,0.104,0.179,0.167,0.543,0.129,0.22,0.217],["2023-12-08","GS",1,0.546,0.073,0.234,0.316,0.562,0.197,0.462,0.183],["2023-12-06","HOU",0,0.471,0.076,0.085,0.218,0.572,0.17,0.278,0.181],["2023-12-02","DAL",1,0.54,0.099,0.333,0.18,0.557,0.128,0.306,0.264],["2023-11-30","LAL",1,0.606,0.063,0.19,0.202,0.512,0.12,0.149,0.333],["2023-11-28","MIN",0,0.472,0.074,0.18,0.2,0.513,0.171,0.27,0.333],["2023-11-25","PHI",0,0.52,0.035,0.289,0.214,0.542,0.105,0.405,0.446],["2023-11-22","CHI",1,0.567,0.116,0.289,0.413,0.483,0.095,0.244,0.193],["2023-11-19","POR",1,0.741,0.163,0.357,0.173,0.453,0.153,0.283,0.165],["2023-11-18","GS",1,0.56,0.084,0.205,0.18,0.546,0.131,0.269,0.175],["2023-11-16","GS",1,0.615,0.11,0.194,0.241,0.48,0.131,0.364,0.153],["2023-11-14","SA",1,0.601,0.133,0.118,0.18,0.435,0.198,0.265,0.065],["2023-11-12","PHX",1,0.549,0.07,0.146,0.256,0.44,0.15,0.372,0.313],["2023-11-10","SAC",0,0.489,0.145,0.122,0.149,0.489,0.145,0.327,0.176],["2023-11-08","CLE",1,0.581,0.124,0.286,0.326,0.56,0.153,0.275,0.325],["2023-11-06","ATL",1,0.553,0.111,0.244,0.234,0.441,0.114,0.397,0.265],["2023-11-03","GS",0,0.693,0.165,0.219,0.289,0.63,0.125,0.342,0.272],["2023-11-01","NO",0,0.472,0.124,0.143,0.261,0.456,0.08,0.338,0.167],["2023-10-30","DET",1,0.608,0.136,0.176,0.277,0.511,0.136,0.255,0.209],["2023-10-29","DEN",0,0.444,0.084,0.156,0.167,0.665,0.122,0.312,0.125],["2023-10-27","CLE",1,0.534,0.159,0.13,0.172,0.478,0.113,0.163,0.185],["2023-10-25","CHI",1,0.665,0.143,0.147,0.183,0.479,0.105,0.255,0.149],["2025-04-13","NO",1,0.464,0.083,0.321,0.245,0.423,0.103,0.229,0.253],["2025-04-11","UTAH",1,0.68,0.086,0.116,0.09,0.461,0.125,0.311,0.155],["2025-04-09","PHX",1,0.593,0.093,0.216,0.267,0.569,0.12,0.2,0.149],["2025-04-08","LAL",1,0.587,0.051,0.312,0.135,0.575,0.158,0.293,0.35],["2025-04-06","LAL",0,0.5,0.068,0.205,0.1,0.679,0.141,0.242,0.143],["2025-04-04","HOU",0,0.556,0.136,0.171,0.135,0.56,0.112,0.35,0.239],["2025-04-02","DET",1,0.49,0.084,0.289,0.26,0.461,0.153,0.25,0.236],["2025-03-31","CHI",1,0.648,0.115,0.214,0.184,0.531,0.153,0.222,0.133],["2025-03-29","IND",1,0.601,0.08,0.186,0.202,0.529,0.101,0.17,0.218],["2025-03-27","MEM",1,0.561,0.105,0.184,0.267,0.519,0.168,0.116,0.278],["2025-03-25","SAC",1,0.64,0.142,0.162,0.195,0.533,0.103,0.098,0.088],["2025-03-23","LAC",1,0.467,0.082,0.213,0.185,0.476,0.129,0.256,0.28],["2025-03-21","CHA",1,0.686,0.065,0.303,0.128,0.581,0.157,0.154,0.163],["2025-03-19","PHI",1,0.656,0.108,0.275,0.167,0.463,0.105,0.214,0.126],["2025-03-16","MIL",1,0.573,0.083,0.242,0.213,0.476,0.084,0.176,0.313],["2025-03-15","DET",1,0.539,0.147,0.233,0.191,0.557,0.154,0.15,0.102],["2025-03-12","BOS",1,0.567,0.11,0.297,0.305,0.543,0.116,0.312,0.106],["2025-03-10","DEN",0,0.565,0.085,0.277,0.14,0.709,0.112,0.273,0.209],["2025-03-09","DEN",1,0.559,0.045,0.227,0.234,0.474,0.062,0.233,0.113],["2025-03-07","POR",1,0.548,0.107,0.093,0.179,0.389,0.142,0.264,0.158],["2025-03-05","MEM",1,0.592,0.103,0.073,0.195,0.456,0.13,0.234,0.22],["2025-03-03","HOU",1,0.582,0.107,0.292,0.247,0.564,0.129,0.3,0.139],["2025-03-02","SA",1,0.639,0.06,0.293,0.168,0.659,0.109,0.154,0.132],["2025-02-28","ATL",1,0.619,0.094,0.2,0.099,0.574,0.162,0.227,0.205],["2025-02-26","BKN",1,0.583,0.097,0.282,0.267,0.532,0.119,0.346,0.237],["2025-02-24","MIN",0,0.495,0.085,0.271,0.217,0.5,0.102,0.229,0.351],["2025-02-23","MIN",1,0.669,0.121,0.194,0.174,0.539,0.114,0.333,0.303],["2025-02-21","UTAH",1,0.572,0.102,0.37,0.196,0.539,0.163,0.292,0.111],["2025-02-13","MIN",0,0.46,0.084,0.261,0.227,0.485,0.069,0.351,0.202],["2025-02-12","MIA",1,0.574,0.118,0.239,0.159,0.525,0.151,0.25,0.228],["2025-02-10","NO",1,0.658,0.089,0.25,0.126,0.5,0.189,0.255,0.232],["2025-02-08","MEM",1,0.514,0.065,0.412,0.162,0.519,0.117,0.227,0.346],["2025-02-07","TOR",1,0.565,0.109,0.282,0.31,0.533,0.108,0.298,0.132],["2025-02-05","PHX",1,0.569,0.042,0.347,0.235,0.571,0.176,0.094,0.414],["2025-02-03","MIL",1,0.596,0.142,0.333,0.071,0.446,0.12,0.18,0.14],["2025-02-01","SAC",1,0.621,0.088,0.417,0.103,0.455,0.059,0.153,0.19],["2025-01-29","GS",0,0.449,0.091,0.327,0.202,0.574,0.138,0.175,0.284],["2025-01-26","POR",1,0.528,0.064,0.311,0.27,0.519,0.138,0.31,0.296],["2025-01-23","DAL",0,0.562,0.109,0.186,0.182,0.622,0.182,0.242,0.392],["2025-01-22","UTAH",1,0.526,0.086,0.31,0.242,0.544,0.212,0.469,0.178],["2025-01-19","BKN",1,0.661,0.106,0.216,0.138,0.494,0.12,0.255,0.172],["2025-01-17","DAL",0,0.495,0.135,0.275,0.088,0.6,0.167,0.158,0.213],["2025-01-16","CLE",1,0.59,0.052,0.174,0.095,0.539,0.175,0.262,0.189],["2025-01-14","PHI",1,0.63,0.16,0.294,0.198,0.518,0.185,0.282,0.179],["2025-01-12","WSH",1,0.542,0.105,0.326,0.347,0.392,0.141,0.163,0.361],["2025-01-10","NY",1,0.618,0.134,0.229,0.18,0.406,0.086,0.296,0.24],["2025-01-08","CLE",0,0.594,0.118,0.243,0.167,0.606,0.128,0.293,0.222],["2025-01-05","BOS",1,0.54,0.139,0.2,0.126,0.418,0.143,0.245,0.247],["2025-01-03","NY",1,0.595,0.122,0.184,0.202,0.528,0.11,0.244,0.133],["2025-01-02","LAC",1,0.581,0.087,0.103,0.186,0.537,0.177,0.244,0.136],["2024-12-31","MIN",1,0.539,0.083,0.214,0.191,0.589,0.214,0.263,0.152],["2024-12-29","MEM",1,0.573,0.085,0.205,0.117,0.454,0.165,0.308,0.186],["2024-12-28","CHA",1,0.534,0.137,0.2,0.136,0.431,0.163,0.167,0.312],["2024-12-26","IND",1,0.532,0.028,0.184,0.2,0.551,0.1,0.234,0.18],["2024-12-23","WSH",1,0.491,0.094,0.333,0.179,0.484,0.16,0.245,0.187],["2024-12-20","MIA",1,0.535,0.13,0.261,0.14,0.506,0.164,0.163,0.157],["2024-12-19","ORL",1,0.542,0.126,0.118,0.181,0.519,0.168,0.263,0.231],["2024-12-17","MIL",0,0.366,0.095,0.14,0.209,0.525,0.16,0.2,0.148],["2024-12-14","HOU",1,0.519,0.113,0.118,0.35,0.422,0.13,0.328,0.156],["2024-12-10","DAL",1,0.554,0.111,0.315,0.059,0.569,0.169,0.167,0.163],["2024-12-07","NO",1,0.6,0.16,0.27,0.2,0.551,0.165,0.186,0.278],["2024-12-05","TOR",1,0.564,0.052,0.25,0.137,0.417,0.168,0.222,0.189],["2024-12-03","UTAH",1,0.603,0.07,0.375,0.098,0.636,0.267,0.367,0.243],["2024-12-01","HOU",0,0.516,0.062,0.234,0.202,0.484,0.084,0.3,0.326],["2024-11-29","LAL",1,0.478,0.083,0.278,0.129,0.527,0.171,0.2,0.219],["2024-11-27","GS",1,0.524,0.127,0.17,0.188,0.439,0.115,0.31,0.153],["2024-11-25","SAC",1,0.64,0.134,0.333,0.233,0.529,0.11,0.214,0.195],["2024-11-20","POR",1,0.489,0.114,0.312,0.22,0.5,0.194,0.34,0.253],["2024-11-19","SA",0,0.49,0.112,0.255,0.06,0.584,0.187,0.19,0.157],["2024-11-17","DAL",0,0.575,0.058,0.167,0.218,0.542,0.138,0.45,0.357],["2024-11-15","PHX",1,0.451,0.092,0.25,0.187,0.353,0.131,0.216,0.4],["2024-11-13","NO",1,0.528,0.05,0.119,0.148,0.448,0.197,0.447,0.128],["2024-11-11","LAC",1,0.615,0.098,0.22,0.242,0.675,0.199,0.429,0.25],["2024-11-10","GS",0,0.505,0.094,0.298,0.223,0.624,0.124,0.325,0.18],["2024-11-08","HOU",1,0.589,0.091,0.171,0.222,0.494,0.144,0.292,0.2],["2024-11-06","DEN",0,0.52,0.113,0.236,0.18,0.562,0.148,0.277,0.27],["2024-11-04","ORL",1,0.529,0.14,0.128,0.141,0.384,0.161,0.159,0.28],["2024-11-02","LAC",1,0.524,0.115,0.07,0.202,0.475,0.181,0.208,0.215],["2024-11-01","POR",1,0.637,0.112,0.359,0.168,0.56,0.164,0.262,0.253],["2024-10-30","SA",1,0.556,0.098,0.114,0.067,0.482,0.195,0.277,0.129],["2024-10-27","ATL",1,0.584,0.088,0.256,0.27,0.451,0.155,0.333,0.242],["2024-10-26","CHI",1,0.458,0.079,0.153,0.15,0.429,0.204,0.196,0.174],["2024-10-24","DEN",1,0.465,0.101,0.245,0.079,0.393,0.126,0.321,0.102],["2026-04-12","PHX",0,0.526,0.092,0.18,0.032,0.653,0.096,0.325,0.03],["2026-04-10","DEN",0,0.495,0.111,0.278,0.091,0.618,0.139,0.244,0.129],["2026-04-08","LAC",1,0.657,0.122,0.188,0.229,0.547,0.119,0.208,0.186],["2026-04-07","LAL",1,0.624,0.112,0.25,0.135,0.5,0.164,0.182,0.192],["2026-04-05","UTAH",1,0.717,0.132,0.216,0.152,0.5,0.131,0.269,0.11],["2026-04-02","LAL",1,0.632,0.085,0.302,0.098,0.475,0.165,0.178,0.266],["2026-03-30","DET",1,0.531,0.152,0.162,0.346,0.505,0.13,0.294,0.124],["2026-03-29","NY",1,0.533,0.124,0.316,0.413,0.53,0.167,0.357,0.159],["2026-03-27","CHI",1,0.535,0.073,0.288,0.228,0.495,0.101,0.189,0.163],["2026-03-25","BOS",0,0.55,0.071,0.1,0.263,0.58,0.122,0.184,0.309],["2026-03-23","PHI",1,0.633,0.137,0.256,0.1,0.527,0.14,0.245,0.043],["2026-03-21","WSH",1,0.597,0.109,0.405,0.226,0.538,0.132,0.191,0.143],["2026-03-18","BKN",1,0.612,0.152,0.231,0.2,0.437,0.199,0.234,0.291],["2026-03-17","ORL",1,0.494,0.089,0.262,0.267,0.489,0.105,0.192,0.183],["2026-03-15","MIN",1,0.49,0.06,0.283,0.168,0.565,0.202,0.216,0.208],["2026-03-12","BOS",1,0.542,0.116,0.256,0.155,0.477,0.111,0.3,0.218],["2026-03-09","DEN",1,0.608,0.029,0.07,0.172,0.536,0.059,0.32,0.214],["2026-03-07","GS",1,0.519,0.137,0.179,0.295,0.489,0.103,0.3,0.125],["2026-03-04","NY",1,0.562,0.152,0.077,0.288,0.477,0.117,0.255,0.182],["2026-03-03","CHI",1,0.485,0.076,0.218,0.202,0.528,0.162,0.204,0.144],["2026-03-01","DAL",1,0.489,0.075,0.149,0.109,0.441,0.156,0.188,0.141],["2026-02-27","DEN",1,0.525,0.098,0.167,0.232,0.505,0.131,0.186,0.165],["2026-02-25","DET",0,0.5,0.11,0.25,0.208,0.59,0.13,0.39,0.213],["2026-02-24","TOR",1,0.558,0.138,0.308,0.105,0.568,0.146,0.159,0.08],["2026-02-22","CLE",1,0.61,0.142,0.289,0.186,0.556,0.149,0.279,0.157],["2026-02-20","BKN",1,0.5,0.161,0.302,0.265,0.411,0.181,0.227,0.266],["2026-02-12","MIL",0,0.464,0.148,0.292,0.193,0.553,0.093,0.312,0.053],["2026-02-11","PHX",1,0.669,0.076,0.222,0.191,0.549,0.093,0.341,0.087],["2026-02-09","LAL",1,0.563,0.131,0.333,0.241,0.56,0.137,0.225,0.19],["2026-02-07","HOU",0,0.537,0.145,0.295,0.22,0.548,0.128,0.256,0.253],["2026-02-04","SA",0,0.5,0.124,0.167,0.14,0.515,0.099,0.327,0.119],["2026-02-03","ORL",1,0.581,0.087,0.333,0.215,0.455,0.138,0.208,0.124],["2026-02-01","DEN",1,0.582,0.118,0.279,0.259,0.595,0.16,0.229,0.215],["2026-01-29","MIN",0,0.541,0.137,0.262,0.209,0.629,0.164,0.375,0.124],["2026-01-27","NO",1,0.477,0.141,0.283,0.241,0.394,0.069,0.344,0.172],["2026-01-25","TOR",0,0.513,0.11,0.114,0.32,0.5,0.101,0.273,0.198],["2026-01-23","IND",0,0.53,0.086,0.098,0.329,0.552,0.087,0.275,0.115],["2026-01-21","MIL",1,0.622,0.076,0.171,0.111,0.593,0.158,0.125,0.074],["2026-01-19","CLE",1,0.683,0.1,0.146,0.144,0.418,0.165,0.373,0.308],["2026-01-17","MIA",0,0.63,0.136,0.143,0.299,0.459,0.031,0.339,0.18],["2026-01-15","HOU",1,0.551,0.103,0.159,0.146,0.37,0.112,0.383,0.135],["2026-01-13","SA",1,0.586,0.106,0.143,0.296,0.476,0.103,0.24,0.2],["2026-01-11","MIA",1,0.559,0.11,0.304,0.215,0.64,0.208,0.135,0.085],["2026-01-09","MEM",1,0.522,0.055,0.213,0.242,0.545,0.147,0.366,0.227],["2026-01-07","UTAH",1,0.47,0.084,0.207,0.337,0.491,0.143,0.328,0.144],["2026-01-05","CHA",0,0.425,0.063,0.245,0.194,0.656,0.193,0.375,0.299],["2026-01-04","PHX",0,0.537,0.091,0.051,0.207,0.551,0.141,0.308,0.266],["2026-01-02","GS",1,0.609,0.115,0.237,0.207,0.428,0.138,0.25,0.189],["2025-12-31","POR",1,0.578,0.121,0.116,0.222,0.471,0.203,0.25,0.149],["2025-12-29","ATL",1,0.602,0.107,0.263,0.224,0.603,0.133,0.204,0.124],["2025-12-28","PHI",1,0.632,0.117,0.265,0.218,0.524,0.2,0.333,0.205],["2025-12-25","SA",0,0.447,0.062,0.291,0.179,0.601,0.114,0.238,0.19],["2025-12-23","SA",0,0.612,0.129,0.273,0.071,0.667,0.087,0.27,0.214],["2025-12-22","MEM",1,0.569,0.115,0.2,0.128,0.518,0.184,0.213,0.205],["2025-12-19","MIN",0,0.429,0.095,0.25,0.304,0.449,0.107,0.316,0.375],["2025-12-18","LAC",1,0.54,0.069,0.184,0.129,0.553,0.246,0.237,0.224],["2025-12-13","SA",0,0.462,0.119,0.275,0.261,0.483,0.154,0.288,0.267],["2025-12-10","PHX",1,0.716,0.13,0.167,0.136,0.452,0.18,0.159,0.155],["2025-12-07","UTAH",1,0.699,0.119,0.205,0.091,0.541,0.158,0.143,0.106],["2025-12-05","DAL",1,0.631,0.059,0.212,0.31,0.57,0.104,0.2,0.151],["2025-12-02","GS",1,0.677,0.144,0.114,0.215,0.547,0.131,0.245,0.084],["2025-11-30","POR",1,0.544,0.103,0.182,0.278,0.483,0.117,0.241,0.326],["2025-11-28","PHX",1,0.569,0.091,0.073,0.276,0.538,0.149,0.277,0.217],["2025-11-26","MIN",1,0.519,0.067,0.135,0.375,0.519,0.127,0.261,0.275],["2025-11-23","POR",1,0.618,0.128,0.293,0.2,0.435,0.136,0.302,0.163],["2025-11-21","UTAH",1,0.753,0.121,0.1,0.229,0.582,0.232,0.343,0.253],["2025-11-19","SAC",1,0.523,0.14,0.214,0.239,0.488,0.158,0.25,0.174],["2025-11-17","NO",1,0.592,0.139,0.361,0.264,0.558,0.178,0.324,0.151],["2025-11-15","CHA",1,0.567,0.13,0.302,0.09,0.469,0.108,0.245,0.062],["2025-11-12","LAL",1,0.568,0.101,0.154,0.239,0.474,0.183,0.2,0.247],["2025-11-11","GS",1,0.602,0.164,0.278,0.313,0.534,0.187,0.167,0.311],["2025-11-09","MEM",1,0.484,0.053,0.188,0.232,0.478,0.124,0.208,0.143],["2025-11-07","SAC",1,0.61,0.098,0.211,0.231,0.495,0.132,0.154,0.109],["2025-11-05","POR",0,0.5,0.118,0.255,0.308,0.517,0.128,0.229,0.341],["2025-11-04","LAC",1,0.628,0.095,0.2,0.209,0.525,0.171,0.238,0.287],["2025-11-02","NO",1,0.679,0.103,0.235,0.274,0.537,0.145,0.261,0.25],["2025-10-30","WSH",1,0.531,0.052,0.275,0.235,0.554,0.194,0.267,0.179],["2025-10-28","SAC",1,0.533,0.135,0.213,0.098,0.482,0.153,0.209,0.224],["2025-10-27","DAL",1,0.5,0.12,0.231,0.122,0.448,0.076,0.115,0.184],["2025-10-25","ATL",1,0.538,0.106,0.326,0.183,0.506,0.145,0.3,0.165],["2025-10-23","IND",1,0.505,0.107,0.17,0.474,0.5,0.102,0.177,0.286],["2025-10-21","HOU",1,0.505,0.087,0.234,0.192,0.5,0.166,0.372,0.278]];</script>
 <script>
-  // Scroll-spy nav (only for in-page anchor links)
-  const links = document.querySelectorAll('.nav-links a[href^="#"]');
-  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
-  function onScroll(){
-    let idx = -1;
-    const y = window.scrollY + 120;
-    sections.forEach((s,i) => { if(s && s.offsetTop <= y) idx = i; });
-    links.forEach((l,i) => l.classList.toggle('active', i === idx));
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
+// Reveal on scroll, once
+(function(){
+  var els=document.querySelectorAll('[data-reveal],[data-pic]');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -10% 0px',threshold:0.08});
+  els.forEach(function(e){io.observe(e)});
+})();
 
-  // Animate metric bars when in view
-  const bars = document.querySelectorAll('.metric-bar > i');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        e.target.style.width = e.target.dataset.fill + '%';
-        io.unobserve(e.target);
-      }
+// OKC game explorer
+(function(){
+  var G=window.OKC_GAMES; if(!G) return;
+  var F=[
+    {k:3,id:'efg',name:'OKC shooting (eFG%)',coef:7.8},
+    {k:7,id:'opp_efg',name:'Opponent shooting',coef:-7.3},
+    {k:8,id:'opp_tov',name:'Turnovers OKC forces',coef:4.5},
+    {k:4,id:'tov',name:'OKC turnovers',coef:-3.4},
+    {k:10,id:'opp_ft',name:'Opponent free throws',coef:-3.1},
+    {k:9,id:'opp_orb',name:'Opponent off. rebounding',coef:-2.4},
+    {k:5,id:'orb',name:'OKC off. rebounding',coef:2.4},
+    {k:6,id:'ft',name:'OKC free throws',coef:1.9}
+  ];
+  var picker=document.getElementById('picker'),chart=document.getElementById('chart'),readout=document.getElementById('readout'),note=document.getElementById('note');
+  var WIN='#3A5DA6',LOSS='#C25B80',NS='http://www.w3.org/2000/svg';
+  var pct=new Intl.NumberFormat('en-US',{style:'percent',minimumFractionDigits:1,maximumFractionDigits:1});
+  var dfmt=new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
+  var params=new URLSearchParams(location.search);
+  var current=F.find(function(f){return f.id===params.get('factor')})||F[0];
+
+  F.forEach(function(f){
+    var l=document.createElement('label');
+    var i=document.createElement('input'); i.type='radio'; i.name='factor'; i.value=f.id; i.checked=f===current;
+    i.addEventListener('change',function(){current=f;draw();var u=new URL(location.href);u.searchParams.set('factor',f.id);history.replaceState(null,'',u);});
+    l.appendChild(i); l.appendChild(document.createTextNode(f.name)); picker.appendChild(l);
+  });
+
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  function mean(a){return a.reduce(function(s,x){return s+x},0)/a.length;}
+
+  function draw(){
+    var f=current, vals=G.map(function(g){return g[f.k]});
+    var lo=Math.min.apply(null,vals), hi=Math.max.apply(null,vals), pad=(hi-lo)*0.04; lo-=pad; hi+=pad;
+    var W=1000,H=360,L=70,R=20,rowY={1:110,0:250},band=78;
+    var x=function(v){return L+(v-lo)/(hi-lo)*(W-L-R)};
+    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':f.name+' in each of 329 games'});
+    // rows
+    [[1,'Wins'],[0,'Losses']].forEach(function(r){
+      var t=el('text',{x:0,y:rowY[r[0]]+5,'font-weight':'700'}); t.textContent=r[1]; svg.appendChild(t);
     });
-  }, {threshold:0.4});
-  bars.forEach(b => io.observe(b));
+    // axis ticks
+    var step=(hi-lo)/5;
+    for(var i=0;i<=5;i++){var v=lo+step*i;var tx=el('text',{x:x(v),y:H-6,'text-anchor':'middle'});tx.textContent=pct.format(v);svg.appendChild(tx);}
+    // beeswarm-ish: bin by x, stack within band
+    var bins={},r=5.2;
+    var gs=G.map(function(g,idx){return {g:g,idx:idx}}).sort(function(a,b){return a.g[f.k]-b.g[f.k]});
+    gs.forEach(function(o){
+      var g=o.g, w=g[2], cx=x(g[f.k]), key=w+':'+Math.round(cx/(r*2.1));
+      var n=bins[key]=(bins[key]||0)+1;
+      var off=(n%2?1:-1)*Math.floor(n/2)*r*2.05; if(Math.abs(off)>band/2) off=(off>0?1:-1)*(band/2)*Math.random();
+      var c=el('circle',{cx:cx.toFixed(1),cy:(rowY[w]+off).toFixed(1),r:r,fill:w?WIN:LOSS,class:'dot',tabindex:'-1'});
+      c.dataset.i=o.idx; svg.appendChild(c);
+    });
+    // means
+    [1,0].forEach(function(w){
+      var m=mean(G.filter(function(g){return g[2]===w}).map(function(g){return g[f.k]}));
+      svg.appendChild(el('rect',{x:x(m)-2,y:rowY[w]-band/2-8,width:4,height:band+16,fill:'#121218'}));
+      var t=el('text',{x:x(m),y:rowY[w]-band/2-14,'text-anchor':'middle','font-weight':'700'}); t.textContent='avg '+pct.format(m); svg.appendChild(t);
+    });
+    chart.replaceChildren(svg);
+    var wm=mean(G.filter(function(g){return g[2]===1}).map(function(g){return g[f.k]}));
+    var lm=mean(G.filter(function(g){return g[2]===0}).map(function(g){return g[f.k]}));
+    readout.innerHTML='<div><b class="num" style="color:#3A5DA6">'+pct.format(wm)+'</b><span>average in 229 wins</span></div>'+
+      '<div><b class="num" style="color:#A8456A">'+pct.format(lm)+'</b><span>average in 100 losses</span></div>'+
+      '<div><b class="num">'+(f.coef>0?'+':'−')+Math.abs(f.coef).toFixed(1)+'</b><span>model effect on win odds</span></div>';
+    note.textContent='Hover or tap a dot to see the game.';
+  }
+  function show(e){
+    var t=e.target; if(!t.classList||!t.classList.contains('dot')) return;
+    var g=G[+t.dataset.i];
+    chart.querySelectorAll('.dot').forEach(function(d){d.style.opacity=d===t?1:0.35});
+    note.textContent=dfmt.format(new Date(g[0]))+' vs. '+g[1]+': OKC '+(g[2]?'won':'lost')+', '+current.name+' '+pct.format(g[current.k])+'.';
+  }
+  function clear(){chart.querySelectorAll('.dot').forEach(function(d){d.style.opacity=''});}
+  chart.addEventListener('pointerover',show);
+  chart.addEventListener('click',show);
+  chart.addEventListener('pointerleave',clear);
+  draw();
+})();
 </script>
-
 </body>
 </html>
