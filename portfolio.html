@@ -119,11 +119,30 @@
   <p data-reveal style="--i:1">Every project starts with a real question and real data. Each one also had something go wrong, and that part taught me the most. <a class="link" href="projects.html">Read every case study</a></p>
 </div>
 <ul class="facts wrap" aria-label="Project results">
-  <li data-reveal style="--i:0"><span class="fig num">22,628</span><p class="what">customer reviews tagged and summarized with Python and a local AI model</p></li>
-  <li data-reveal style="--i:1"><span class="fig num">0.93</span><p class="what">ROC-AUC predicting which online shoppers will buy</p></li>
-  <li data-reveal style="--i:2"><span class="fig num">4.8%</span><p class="what">average error forecasting weekly sales on 7 unseen months</p></li>
-  <li data-reveal style="--i:3"><span class="fig num">329</span><p class="what">OKC Thunder games modeled in R to find what wins</p></li>
+  <li data-reveal style="--i:0"><span class="fig num">531,108</span><p class="what">county service requests analyzed in SQL and built into a Power BI dashboard</p></li>
+  <li data-reveal style="--i:1"><span class="fig num">22,628</span><p class="what">customer reviews tagged and summarized with Python and a local AI model</p></li>
+  <li data-reveal style="--i:2"><span class="fig num">0.93</span><p class="what">ROC-AUC predicting which online shoppers will buy</p></li>
+  <li data-reveal style="--i:3"><span class="fig num">4.8%</span><p class="what">average error forecasting weekly sales on 7 unseen months</p></li>
+  <li data-reveal style="--i:4"><span class="fig num">329</span><p class="what">OKC Thunder games modeled in R to find what wins</p></li>
 </ul>
+
+<article class="project f-pink flip" aria-labelledby="p0">
+  <div class="wrap grid">
+    <div class="text">
+      <h3 id="p0" data-reveal>Montgomery County 311 on-time analysis</h3>
+      <p class="tools" data-reveal style="--i:1">MySQL, Power BI, DAX</p>
+      <p data-reveal style="--i:2">Every 311 request in my home county comes with a promise: a deadline to resolve it. I loaded all 531,108 requests from 2025 into MySQL, cleaned them, and checked how often that promise is kept. The county is on time 97.7% of the time, but the Department of Transportation alone caused over half of all late requests, and tree requests were the worst, missing about one in four deadlines.</p>
+      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> 53% of requests had no location. Before comparing council districts, I checked whether those rows were different, and they were (99.0% on time vs. 96.1%), so I compared districts using only requests with a location.</p>
+      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> the county could add tree crews from April through July, before the backlog builds, and start in the districts where residents wait longest.</p>
+      <div class="big" data-reveal style="--i:5"><b class="num">6,449</b><span>of 12,309 late requests came from one department</span></div>
+      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#mc311">Read the case study</a><a class="link" href="https://github.com/Heavenb20/m311-service-requests-sql">View the code</a></div>
+    </div>
+    <div class="pics">
+      <figure data-pic><img src="images/charts/mc311-powerbi.webp" alt="Power BI dashboard: 527,016 closed requests, 12,309 late, 97.66% on time, with charts of late requests by department, on-time rate by month, and DOT late requests by area and council district." width="1484" height="812" loading="lazy"></figure>
+      <figure data-pic style="--i:1"><img src="images/charts/mc311-dot-area.webp" alt="Bar chart of DOT on-time rate by service area: Tree Maintenance is lowest at 77.2%, then Traffic 87.0%, Highway Services 89.7%, Transit 94.9%, Parking 99.5%." width="1440" height="800" loading="lazy"></figure>
+    </div>
+  </div>
+</article>
 
 <article class="project f-blue" aria-labelledby="p1">
   <div class="wrap grid">
@@ -337,7 +356,7 @@
     <h2 id="sk-h" data-reveal>Skills &amp; coursework</h2>
     <div class="lists">
       <div data-reveal><h3>Data and programming</h3><ul class="chips c"><li>Python</li><li>R</li><li>SQL</li><li>Excel</li><li>Power BI</li><li>Git &amp; GitHub</li></ul></div>
-      <div data-reveal style="--i:1"><h3>Libraries and methods from my projects</h3><ul class="chips"><li>pandas</li><li>scikit-learn</li><li>tidyverse</li><li>Random Forest</li><li>Logistic regression</li><li>Forecasting</li><li>Generative AI</li></ul></div>
+      <div data-reveal style="--i:1"><h3>Libraries and methods from my projects</h3><ul class="chips"><li>pandas</li><li>scikit-learn</li><li>tidyverse</li><li>Random Forest</li><li>Logistic regression</li><li>Forecasting</li><li>Generative AI</li><li>SQL window functions</li><li>DAX</li></ul></div>
       <div data-reveal style="--i:2"><h3>How I work</h3><ul class="chips"><li>Problem solving</li><li>Clear communication</li><li>Teamwork</li><li>Attention to detail</li><li>English, Amharic, Tigrigna</li></ul></div>
       <div data-reveal style="--i:3"><h3>Relevant coursework</h3><p>Database Design and Modeling, Data Sources and Manipulation, Information User Needs &amp; Assessment, User-Centered Design, Organizations Management &amp; Teamwork, Information Organization, Technology Socialpreneur, Ethical Hacking.</p></div>
       <div data-reveal style="--i:4"><h3>Certification</h3><p>Microsoft Power BI Data Analyst, in progress.</p></div>

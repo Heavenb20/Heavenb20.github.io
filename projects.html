@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heaven Brhanu | Project Case Studies</title>
-<meta name="description" content="Data project case studies by Heaven Brhanu: AI review analysis, purchase prediction, sales forecasting, and NBA analytics, with the data, method, results, and what went wrong.">
+<meta name="description" content="Data project case studies by Heaven Brhanu: county 311 analysis in SQL and Power BI, AI review analysis, purchase prediction, sales forecasting, and NBA analytics, with the data, method, results, and what went wrong.">
 <meta name="theme-color" content="#D4E3FA">
 <meta property="og:title" content="Heaven Brhanu | Project Case Studies">
 <meta property="og:description" content="Data projects with real results, and an interactive look at 329 OKC Thunder games.">
@@ -36,15 +36,84 @@
 <main id="main">
 
   <section class="page-hero wrap" id="top">
-    <h1>Four projects in depth</h1>
+    <h1>Five projects in depth</h1>
     <p class="lede">Every project here starts with a real question and real data. For each one, I walk through what I built, what I found, and what went wrong along the way. Honestly, the things that went wrong taught me the most.</p>
     <nav class="jump" aria-label="Jump to a project">
+      <a href="#mc311"><span class="j-num">531,108</span><span class="j-name">Montgomery County 311 On-Time Analysis</span><span class="j-tool">MySQL · Power BI · DAX</span></a>
       <a href="#ai-review-insights"><span class="j-num">22,600+</span><span class="j-name">AI Review Insights Tool</span><span class="j-tool">Python · pandas · generative AI</span></a>
       <a href="#purchase-intent"><span class="j-num">0.93</span><span class="j-name">Purchase Intent Classification</span><span class="j-tool">Python · scikit-learn</span></a>
       <a href="#sales-forecast"><span class="j-num">4.8%</span><span class="j-name">Retail Sales &amp; Staffing Forecast</span><span class="j-tool">Python · scikit-learn</span></a>
       <a href="#okc-four-factors"><span class="j-num">329</span><span class="j-name">OKC Thunder Four Factors</span><span class="j-tool">R · tidyverse · hoopR</span></a>
     </nav>
   </section>
+  <article class="case" id="mc311">
+    <header class="case-head f-pink"><div class="wrap">
+      <h2>Montgomery County 311 On-Time Analysis</h2>
+      <p class="tools">MySQL 8.0 · MySQL Workbench · Power BI · DAX · Python (matplotlib)</p>
+      <p class="lede">Every 311 request comes with a promise: a deadline to resolve it. How often does Montgomery County keep that promise, and where does it fall behind?</p>
+      <div class="case-links"><a class="button" href="https://github.com/Heavenb20/m311-service-requests-sql">View code on GitHub</a><a class="button" href="https://heavenb20.github.io/mc311-dashboard/">Open the web dashboard</a></div>
+    </div></header>
+    <div class="wrap case-body">
+
+    <div class="case-stats" data-reveal>
+      <div><b>531,108</b><span>service requests from 2025</span></div>
+      <div><b>97.7%</b><span>closed on time county-wide</span></div>
+      <div><b>52%</b><span>of late requests came from DOT</span></div>
+    </div>
+
+    <div class="row" data-reveal><div class="row-label">The question</div><div class="row-body">
+      <p>MC311 is how Montgomery County, Maryland residents report things like missed trash pickup, potholes, fallen trees, and bus problems. Each request gets a deadline in business days. I wanted to know how often departments meet that deadline, which ones miss it, and when and where they fall behind.</p>
+    </div></div>
+
+    <div class="row" data-reveal><div class="row-label">What I did</div><div class="row-body">
+      <ol>
+        <li><b>Loaded the data:</b> all 531,108 requests from 2025 into MySQL with <code>LOAD DATA</code>.</li>
+        <li><b>Checked it first:</b> no duplicate IDs, open requests matched &ldquo;In Progress&rdquo; exactly, and the county&rsquo;s on-time flag matched &ldquo;days open is at most the deadline&rdquo; for every closed request.</li>
+        <li><b>Cleaned it:</b> real dates and numbers, <code>NULL</code> for blanks, and standardized city names (584 spellings down to 456).</li>
+        <li><b>Analyzed it in SQL:</b> on-time rates by department, service area, month, and council district, using <code>GROUP BY</code>, <code>CASE WHEN</code>, CTEs, and window functions (<code>LAG</code>, <code>RANK</code>, <code>AVG() OVER ()</code>).</li>
+        <li><b>Built a Power BI dashboard</b> from a SQL view of the 527,016 closed requests with a deadline, with DAX measures for late requests and on-time rate, and slicers for department and month.</li>
+      </ol>
+    </div></div>
+
+    <div class="row" data-reveal><div class="row-label">What I found</div><div class="row-body">
+      <ul>
+        <li><b>One department drives most of the misses.</b> Of 12,309 late requests, the Department of Transportation (DOT) had 6,449. DOT was on time 89.8% of the time, 8.2 points below the average department.</li>
+        <li><b>Tree requests are DOT&rsquo;s biggest gap.</b> Tree Maintenance was on time only 77.2% of the time, and &ldquo;Inspect, Remove or Prune County Tree&rdquo; only 66%.</li>
+        <li><b>DOT falls behind in spring and summer.</b> Its on-time rate drops from 93.3% in January to 85.1% in June, then recovers in the fall.</li>
+        <li><b>Location matters for DOT.</b> Districts 6, 4, and 7 were around 81 to 82% on time for DOT requests, compared with 87.7% in District 3.</li>
+      </ul>
+    </div></div>
+
+    <div class="row" data-reveal><div class="row-label">The hard part</div><div class="row-body">
+      <ul>
+        <li><b>Half the requests had no location.</b> 53% had no zip code or council district. Before comparing districts, I tested whether those rows were different, and they were: 99.0% on time vs. 96.1%, because most were questions or referrals, not work at an address. So I compared districts using only requests with a location.</li>
+        <li><b>Same city, different spellings.</b> &ldquo;SILVER SPRING&rdquo; and &ldquo;Silver Spring&rdquo; counted as two cities until I standardized them.</li>
+      </ul>
+    </div></div>
+
+    <div class="row" data-reveal><div class="row-label">What I&rsquo;d recommend</div><div class="row-body">
+      <ul>
+        <li>Add tree inspection and removal capacity from April through July, before the backlog builds.</li>
+        <li>Revisit tree request deadlines. Missing a third of one request type&rsquo;s deadlines suggests the staffing or the promise should change.</li>
+        <li>Start any DOT fix in Districts 4, 6, and 7, where residents wait longest.</li>
+      </ul>
+    </div></div>
+
+    <div class="row" data-reveal><div class="row-label">If I kept going</div><div class="row-body">
+      <ul>
+        <li>Add more years to confirm the seasonal pattern.</li>
+        <li>Connect Power BI straight to the database so the dashboard refreshes with new requests.</li>
+      </ul>
+    </div></div>
+
+    <div class="figs">
+      <figure data-pic><img src="images/charts/mc311-powerbi.webp" alt="Power BI dashboard: 527,016 closed requests, 12,309 late, 97.66% on time, with charts of late requests by department, on-time rate by month, and DOT late requests by area and council district." loading="lazy" width="1484" height="812"><figcaption><b>The Power BI dashboard.</b> Filter by department or month, or click any bar to filter the whole page.</figcaption></figure>
+      <figure data-pic><img src="images/charts/mc311-by-month.webp" alt="Line chart of on-time rate by month in 2025: DOT drops from 93.3% in January to 85.1% in June while the county overall stays near 97 to 98%." loading="lazy" width="1440" height="800"><figcaption><b>The summer dip.</b> DOT falls behind every spring and summer, then recovers in the fall.</figcaption></figure>
+      <figure data-pic><img src="images/charts/mc311-dot-area.webp" alt="Bar chart of DOT on-time rate by service area: Tree Maintenance is lowest at 77.2%." loading="lazy" width="1440" height="800"><figcaption><b>Where DOT misses.</b> Tree Maintenance has the lowest on-time rate of any DOT area.</figcaption></figure>
+    </div>
+    <a class="link back-top" href="#top">Back to all projects</a>
+    </div>
+  </article>
   <article class="case" id="ai-review-insights">
     <header class="case-head f-blue"><div class="wrap">
       <h2>AI Review Insights Tool</h2>
