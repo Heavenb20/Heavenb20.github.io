@@ -8,287 +8,18 @@
 <meta name="theme-color" content="#D4E3FA">
 <meta property="og:title" content="Heaven Brhanu | Data Portfolio">
 <meta property="og:description" content="Data projects with real results, and an interactive look at 329 OKC Thunder games.">
-<meta property="og:image" content="https://heavenb20.github.io/images/charts/okc-impact.webp">
+<meta property="og:image" content="https://heavenb20.github.io/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Heaven Brhanu, data analyst portfolio">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://heavenb20.github.io/portfolio.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://heavenb20.github.io/portfolio.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23D4E3FA'/%3E%3Crect x='12' y='34' width='9' height='18' fill='%23F8EAB9'/%3E%3Crect x='27' y='22' width='9' height='30' fill='%23F6DCE5'/%3E%3Crect x='42' y='12' width='9' height='40' fill='%231D1C24'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/chivo-var.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/site.css">
 <script>document.documentElement.classList.add('js')</script>
-<style>
-@font-face{font-family:"Chivo";src:url("fonts/chivo-var.woff") format("woff");font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:"Chivo";src:url("fonts/chivo-italic-var.woff") format("woff");font-weight:100 900;font-style:italic;font-display:swap}
-:root{
-  /* three soft colours: baby blue, blush pink, butter. Deep tones only for small text and chart marks. */
-  --ground:#F8F7F4; --surface:#EFEDE8; --ink:#1D1C24; --muted:#4A4952;
-  --blue:#D4E3FA; --pink:#F6DCE5; --butter:#F8EAB9;
-  --blue-deep:#3A5DA6; --pink-deep:#A8456A;
-  --face:"Chivo",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  --step-small:clamp(0.8125rem,0.79rem + 0.1vw,0.875rem);
-  --step-body:clamp(1.0625rem,1rem + 0.25vw,1.1875rem);
-  --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
-  --step-head:clamp(2.5rem,1.2rem + 5vw,5.5rem);
-  --margin:clamp(16px,2.4vw,32px);
-  --gap-section:clamp(96px,12vw,200px);
-  --ease-out:cubic-bezier(0.22,1,0.36,1); --ease-in-out:cubic-bezier(0.76,0,0.24,1); --ease-soft:cubic-bezier(0.33,1,0.68,1);
-  --t-press:140ms; --t-hover:180ms; --t-reveal:800ms;
-  --z-nav:10; --z-skip:20;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
-@media (pointer:fine){html{overscroll-behavior:none}}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--face);font-size:var(--step-body);line-height:1.5;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased;font-kerning:normal;overflow-x:hidden}
-img{display:block;max-width:100%;height:auto}
-a{color:inherit;-webkit-tap-highlight-color:transparent}
-button,input{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-h1,h2,h3{margin:0;font-weight:900;text-wrap:balance}
-h2{font-size:var(--step-head);line-height:0.92;letter-spacing:-0.045em;text-transform:uppercase}
-h3{font-size:var(--step-lead);line-height:1.15;letter-spacing:-0.02em}
-p{margin:0;text-wrap:pretty}
-section[id],[id]{scroll-margin-top:24px}
-.wrap{padding-inline:var(--margin);max-width:1600px;margin-inline:auto}
-.skip{position:absolute;left:var(--margin);top:-80px;background:var(--butter);color:var(--ink);padding:12px 16px;font-weight:700;z-index:var(--z-skip);text-decoration:none}
-.skip:focus{top:12px}
-.num{font-variant-numeric:tabular-nums}
-
-/* buttons and links */
-.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--ink);color:var(--ground);font-weight:700;text-decoration:none;border:0;border-radius:0;cursor:pointer;touch-action:manipulation;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease,color var(--t-hover) ease}
-.button:active{transform:scale(0.97)}
-.link{font-weight:700;text-decoration:underline;text-decoration-thickness:0.08em;text-underline-offset:0.22em;text-decoration-color:currentColor;transition:text-decoration-color var(--t-hover) ease,color var(--t-hover) ease}
-@media (hover:hover) and (pointer:fine){
-  .button:hover{background:var(--blue-deep);color:#fff}
-  .link:hover{text-decoration-color:transparent}
-}
-
-/* nav */
-.nav{position:absolute;inset:0 0 auto 0;z-index:var(--z-nav);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px var(--margin);color:var(--ink)}
-.nav .mark{font-weight:900;text-decoration:none;letter-spacing:-0.02em}
-.nav ul{display:flex;gap:clamp(16px,2.6vw,40px);list-style:none;margin:0;padding:0;font-size:var(--step-small);font-weight:700}
-.nav ul a{text-decoration:none;padding:12px 0;display:inline-block;transition:opacity var(--t-hover) ease}
-@media (hover:hover) and (pointer:fine){.nav ul a:hover{opacity:0.7}}
-@media (max-width:720px){.nav .wide{display:none}}
-
-/* hero */
-.hero{background:var(--blue);color:var(--ink);min-height:100svh;display:grid;grid-template-rows:1fr auto 1fr;padding:0 var(--margin);position:relative}
-.monument{grid-row:2;display:flex;align-items:baseline;justify-content:center;gap:0.25em;font-size:clamp(56px,10.5vw,190px);line-height:0.88;letter-spacing:-0.05em;text-transform:uppercase;white-space:nowrap;margin:0}
-.hero-foot{grid-row:3;align-self:end;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:end;padding-bottom:28px}
-.hero-copy{grid-column:1 / span 7;display:grid;gap:12px}
-.hero-copy p{max-width:48ch}
-.hero-copy .scan{font-weight:700;font-size:var(--step-small);max-width:none}
-.hero-foot .actions{grid-column:9 / -1;display:flex;gap:24px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
-@media (max-width:720px){
-  .hero{grid-template-rows:auto 1fr auto;padding-top:84px}
-  .monument{grid-row:2;flex-direction:column;align-items:flex-start;justify-content:center;font-size:19vw;line-height:0.9;gap:0.12em}
-  .monument .w2{order:3}
-  .hero-foot{grid-row:3;grid-template-columns:1fr;gap:20px}
-  .hero-copy,.hero-foot .actions{grid-column:1/-1;justify-content:flex-start}
-}
-
-/* signature move + reveals */
-.shutter{overflow:hidden}
-@media (prefers-reduced-motion:no-preference){
-  .js .shutter{clip-path:inset(0 0 100% 0);animation:shutter 1100ms var(--ease-in-out) 350ms forwards}
-  .js .shutter img{transform:scale(1.12);animation:settle 1500ms var(--ease-soft) 350ms forwards}
-  .js [data-rise]{opacity:0;transform:translateY(18px);animation:rise var(--t-reveal) var(--ease-out) forwards;animation-delay:calc(var(--i,0) * 90ms + 120ms)}
-  .js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity 700ms var(--ease-out),transform 900ms var(--ease-out);transition-delay:calc(var(--i,0) * 75ms)}
-  .js [data-reveal].is-in{opacity:1;transform:none}
-  .js [data-pic]{opacity:0;transform:scale(1.04);transition:opacity 900ms var(--ease-out),transform 1400ms var(--ease-soft);transition-delay:calc(var(--i,0) * 75ms)}
-  .js [data-pic].is-in{opacity:1;transform:none}
-}
-@keyframes shutter{to{clip-path:inset(0)}}
-@keyframes settle{to{transform:none}}
-@keyframes rise{to{opacity:1;transform:none}}
-
-/* facts */
-.facts{display:flex;justify-content:space-between;gap:32px;margin:0 auto;padding-block:8px clamp(72px,8vw,120px);list-style:none}
-.facts li{max-width:24ch}
-.facts .fig{display:block;font-size:clamp(2.25rem,1.6rem + 2.4vw,3.5rem);font-weight:900;letter-spacing:-0.04em;line-height:1}
-.facts .what{margin-top:10px}
-@media (max-width:860px){.facts{display:grid;grid-template-columns:1fr 1fr;row-gap:36px}}
-
-/* story */
-.story{padding-block:var(--gap-section) clamp(80px,9vw,140px)}
-.story-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:32px 16px;align-items:start}
-.story h2{grid-column:1 / span 6;font-size:clamp(3rem,1.4rem + 6.4vw,7.5rem)}
-.story-text{grid-column:8 / -1;display:grid;gap:20px;max-width:52ch}
-.lede{font-size:var(--step-lead);line-height:1.35;letter-spacing:-0.015em;font-weight:700}
-.why{padding-block:clamp(80px,9vw,140px)}
-.statement{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.25rem);line-height:1.2;letter-spacing:-0.025em;font-weight:700;max-width:30ch}
-.path{padding-block:var(--gap-section)}
-.path-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:48px 16px}
-.path-head{grid-column:1 / span 5;display:grid;gap:20px;align-content:start}
-.path-head p{max-width:42ch}
-.lessons{grid-column:7 / -1;margin:0;display:grid;gap:28px}
-.lessons div{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:24px;align-items:baseline}
-.lessons dt{font-weight:900;letter-spacing:-0.01em}
-.lessons dd{margin:0;max-width:48ch}
-.people{padding-block:var(--gap-section)}
-.people-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px 16px;align-items:end}
-.people-head h2{grid-column:1 / span 7}
-.people-head .lede{grid-column:8 / -1;max-width:44ch;font-weight:400}
-.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px clamp(32px,6vw,96px);margin-top:clamp(56px,7vw,96px)}
-.cases h3{font-size:var(--step-lead)}
-.cases p{margin-top:10px;max-width:56ch}
-.people .process{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:clamp(64px,8vw,112px)}
-@media (max-width:860px){
-  .story h2,.story-text,.path-head,.lessons,.people-head h2,.people-head .lede{grid-column:1/-1}
-  .cases{grid-template-columns:1fr}
-  .lessons div{grid-template-columns:1fr;gap:4px}
-}
-
-/* projects */
-.project{padding-block:clamp(72px,9vw,140px)}
-.project .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px 16px;align-items:start}
-.project .text{grid-column:1 / span 5}
-.project .pics{grid-column:7 / -1;display:grid;gap:16px}
-.project.flip .text{grid-column:8 / -1;grid-row:1}
-.project.flip .pics{grid-column:1 / span 6;grid-row:1}
-.project h3{font-size:clamp(2rem,1.3rem + 2.6vw,3.5rem);line-height:0.95;letter-spacing:-0.04em;text-transform:uppercase}
-.project .tools{margin-top:14px;font-weight:700}
-.project .text>p{margin-top:20px;max-width:52ch}
-.project .hard{margin-top:20px;max-width:52ch}
-.project .hard strong,.project .sowhat strong{font-weight:900}
-.project .sowhat{margin-top:20px;max-width:52ch}
-.project .big{display:flex;align-items:baseline;gap:16px;margin-top:32px;flex-wrap:wrap}
-.project .big b{font-size:clamp(3.5rem,2rem + 6vw,7.5rem);font-weight:900;letter-spacing:-0.05em;line-height:0.9}
-.project .big span{max-width:22ch;font-weight:700}
-.project .links{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
-.project .links a{display:inline-block;padding-block:10px}
-.project figure{margin:0;background:#fff}
-.project figure img{width:100%}
-.f-blue{background:var(--blue);color:var(--ink)}
-.f-pink{background:var(--pink);color:var(--ink)}
-.f-butter{background:var(--butter);color:var(--ink)}
-.projects-head{padding-block:var(--gap-section) 64px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:end}
-.projects-head h2{grid-column:1 / span 7}
-.projects-head p{grid-column:9 / -1;max-width:40ch}
-@media (max-width:860px){
-  .project .text,.project .pics,.project.flip .text,.project.flip .pics{grid-column:1/-1;grid-row:auto}
-  .project .pics{margin-top:32px}
-  .projects-head h2,.projects-head p{grid-column:1/-1}
-  .projects-head{row-gap:20px}
-}
-
-/* explorer */
-.explore{padding-block:var(--gap-section) clamp(80px,8vw,120px)}
-.explore-head{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:end}
-.explore-head h2{grid-column:1 / span 8}
-.explore-head p{grid-column:9 / -1;max-width:42ch}
-.factor-picker{border:0;margin:48px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.factor-picker legend{font-weight:700;margin-bottom:14px;padding:0}
-.factor-picker label{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--surface);font-weight:700;font-size:var(--step-small);cursor:pointer;transition:background-color var(--t-hover) ease,color var(--t-hover) ease,transform var(--t-press) var(--ease-out);touch-action:manipulation}
-.factor-picker label:active{transform:scale(0.97)}
-.factor-picker input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.factor-picker label:has(input:checked){background:var(--ink);color:var(--ground)}
-.factor-picker label:has(input:focus-visible){outline:3px solid var(--blue-deep);outline-offset:2px}
-@media (hover:hover) and (pointer:fine){.factor-picker label:hover{background:var(--butter);color:var(--ink)}.factor-picker label:has(input:checked):hover{background:var(--ink);color:var(--ground)}}
-.readout{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:16px clamp(32px,6vw,96px);margin-top:40px}
-.readout div b{display:block;font-size:clamp(2.25rem,1.6rem + 2.4vw,3.5rem);font-weight:900;letter-spacing:-0.04em;line-height:1}
-.readout div span{display:block;margin-top:8px;color:var(--muted);font-weight:700}
-.chart{margin:32px 0 0;background:#fff;padding:clamp(12px,2vw,24px)}
-.chart{overflow-x:auto;overscroll-behavior-x:contain}
-.chart svg{display:block;width:100%;min-width:640px;height:auto;overflow:visible}
-.chart svg text{font-family:var(--face);font-size:13px;fill:var(--ink)}
-.chart .dot{transition:opacity var(--t-hover) ease}
-.chart-note{margin-top:14px;min-height:1.5em;font-weight:700}
-.explore .static{margin-top:32px;border-collapse:collapse;width:100%;max-width:720px}
-.explore .static th,.explore .static td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--surface)}
-.explore .static td{font-variant-numeric:tabular-nums}
-.js .explore .static{display:none}
-.explore .method{margin-top:24px;max-width:70ch}
-@media (max-width:860px){.explore-head h2,.explore-head p{grid-column:1/-1}.explore-head{row-gap:20px}.readout{grid-template-columns:1fr 1fr}}
-
-/* process */
-.process h3{grid-column:1 / span 5;font-size:var(--step-lead)}
-.process ol{grid-column:7 / -1;margin:0;padding-left:1.4em;display:grid;gap:20px}
-.process li::marker{font-weight:900}
-.process li b{font-weight:900}
-@media (max-width:860px){.process h3,.process ol{grid-column:1/-1}}
-
-/* internship case study */
-.nlc{padding-block:var(--gap-section)}
-.nlc-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px 16px;align-items:end}
-.nlc-head h2{grid-column:1 / span 6}
-.nlc-head .lede{grid-column:8 / -1;max-width:44ch;font-weight:400}
-.nlc-body{display:grid;grid-template-columns:repeat(12,1fr);gap:48px 16px;margin-top:clamp(56px,7vw,96px)}
-.nlc-q{grid-column:1 / span 5}
-.nlc-q h3{font-size:var(--step-lead)}
-.nlc-q p{margin-top:10px;max-width:46ch}
-.nlc-steps{grid-column:7 / -1;grid-row:1 / span 2;margin:0;padding-left:1.4em;display:grid;gap:24px;align-content:start}
-.nlc-steps li::marker{font-weight:900}
-.nlc-steps b{font-weight:900}
-@media (max-width:860px){.nlc-head h2,.nlc-head .lede,.nlc-q,.nlc-steps{grid-column:1/-1;grid-row:auto}}
-
-/* experience */
-.experience{padding-block:var(--gap-section)}
-.exp-col{max-width:760px;container-type:inline-size}
-.giant{font-size:31cqw;line-height:0.8;letter-spacing:-0.05em;text-transform:uppercase;font-weight:900;margin:0 0 24px -0.04em}
-.exp-col details{background:var(--surface);margin-top:6px;transition:background-color var(--t-hover) ease}
-.exp-col details[open]{background:var(--butter)}
-.exp-col summary{list-style:none;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;min-height:64px;padding:14px 18px;cursor:pointer;touch-action:manipulation}
-.exp-col summary::-webkit-details-marker{display:none}
-.exp-col summary .role{font-weight:900}
-.exp-col summary .when{font-variant-numeric:tabular-nums;font-weight:700;text-align:right}
-.exp-col summary .org{grid-column:1/-1;font-size:var(--step-small);font-weight:700}
-.exp-col summary .plus{grid-column:2;grid-row:1;display:none}
-.exp-col details ul{margin:0;padding:4px 18px 22px 2.2em;display:grid;gap:10px;max-width:64ch}
-@media (hover:hover) and (pointer:fine){.exp-col details:not([open]):hover{background:#DCD8CD}}
-.exp-wrap{display:grid;grid-template-columns:minmax(0,760px) 1fr;gap:16px clamp(32px,6vw,96px);align-items:start}
-.exp-aside{position:sticky;top:32px;padding-top:12cqw}
-.exp-aside p{max-width:34ch;font-size:var(--step-lead);line-height:1.3;font-weight:700;letter-spacing:-0.02em}
-.exp-aside p+p{margin-top:20px;font-size:var(--step-body);font-weight:400;line-height:1.5}
-@media (max-width:980px){.exp-wrap{grid-template-columns:1fr}.exp-aside{position:static;padding-top:24px}}
-
-/* leadership */
-.leadership{padding-block:var(--gap-section)}
-.leadership h2{max-width:12ch}
-.lead-row{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:clamp(56px,7vw,100px);align-items:start}
-.lead-row figure{margin:0;grid-column:1 / span 6}
-.lead-row figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.lead-row .copy{grid-column:8 / -1}
-.lead-row.flip figure{grid-column:7 / -1;grid-row:1}
-.lead-row.flip .copy{grid-column:1 / span 5;grid-row:1}
-.lead-row h3{font-size:clamp(1.75rem,1.2rem + 2vw,2.75rem);text-transform:uppercase;letter-spacing:-0.04em;line-height:0.95}
-.lead-row .meta{margin-top:12px;font-weight:700;color:var(--blue-deep)}
-.lead-row .copy p:not(.meta){margin-top:18px;max-width:52ch}
-.also{margin-top:clamp(56px,7vw,100px);display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.also h3{grid-column:1 / span 5;font-size:var(--step-lead);text-transform:none;letter-spacing:-0.02em}
-.also .copy{grid-column:7 / -1;max-width:56ch}
-.also .copy p+p{margin-top:12px}
-@media (max-width:860px){.lead-row figure,.lead-row .copy,.lead-row.flip figure,.lead-row.flip .copy,.also h3,.also .copy{grid-column:1/-1;grid-row:auto}.lead-row .copy{margin-top:20px}}
-
-/* skills */
-.skills{padding-block:var(--gap-section)}
-.skills .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:48px 16px}
-.skills h2{grid-column:1 / span 5}
-.skills .lists{grid-column:7 / -1;display:grid;gap:36px}
-.skills h3{font-size:var(--step-body);font-weight:900;letter-spacing:0}
-.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:12px 0 0;padding:0}
-.chips li{background:var(--surface);padding:10px 14px;font-weight:700}
-.chips.c li:nth-child(3n+1){background:var(--blue)}
-.chips.c li:nth-child(3n+2){background:var(--pink)}
-.chips.c li:nth-child(3n+3){background:var(--butter)}
-.skills .lists p{margin-top:10px;max-width:60ch}
-@media (max-width:860px){.skills h2,.skills .lists{grid-column:1/-1}}
-
-/* contact + footer */
-.contact{background:var(--pink);color:var(--ink);min-height:90svh;display:grid;grid-template-rows:auto 1fr;padding:clamp(32px,4vw,56px) var(--margin) 28px}
-.ask-wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.contact .ask{grid-column:1 / span 5}
-.contact .looking{grid-column:7 / -1;max-width:52ch;font-size:var(--step-lead);line-height:1.35;letter-spacing:-0.015em}
-@media (max-width:860px){.contact .ask,.contact .looking{grid-column:1/-1}}
-.contact .mail{align-self:end;margin-bottom:12vh;display:block;font-size:clamp(28px,6.6vw,124px);font-weight:400;letter-spacing:-0.05em;line-height:0.95;text-decoration:none;overflow-wrap:anywhere;transition:color var(--t-hover) ease}
-@media (hover:hover) and (pointer:fine){.contact .mail:hover{color:var(--pink-deep)}}
-.contact .corners{display:flex;justify-content:flex-end;gap:24px;flex-wrap:wrap;font-size:var(--step-small);font-weight:700}
-.contact .corners ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
-.contact .corners a{display:inline-block;padding-block:8px}
-.footer{background:var(--butter);color:var(--ink);padding:32px var(--margin) 0;overflow:hidden}
-.footer .name{font-size:12.4vw;font-weight:900;letter-spacing:-0.06em;line-height:0.78;text-transform:uppercase;white-space:nowrap;margin:0 0 24px -0.04em}
-.footer .row .links{display:flex;gap:24px;flex-wrap:wrap}
-.footer .row a{display:inline-block;padding-block:8px}
-.footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:var(--step-small);font-weight:700;margin-bottom:28px}
-@media (max-width:720px){.contact .mail{font-size:9.8vw}.contact .corners{flex-direction:column}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:0.001ms !important;animation-delay:0ms !important;transition-duration:0.001ms !important}}
-</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -305,9 +36,9 @@ section[id],[id]{scroll-margin-top:24px}
     </ul>
   </nav>
 
-  <h1 class="monument" aria-label="Heaven Brhanu">
-    <span class="w1" aria-hidden="true">Heaven</span>
-    <span class="w2" aria-hidden="true">Brhanu</span>
+  <h1 class="monument">
+    <span class="w1">Heaven</span>
+    <span class="w2">Brhanu</span>
   </h1>
 
   <div class="hero-foot">
@@ -473,23 +204,23 @@ section[id],[id]{scroll-margin-top:24px}
     <p data-reveal style="--i:1">Pick a factor. Every dot is one game from my OKC dataset, blue for a win and pink for a loss. Hover or tap a dot to see the game.</p>
   </div>
 
-  <div class="explorer" data-ui>
+  <div class="explorer">
   <fieldset class="factor-picker" id="picker">
     <legend>Factor</legend>
   </fieldset>
 
   <div class="readout" aria-live="polite" id="readout"></div>
-  <figure class="chart" data-ui id="chart" role="group" aria-label="Dot plot of the chosen factor for every game, wins and losses"></figure>
+  <figure class="chart" id="chart" role="group" aria-label="Dot plot of the chosen factor for every game, wins and losses"></figure>
   <p class="chart-note" id="note" aria-live="polite"></p>
   </div>
 
   <table class="static">
-    <caption class="sr-only" style="position:absolute;left:-9999px">Average of each factor in OKC wins and losses</caption>
+    <caption class="sr-only">Average of each factor in OKC wins and losses</caption>
     <thead><tr><th scope="col">Factor</th><th scope="col">In wins</th><th scope="col">In losses</th><th scope="col">Model effect</th></tr></thead>
     <tbody>
       <tr><td>OKC shooting (eFG%)</td><td>57.7%</td><td>51.2%</td><td>+7.8</td></tr>
       <tr><td>Opponent shooting</td><td>51.0%</td><td>57.2%</td><td>&minus;7.3</td></tr>
-      <tr><td>Turnovers OKC forces</td><td>14.3%</td><td>12.8%</td><td>+4.5</td></tr>
+      <tr><td>Turnovers OKC forces</td><td>14.4%</td><td>12.8%</td><td>+4.5</td></tr>
       <tr><td>OKC turnovers</td><td>10.4%</td><td>10.7%</td><td>&minus;3.4</td></tr>
       <tr><td>Opponent free throws</td><td>20.0%</td><td>22.4%</td><td>&minus;3.1</td></tr>
       <tr><td>Opponent off. rebounding</td><td>24.7%</td><td>28.8%</td><td>&minus;2.4</td></tr>
@@ -622,99 +353,10 @@ section[id],[id]{scroll-margin-top:24px}
 
 <footer class="footer">
   <p class="name" aria-hidden="true">Heaven Brhanu</p>
-  <div class="row"><span>667-273-1581 &middot; Silver Spring, MD &middot; Open to full-time roles and internships</span><span class="links"><a class="link" href="https://github.com/Heavenb20">GitHub</a><a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a><a class="link" href="#top">Back to top</a></span></div>
+  <div class="row"><span><a class="link tel" href="tel:+16672731581">667-273-1581</a> &middot; Silver Spring, MD &middot; Open to full-time roles and internships</span><span class="links"><a class="link" href="https://github.com/Heavenb20">GitHub</a><a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a><a class="link" href="#top">Back to top</a></span></div>
 </footer>
-<script>window.OKC_GAMES=[["2023-04-09","MEM",1,0.567,0.126,0.2,0.144,0.473,0.107,0.212,0.141],["2023-04-06","UTAH",1,0.479,0.1,0.309,0.216,0.524,0.174,0.175,0.133],["2023-04-04","GS",0,0.532,0.084,0.271,0.28,0.6,0.107,0.432,0.232],["2023-04-02","PHX",0,0.472,0.07,0.283,0.398,0.648,0.122,0.152,0.284],["2023-03-31","IND",0,0.5,0.089,0.234,0.33,0.52,0.12,0.37,0.194],["2023-03-29","DET",1,0.506,0.084,0.238,0.218,0.6,0.165,0.263,0.125],["2023-03-28","CHA",0,0.578,0.092,0.159,0.24,0.628,0.144,0.319,0.202],["2023-03-26","POR",1,0.5,0.094,0.31,0.255,0.561,0.161,0.216,0.244],["2023-03-24","LAL",0,0.511,0.091,0.245,0.185,0.527,0.096,0.327,0.22],["2023-03-23","LAC",0,0.511,0.125,0.277,0.108,0.667,0.123,0.229,0.179],["2023-03-21","LAC",1,0.473,0.1,0.261,0.14,0.512,0.12,0.255,0.14],["2023-03-19","PHX",1,0.565,0.131,0.162,0.345,0.56,0.12,0.191,0.185],["2023-03-16","TOR",0,0.495,0.112,0.216,0.191,0.557,0.084,0.404,0.206],["2023-03-14","BKN",1,0.51,0.076,0.286,0.202,0.5,0.149,0.229,0.305],["2023-03-12","SA",1,0.432,0.079,0.231,0.211,0.432,0.157,0.189,0.159],["2023-03-11","NO",1,0.519,0.105,0.103,0.338,0.494,0.198,0.19,0.198],["2023-03-08","PHX",0,0.46,0.141,0.149,0.227,0.628,0.122,0.318,0.149],["2023-03-07","GS",1,0.622,0.125,0.342,0.213,0.64,0.179,0.205,0.157],["2023-03-05","UTAH",1,0.586,0.106,0.289,0.31,0.551,0.138,0.279,0.25],["2023-03-03","UTAH",1,0.582,0.06,0.224,0.087,0.545,0.221,0.256,0.231],["2023-03-01","LAL",0,0.544,0.098,0.279,0.198,0.575,0.118,0.25,0.388],["2023-02-28","SAC",0,0.495,0.084,0.218,0.204,0.616,0.166,0.211,0.268],["2023-02-26","SAC",0,0.57,0.127,0.205,0.198,0.635,0.166,0.317,0.188],["2023-02-24","PHX",0,0.511,0.079,0.264,0.189,0.544,0.096,0.312,0.289],["2023-02-23","UTAH",0,0.438,0.075,0.328,0.188,0.485,0.158,0.333,0.23],["2023-02-15","HOU",1,0.534,0.085,0.233,0.46,0.393,0.139,0.264,0.292],["2023-02-13","NO",0,0.472,0.14,0.326,0.167,0.588,0.18,0.121,0.216],["2023-02-10","POR",1,0.639,0.092,0.303,0.386,0.658,0.167,0.321,0.382],["2023-02-07","LAL",1,0.612,0.105,0.167,0.191,0.659,0.172,0.167,0.212],["2023-02-06","GS",0,0.544,0.099,0.171,0.165,0.711,0.138,0.275,0.031],["2023-02-04","HOU",1,0.686,0.069,0.265,0.206,0.562,0.129,0.214,0.236],["2023-02-01","HOU",0,0.427,0.082,0.369,0.175,0.473,0.136,0.462,0.245],["2023-01-30","GS",0,0.554,0.136,0.174,0.183,0.622,0.132,0.146,0.178],["2023-01-27","CLE",1,0.592,0.139,0.278,0.289,0.489,0.094,0.234,0.159],["2023-01-25","ATL",0,0.593,0.092,0.255,0.108,0.661,0.14,0.306,0.31],["2023-01-22","DEN",1,0.489,0.077,0.304,0.157,0.5,0.085,0.217,0.207],["2023-01-20","SAC",0,0.57,0.084,0.167,0.075,0.54,0.131,0.317,0.276],["2023-01-18","IND",1,0.591,0.143,0.317,0.172,0.479,0.18,0.408,0.17],["2023-01-15","BKN",1,0.511,0.073,0.229,0.222,0.495,0.131,0.264,0.132],["2023-01-13","CHI",1,0.571,0.09,0.273,0.207,0.518,0.143,0.227,0.259],["2023-01-12","PHI",1,0.593,0.099,0.143,0.36,0.506,0.145,0.209,0.284],["2023-01-10","MIA",0,0.533,0.152,0.333,0.154,0.456,0.164,0.302,0.506],["2023-01-08","DAL",1,0.547,0.072,0.295,0.168,0.521,0.116,0.186,0.452],["2023-01-06","WSH",1,0.597,0.08,0.239,0.102,0.525,0.174,0.268,0.342],["2023-01-04","ORL",0,0.489,0.081,0.2,0.315,0.599,0.142,0.351,0.358],["2023-01-03","BOS",1,0.694,0.108,0.25,0.143,0.523,0.143,0.239,0.284],["2022-12-31","PHI",0,0.446,0.136,0.263,0.152,0.52,0.109,0.286,0.121],["2022-12-29","CHA",0,0.48,0.1,0.216,0.182,0.607,0.149,0.286,0.226],["2022-12-27","SA",1,0.61,0.107,0.342,0.291,0.515,0.117,0.333,0.121],["2022-12-23","NO",0,0.525,0.137,0.192,0.176,0.505,0.158,0.26,0.351],["2022-12-21","POR",1,0.519,0.17,0.25,0.273,0.582,0.178,0.243,0.076],["2022-12-19","POR",1,0.517,0.088,0.262,0.364,0.591,0.141,0.333,0.193],["2022-12-17","MEM",1,0.516,0.086,0.173,0.217,0.444,0.078,0.182,0.322],["2022-12-16","MIN",0,0.528,0.185,0.22,0.193,0.563,0.14,0.234,0.161],["2022-12-14","MIA",0,0.555,0.132,0.179,0.207,0.57,0.131,0.159,0.14],["2022-12-12","DAL",0,0.534,0.118,0.227,0.227,0.538,0.119,0.333,0.226],["2022-12-10","CLE",0,0.518,0.098,0.163,0.193,0.541,0.102,0.267,0.212],["2022-12-07","MEM",0,0.446,0.15,0.259,0.217,0.585,0.122,0.227,0.138],["2022-12-05","ATL",1,0.516,0.132,0.275,0.242,0.495,0.141,0.327,0.127],["2022-12-03","MIN",1,0.575,0.162,0.289,0.301,0.584,0.184,0.293,0.27],["2022-11-30","SA",1,0.559,0.096,0.326,0.149,0.5,0.088,0.26,0.207],["2022-11-28","NO",0,0.435,0.157,0.34,0.228,0.5,0.187,0.326,0.207],["2022-11-26","HOU",0,0.443,0.123,0.276,0.196,0.628,0.207,0.306,0.116],["2022-11-25","CHI",1,0.5,0.106,0.233,0.295,0.495,0.119,0.259,0.188],["2022-11-23","DEN",0,0.526,0.076,0.24,0.247,0.557,0.138,0.386,0.375],["2022-11-21","NY",0,0.534,0.121,0.244,0.284,0.582,0.109,0.341,0.165],["2022-11-18","MEM",0,0.526,0.09,0.167,0.094,0.495,0.09,0.327,0.312],["2022-11-16","WSH",1,0.642,0.14,0.231,0.21,0.61,0.169,0.282,0.174],["2022-11-14","BOS",0,0.536,0.151,0.217,0.173,0.531,0.114,0.196,0.25],["2022-11-13","NY",1,0.722,0.164,0.154,0.205,0.546,0.104,0.277,0.299],["2022-11-11","TOR",1,0.64,0.159,0.375,0.14,0.494,0.134,0.326,0.295],["2022-11-09","MIL",0,0.532,0.098,0.267,0.126,0.552,0.122,0.22,0.179],["2022-11-07","DET",0,0.451,0.084,0.276,0.108,0.468,0.115,0.348,0.269],["2022-11-05","MIL",0,0.5,0.141,0.196,0.119,0.517,0.156,0.383,0.167],["2022-11-03","DEN",0,0.516,0.09,0.204,0.151,0.643,0.165,0.211,0.167],["2022-11-01","ORL",1,0.526,0.126,0.178,0.168,0.506,0.2,0.3,0.23],["2022-10-29","DAL",1,0.522,0.128,0.196,0.27,0.442,0.127,0.24,0.284],["2022-10-27","LAC",1,0.584,0.1,0.277,0.074,0.591,0.174,0.303,0.159],["2022-10-25","LAC",1,0.4,0.04,0.344,0.182,0.482,0.165,0.152,0.169],["2022-10-23","MIN",0,0.484,0.096,0.208,0.16,0.58,0.133,0.279,0.159],["2022-10-22","DEN",0,0.527,0.103,0.213,0.191,0.612,0.154,0.196,0.212],["2022-10-19","MIN",0,0.455,0.107,0.281,0.182,0.468,0.114,0.255,0.287],["2024-04-14","DAL",1,0.629,0.119,0.275,0.134,0.371,0.118,0.203,0.144],["2024-04-12","MIL",1,0.601,0.093,0.19,0.202,0.559,0.158,0.211,0.141],["2024-04-10","SA",1,0.545,0.098,0.14,0.168,0.38,0.125,0.068,0.167],["2024-04-09","SAC",1,0.556,0.122,0.146,0.287,0.448,0.137,0.368,0.198],["2024-04-07","CHA",1,0.621,0.145,0.256,0.149,0.645,0.168,0.212,0.133],["2024-04-05","IND",0,0.535,0.134,0.225,0.233,0.608,0.118,0.211,0.216],["2024-04-03","BOS",0,0.463,0.122,0.125,0.309,0.636,0.091,0.297,0.196],["2024-04-02","PHI",0,0.5,0.126,0.267,0.207,0.551,0.152,0.225,0.295],["2024-03-31","NY",1,0.616,0.115,0.225,0.146,0.484,0.085,0.306,0.25],["2024-03-29","PHX",1,0.655,0.097,0.212,0.161,0.523,0.13,0.295,0.138],["2024-03-27","HOU",0,0.562,0.151,0.277,0.188,0.553,0.123,0.308,0.163],["2024-03-26","NO",1,0.622,0.115,0.179,0.14,0.535,0.086,0.116,0.233],["2024-03-24","MIL",0,0.427,0.108,0.192,0.191,0.592,0.14,0.357,0.098],["2024-03-22","TOR",1,0.568,0.127,0.295,0.158,0.599,0.244,0.132,0.158],["2024-03-20","UTAH",1,0.545,0.09,0.217,0.261,0.5,0.133,0.239,0.189],["2024-03-16","MEM",1,0.586,0.103,0.216,0.184,0.568,0.132,0.159,0.247],["2024-03-14","DAL",1,0.616,0.119,0.211,0.233,0.583,0.166,0.278,0.25],["2024-03-12","IND",0,0.505,0.102,0.25,0.111,0.59,0.085,0.098,0.18],["2024-03-10","MEM",1,0.64,0.095,0.205,0.054,0.481,0.151,0.174,0.231],["2024-03-08","MIA",1,0.539,0.087,0.2,0.124,0.53,0.1,0.163,0.159],["2024-03-06","POR",1,0.642,0.165,0.219,0.446,0.593,0.155,0.179,0.296],["2024-03-04","LAL",0,0.473,0.09,0.232,0.16,0.613,0.18,0.324,0.225],["2024-03-03","PHX",1,0.525,0.044,0.222,0.108,0.516,0.175,0.326,0.176],["2024-02-29","SA",0,0.545,0.092,0.171,0.236,0.632,0.099,0.268,0.187],["2024-02-27","HOU",1,0.527,0.114,0.261,0.151,0.437,0.127,0.218,0.126],["2024-02-25","HOU",1,0.562,0.08,0.213,0.144,0.495,0.149,0.255,0.194],["2024-02-23","WSH",1,0.707,0.129,0.229,0.185,0.438,0.11,0.25,0.144],["2024-02-22","LAC",1,0.65,0.11,0.205,0.133,0.516,0.124,0.234,0.118],["2024-02-13","ORL",1,0.625,0.104,0.105,0.262,0.511,0.136,0.341,0.22],["2024-02-11","SAC",1,0.618,0.085,0.143,0.259,0.578,0.158,0.244,0.1],["2024-02-10","DAL",0,0.474,0.085,0.218,0.184,0.665,0.102,0.282,0.275],["2024-02-06","UTAH",0,0.583,0.101,0.214,0.133,0.596,0.148,0.395,0.202],["2024-02-04","TOR",1,0.577,0.081,0.275,0.073,0.545,0.091,0.262,0.168],["2024-02-02","CHA",1,0.7,0.156,0.097,0.28,0.522,0.125,0.146,0.109],["2024-01-31","DEN",1,0.489,0.101,0.3,0.23,0.478,0.074,0.24,0.118],["2024-01-29","MIN",0,0.532,0.119,0.182,0.215,0.566,0.127,0.231,0.157],["2024-01-28","DET",0,0.522,0.093,0.224,0.087,0.553,0.08,0.319,0.158],["2024-01-26","NO",1,0.534,0.105,0.154,0.148,0.445,0.185,0.17,0.122],["2024-01-24","SA",1,0.656,0.127,0.381,0.146,0.552,0.157,0.279,0.221],["2024-01-23","POR",1,0.522,0.106,0.227,0.202,0.535,0.166,0.267,0.198],["2024-01-20","MIN",1,0.444,0.077,0.18,0.37,0.507,0.193,0.243,0.28],["2024-01-18","UTAH",1,0.64,0.132,0.206,0.279,0.556,0.118,0.262,0.337],["2024-01-16","LAC",0,0.602,0.116,0.25,0.205,0.655,0.085,0.316,0.161],["2024-01-15","LAL",0,0.495,0.098,0.265,0.104,0.571,0.156,0.229,0.19],["2024-01-13","ORL",1,0.5,0.072,0.235,0.191,0.506,0.137,0.244,0.179],["2024-01-11","POR",1,0.645,0.105,0.216,0.204,0.332,0.077,0.203,0.099],["2024-01-10","MIA",1,0.674,0.114,0.118,0.14,0.545,0.09,0.174,0.258],["2024-01-08","WSH",1,0.67,0.124,0.278,0.205,0.579,0.121,0.286,0.281],["2024-01-05","BKN",0,0.589,0.121,0.184,0.19,0.527,0.124,0.408,0.308],["2024-01-03","ATL",0,0.648,0.113,0.209,0.22,0.579,0.091,0.349,0.326],["2024-01-02","BOS",1,0.626,0.092,0.25,0.143,0.538,0.118,0.378,0.261],["2023-12-31","BKN",1,0.651,0.124,0.143,0.193,0.44,0.05,0.293,0.2],["2023-12-29","DEN",1,0.571,0.101,0.244,0.165,0.482,0.149,0.109,0.129],["2023-12-27","NY",1,0.622,0.039,0.088,0.189,0.585,0.159,0.273,0.293],["2023-12-26","MIN",1,0.716,0.111,0.103,0.16,0.548,0.194,0.235,0.356],["2023-12-23","LAL",0,0.553,0.08,0.234,0.158,0.611,0.082,0.205,0.211],["2023-12-21","LAC",1,0.678,0.104,0.176,0.184,0.565,0.132,0.273,0.108],["2023-12-18","MEM",1,0.516,0.105,0.208,0.228,0.465,0.189,0.14,0.212],["2023-12-16","DEN",1,0.554,0.093,0.231,0.298,0.516,0.08,0.34,0.226],["2023-12-14","SAC",0,0.485,0.102,0.308,0.235,0.589,0.14,0.282,0.168],["2023-12-11","UTAH",1,0.615,0.104,0.179,0.167,0.543,0.129,0.22,0.217],["2023-12-08","GS",1,0.546,0.073,0.234,0.316,0.562,0.197,0.462,0.183],["2023-12-06","HOU",0,0.471,0.076,0.085,0.218,0.572,0.17,0.278,0.181],["2023-12-02","DAL",1,0.54,0.099,0.333,0.18,0.557,0.128,0.306,0.264],["2023-11-30","LAL",1,0.606,0.063,0.19,0.202,0.512,0.12,0.149,0.333],["2023-11-28","MIN",0,0.472,0.074,0.18,0.2,0.513,0.171,0.27,0.333],["2023-11-25","PHI",0,0.52,0.035,0.289,0.214,0.542,0.105,0.405,0.446],["2023-11-22","CHI",1,0.567,0.116,0.289,0.413,0.483,0.095,0.244,0.193],["2023-11-19","POR",1,0.741,0.163,0.357,0.173,0.453,0.153,0.283,0.165],["2023-11-18","GS",1,0.56,0.084,0.205,0.18,0.546,0.131,0.269,0.175],["2023-11-16","GS",1,0.615,0.11,0.194,0.241,0.48,0.131,0.364,0.153],["2023-11-14","SA",1,0.601,0.133,0.118,0.18,0.435,0.198,0.265,0.065],["2023-11-12","PHX",1,0.549,0.07,0.146,0.256,0.44,0.15,0.372,0.313],["2023-11-10","SAC",0,0.489,0.145,0.122,0.149,0.489,0.145,0.327,0.176],["2023-11-08","CLE",1,0.581,0.124,0.286,0.326,0.56,0.153,0.275,0.325],["2023-11-06","ATL",1,0.553,0.111,0.244,0.234,0.441,0.114,0.397,0.265],["2023-11-03","GS",0,0.693,0.165,0.219,0.289,0.63,0.125,0.342,0.272],["2023-11-01","NO",0,0.472,0.124,0.143,0.261,0.456,0.08,0.338,0.167],["2023-10-30","DET",1,0.608,0.136,0.176,0.277,0.511,0.136,0.255,0.209],["2023-10-29","DEN",0,0.444,0.084,0.156,0.167,0.665,0.122,0.312,0.125],["2023-10-27","CLE",1,0.534,0.159,0.13,0.172,0.478,0.113,0.163,0.185],["2023-10-25","CHI",1,0.665,0.143,0.147,0.183,0.479,0.105,0.255,0.149],["2025-04-13","NO",1,0.464,0.083,0.321,0.245,0.423,0.103,0.229,0.253],["2025-04-11","UTAH",1,0.68,0.086,0.116,0.09,0.461,0.125,0.311,0.155],["2025-04-09","PHX",1,0.593,0.093,0.216,0.267,0.569,0.12,0.2,0.149],["2025-04-08","LAL",1,0.587,0.051,0.312,0.135,0.575,0.158,0.293,0.35],["2025-04-06","LAL",0,0.5,0.068,0.205,0.1,0.679,0.141,0.242,0.143],["2025-04-04","HOU",0,0.556,0.136,0.171,0.135,0.56,0.112,0.35,0.239],["2025-04-02","DET",1,0.49,0.084,0.289,0.26,0.461,0.153,0.25,0.236],["2025-03-31","CHI",1,0.648,0.115,0.214,0.184,0.531,0.153,0.222,0.133],["2025-03-29","IND",1,0.601,0.08,0.186,0.202,0.529,0.101,0.17,0.218],["2025-03-27","MEM",1,0.561,0.105,0.184,0.267,0.519,0.168,0.116,0.278],["2025-03-25","SAC",1,0.64,0.142,0.162,0.195,0.533,0.103,0.098,0.088],["2025-03-23","LAC",1,0.467,0.082,0.213,0.185,0.476,0.129,0.256,0.28],["2025-03-21","CHA",1,0.686,0.065,0.303,0.128,0.581,0.157,0.154,0.163],["2025-03-19","PHI",1,0.656,0.108,0.275,0.167,0.463,0.105,0.214,0.126],["2025-03-16","MIL",1,0.573,0.083,0.242,0.213,0.476,0.084,0.176,0.313],["2025-03-15","DET",1,0.539,0.147,0.233,0.191,0.557,0.154,0.15,0.102],["2025-03-12","BOS",1,0.567,0.11,0.297,0.305,0.543,0.116,0.312,0.106],["2025-03-10","DEN",0,0.565,0.085,0.277,0.14,0.709,0.112,0.273,0.209],["2025-03-09","DEN",1,0.559,0.045,0.227,0.234,0.474,0.062,0.233,0.113],["2025-03-07","POR",1,0.548,0.107,0.093,0.179,0.389,0.142,0.264,0.158],["2025-03-05","MEM",1,0.592,0.103,0.073,0.195,0.456,0.13,0.234,0.22],["2025-03-03","HOU",1,0.582,0.107,0.292,0.247,0.564,0.129,0.3,0.139],["2025-03-02","SA",1,0.639,0.06,0.293,0.168,0.659,0.109,0.154,0.132],["2025-02-28","ATL",1,0.619,0.094,0.2,0.099,0.574,0.162,0.227,0.205],["2025-02-26","BKN",1,0.583,0.097,0.282,0.267,0.532,0.119,0.346,0.237],["2025-02-24","MIN",0,0.495,0.085,0.271,0.217,0.5,0.102,0.229,0.351],["2025-02-23","MIN",1,0.669,0.121,0.194,0.174,0.539,0.114,0.333,0.303],["2025-02-21","UTAH",1,0.572,0.102,0.37,0.196,0.539,0.163,0.292,0.111],["2025-02-13","MIN",0,0.46,0.084,0.261,0.227,0.485,0.069,0.351,0.202],["2025-02-12","MIA",1,0.574,0.118,0.239,0.159,0.525,0.151,0.25,0.228],["2025-02-10","NO",1,0.658,0.089,0.25,0.126,0.5,0.189,0.255,0.232],["2025-02-08","MEM",1,0.514,0.065,0.412,0.162,0.519,0.117,0.227,0.346],["2025-02-07","TOR",1,0.565,0.109,0.282,0.31,0.533,0.108,0.298,0.132],["2025-02-05","PHX",1,0.569,0.042,0.347,0.235,0.571,0.176,0.094,0.414],["2025-02-03","MIL",1,0.596,0.142,0.333,0.071,0.446,0.12,0.18,0.14],["2025-02-01","SAC",1,0.621,0.088,0.417,0.103,0.455,0.059,0.153,0.19],["2025-01-29","GS",0,0.449,0.091,0.327,0.202,0.574,0.138,0.175,0.284],["2025-01-26","POR",1,0.528,0.064,0.311,0.27,0.519,0.138,0.31,0.296],["2025-01-23","DAL",0,0.562,0.109,0.186,0.182,0.622,0.182,0.242,0.392],["2025-01-22","UTAH",1,0.526,0.086,0.31,0.242,0.544,0.212,0.469,0.178],["2025-01-19","BKN",1,0.661,0.106,0.216,0.138,0.494,0.12,0.255,0.172],["2025-01-17","DAL",0,0.495,0.135,0.275,0.088,0.6,0.167,0.158,0.213],["2025-01-16","CLE",1,0.59,0.052,0.174,0.095,0.539,0.175,0.262,0.189],["2025-01-14","PHI",1,0.63,0.16,0.294,0.198,0.518,0.185,0.282,0.179],["2025-01-12","WSH",1,0.542,0.105,0.326,0.347,0.392,0.141,0.163,0.361],["2025-01-10","NY",1,0.618,0.134,0.229,0.18,0.406,0.086,0.296,0.24],["2025-01-08","CLE",0,0.594,0.118,0.243,0.167,0.606,0.128,0.293,0.222],["2025-01-05","BOS",1,0.54,0.139,0.2,0.126,0.418,0.143,0.245,0.247],["2025-01-03","NY",1,0.595,0.122,0.184,0.202,0.528,0.11,0.244,0.133],["2025-01-02","LAC",1,0.581,0.087,0.103,0.186,0.537,0.177,0.244,0.136],["2024-12-31","MIN",1,0.539,0.083,0.214,0.191,0.589,0.214,0.263,0.152],["2024-12-29","MEM",1,0.573,0.085,0.205,0.117,0.454,0.165,0.308,0.186],["2024-12-28","CHA",1,0.534,0.137,0.2,0.136,0.431,0.163,0.167,0.312],["2024-12-26","IND",1,0.532,0.028,0.184,0.2,0.551,0.1,0.234,0.18],["2024-12-23","WSH",1,0.491,0.094,0.333,0.179,0.484,0.16,0.245,0.187],["2024-12-20","MIA",1,0.535,0.13,0.261,0.14,0.506,0.164,0.163,0.157],["2024-12-19","ORL",1,0.542,0.126,0.118,0.181,0.519,0.168,0.263,0.231],["2024-12-17","MIL",0,0.366,0.095,0.14,0.209,0.525,0.16,0.2,0.148],["2024-12-14","HOU",1,0.519,0.113,0.118,0.35,0.422,0.13,0.328,0.156],["2024-12-10","DAL",1,0.554,0.111,0.315,0.059,0.569,0.169,0.167,0.163],["2024-12-07","NO",1,0.6,0.16,0.27,0.2,0.551,0.165,0.186,0.278],["2024-12-05","TOR",1,0.564,0.052,0.25,0.137,0.417,0.168,0.222,0.189],["2024-12-03","UTAH",1,0.603,0.07,0.375,0.098,0.636,0.267,0.367,0.243],["2024-12-01","HOU",0,0.516,0.062,0.234,0.202,0.484,0.084,0.3,0.326],["2024-11-29","LAL",1,0.478,0.083,0.278,0.129,0.527,0.171,0.2,0.219],["2024-11-27","GS",1,0.524,0.127,0.17,0.188,0.439,0.115,0.31,0.153],["2024-11-25","SAC",1,0.64,0.134,0.333,0.233,0.529,0.11,0.214,0.195],["2024-11-20","POR",1,0.489,0.114,0.312,0.22,0.5,0.194,0.34,0.253],["2024-11-19","SA",0,0.49,0.112,0.255,0.06,0.584,0.187,0.19,0.157],["2024-11-17","DAL",0,0.575,0.058,0.167,0.218,0.542,0.138,0.45,0.357],["2024-11-15","PHX",1,0.451,0.092,0.25,0.187,0.353,0.131,0.216,0.4],["2024-11-13","NO",1,0.528,0.05,0.119,0.148,0.448,0.197,0.447,0.128],["2024-11-11","LAC",1,0.615,0.098,0.22,0.242,0.675,0.199,0.429,0.25],["2024-11-10","GS",0,0.505,0.094,0.298,0.223,0.624,0.124,0.325,0.18],["2024-11-08","HOU",1,0.589,0.091,0.171,0.222,0.494,0.144,0.292,0.2],["2024-11-06","DEN",0,0.52,0.113,0.236,0.18,0.562,0.148,0.277,0.27],["2024-11-04","ORL",1,0.529,0.14,0.128,0.141,0.384,0.161,0.159,0.28],["2024-11-02","LAC",1,0.524,0.115,0.07,0.202,0.475,0.181,0.208,0.215],["2024-11-01","POR",1,0.637,0.112,0.359,0.168,0.56,0.164,0.262,0.253],["2024-10-30","SA",1,0.556,0.098,0.114,0.067,0.482,0.195,0.277,0.129],["2024-10-27","ATL",1,0.584,0.088,0.256,0.27,0.451,0.155,0.333,0.242],["2024-10-26","CHI",1,0.458,0.079,0.153,0.15,0.429,0.204,0.196,0.174],["2024-10-24","DEN",1,0.465,0.101,0.245,0.079,0.393,0.126,0.321,0.102],["2026-04-12","PHX",0,0.526,0.092,0.18,0.032,0.653,0.096,0.325,0.03],["2026-04-10","DEN",0,0.495,0.111,0.278,0.091,0.618,0.139,0.244,0.129],["2026-04-08","LAC",1,0.657,0.122,0.188,0.229,0.547,0.119,0.208,0.186],["2026-04-07","LAL",1,0.624,0.112,0.25,0.135,0.5,0.164,0.182,0.192],["2026-04-05","UTAH",1,0.717,0.132,0.216,0.152,0.5,0.131,0.269,0.11],["2026-04-02","LAL",1,0.632,0.085,0.302,0.098,0.475,0.165,0.178,0.266],["2026-03-30","DET",1,0.531,0.152,0.162,0.346,0.505,0.13,0.294,0.124],["2026-03-29","NY",1,0.533,0.124,0.316,0.413,0.53,0.167,0.357,0.159],["2026-03-27","CHI",1,0.535,0.073,0.288,0.228,0.495,0.101,0.189,0.163],["2026-03-25","BOS",0,0.55,0.071,0.1,0.263,0.58,0.122,0.184,0.309],["2026-03-23","PHI",1,0.633,0.137,0.256,0.1,0.527,0.14,0.245,0.043],["2026-03-21","WSH",1,0.597,0.109,0.405,0.226,0.538,0.132,0.191,0.143],["2026-03-18","BKN",1,0.612,0.152,0.231,0.2,0.437,0.199,0.234,0.291],["2026-03-17","ORL",1,0.494,0.089,0.262,0.267,0.489,0.105,0.192,0.183],["2026-03-15","MIN",1,0.49,0.06,0.283,0.168,0.565,0.202,0.216,0.208],["2026-03-12","BOS",1,0.542,0.116,0.256,0.155,0.477,0.111,0.3,0.218],["2026-03-09","DEN",1,0.608,0.029,0.07,0.172,0.536,0.059,0.32,0.214],["2026-03-07","GS",1,0.519,0.137,0.179,0.295,0.489,0.103,0.3,0.125],["2026-03-04","NY",1,0.562,0.152,0.077,0.288,0.477,0.117,0.255,0.182],["2026-03-03","CHI",1,0.485,0.076,0.218,0.202,0.528,0.162,0.204,0.144],["2026-03-01","DAL",1,0.489,0.075,0.149,0.109,0.441,0.156,0.188,0.141],["2026-02-27","DEN",1,0.525,0.098,0.167,0.232,0.505,0.131,0.186,0.165],["2026-02-25","DET",0,0.5,0.11,0.25,0.208,0.59,0.13,0.39,0.213],["2026-02-24","TOR",1,0.558,0.138,0.308,0.105,0.568,0.146,0.159,0.08],["2026-02-22","CLE",1,0.61,0.142,0.289,0.186,0.556,0.149,0.279,0.157],["2026-02-20","BKN",1,0.5,0.161,0.302,0.265,0.411,0.181,0.227,0.266],["2026-02-12","MIL",0,0.464,0.148,0.292,0.193,0.553,0.093,0.312,0.053],["2026-02-11","PHX",1,0.669,0.076,0.222,0.191,0.549,0.093,0.341,0.087],["2026-02-09","LAL",1,0.563,0.131,0.333,0.241,0.56,0.137,0.225,0.19],["2026-02-07","HOU",0,0.537,0.145,0.295,0.22,0.548,0.128,0.256,0.253],["2026-02-04","SA",0,0.5,0.124,0.167,0.14,0.515,0.099,0.327,0.119],["2026-02-03","ORL",1,0.581,0.087,0.333,0.215,0.455,0.138,0.208,0.124],["2026-02-01","DEN",1,0.582,0.118,0.279,0.259,0.595,0.16,0.229,0.215],["2026-01-29","MIN",0,0.541,0.137,0.262,0.209,0.629,0.164,0.375,0.124],["2026-01-27","NO",1,0.477,0.141,0.283,0.241,0.394,0.069,0.344,0.172],["2026-01-25","TOR",0,0.513,0.11,0.114,0.32,0.5,0.101,0.273,0.198],["2026-01-23","IND",0,0.53,0.086,0.098,0.329,0.552,0.087,0.275,0.115],["2026-01-21","MIL",1,0.622,0.076,0.171,0.111,0.593,0.158,0.125,0.074],["2026-01-19","CLE",1,0.683,0.1,0.146,0.144,0.418,0.165,0.373,0.308],["2026-01-17","MIA",0,0.63,0.136,0.143,0.299,0.459,0.031,0.339,0.18],["2026-01-15","HOU",1,0.551,0.103,0.159,0.146,0.37,0.112,0.383,0.135],["2026-01-13","SA",1,0.586,0.106,0.143,0.296,0.476,0.103,0.24,0.2],["2026-01-11","MIA",1,0.559,0.11,0.304,0.215,0.64,0.208,0.135,0.085],["2026-01-09","MEM",1,0.522,0.055,0.213,0.242,0.545,0.147,0.366,0.227],["2026-01-07","UTAH",1,0.47,0.084,0.207,0.337,0.491,0.143,0.328,0.144],["2026-01-05","CHA",0,0.425,0.063,0.245,0.194,0.656,0.193,0.375,0.299],["2026-01-04","PHX",0,0.537,0.091,0.051,0.207,0.551,0.141,0.308,0.266],["2026-01-02","GS",1,0.609,0.115,0.237,0.207,0.428,0.138,0.25,0.189],["2025-12-31","POR",1,0.578,0.121,0.116,0.222,0.471,0.203,0.25,0.149],["2025-12-29","ATL",1,0.602,0.107,0.263,0.224,0.603,0.133,0.204,0.124],["2025-12-28","PHI",1,0.632,0.117,0.265,0.218,0.524,0.2,0.333,0.205],["2025-12-25","SA",0,0.447,0.062,0.291,0.179,0.601,0.114,0.238,0.19],["2025-12-23","SA",0,0.612,0.129,0.273,0.071,0.667,0.087,0.27,0.214],["2025-12-22","MEM",1,0.569,0.115,0.2,0.128,0.518,0.184,0.213,0.205],["2025-12-19","MIN",0,0.429,0.095,0.25,0.304,0.449,0.107,0.316,0.375],["2025-12-18","LAC",1,0.54,0.069,0.184,0.129,0.553,0.246,0.237,0.224],["2025-12-13","SA",0,0.462,0.119,0.275,0.261,0.483,0.154,0.288,0.267],["2025-12-10","PHX",1,0.716,0.13,0.167,0.136,0.452,0.18,0.159,0.155],["2025-12-07","UTAH",1,0.699,0.119,0.205,0.091,0.541,0.158,0.143,0.106],["2025-12-05","DAL",1,0.631,0.059,0.212,0.31,0.57,0.104,0.2,0.151],["2025-12-02","GS",1,0.677,0.144,0.114,0.215,0.547,0.131,0.245,0.084],["2025-11-30","POR",1,0.544,0.103,0.182,0.278,0.483,0.117,0.241,0.326],["2025-11-28","PHX",1,0.569,0.091,0.073,0.276,0.538,0.149,0.277,0.217],["2025-11-26","MIN",1,0.519,0.067,0.135,0.375,0.519,0.127,0.261,0.275],["2025-11-23","POR",1,0.618,0.128,0.293,0.2,0.435,0.136,0.302,0.163],["2025-11-21","UTAH",1,0.753,0.121,0.1,0.229,0.582,0.232,0.343,0.253],["2025-11-19","SAC",1,0.523,0.14,0.214,0.239,0.488,0.158,0.25,0.174],["2025-11-17","NO",1,0.592,0.139,0.361,0.264,0.558,0.178,0.324,0.151],["2025-11-15","CHA",1,0.567,0.13,0.302,0.09,0.469,0.108,0.245,0.062],["2025-11-12","LAL",1,0.568,0.101,0.154,0.239,0.474,0.183,0.2,0.247],["2025-11-11","GS",1,0.602,0.164,0.278,0.313,0.534,0.187,0.167,0.311],["2025-11-09","MEM",1,0.484,0.053,0.188,0.232,0.478,0.124,0.208,0.143],["2025-11-07","SAC",1,0.61,0.098,0.211,0.231,0.495,0.132,0.154,0.109],["2025-11-05","POR",0,0.5,0.118,0.255,0.308,0.517,0.128,0.229,0.341],["2025-11-04","LAC",1,0.628,0.095,0.2,0.209,0.525,0.171,0.238,0.287],["2025-11-02","NO",1,0.679,0.103,0.235,0.274,0.537,0.145,0.261,0.25],["2025-10-30","WSH",1,0.531,0.052,0.275,0.235,0.554,0.194,0.267,0.179],["2025-10-28","SAC",1,0.533,0.135,0.213,0.098,0.482,0.153,0.209,0.224],["2025-10-27","DAL",1,0.5,0.12,0.231,0.122,0.448,0.076,0.115,0.184],["2025-10-25","ATL",1,0.538,0.106,0.326,0.183,0.506,0.145,0.3,0.165],["2025-10-23","IND",1,0.505,0.107,0.17,0.474,0.5,0.102,0.177,0.286],["2025-10-21","HOU",1,0.505,0.087,0.234,0.192,0.5,0.166,0.372,0.278]];</script>
-<script>
-// Reveal on scroll, once
-(function(){
-  var els=document.querySelectorAll('[data-reveal],[data-pic]');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-in')});return;}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});
-  },{rootMargin:'0px 0px -10% 0px',threshold:0.08});
-  els.forEach(function(e){io.observe(e)});
-})();
-
-// OKC game explorer
-(function(){
-  var G=window.OKC_GAMES; if(!G) return;
-  var F=[
-    {k:3,id:'efg',name:'OKC shooting (eFG%)',coef:7.8},
-    {k:7,id:'opp_efg',name:'Opponent shooting',coef:-7.3},
-    {k:8,id:'opp_tov',name:'Turnovers OKC forces',coef:4.5},
-    {k:4,id:'tov',name:'OKC turnovers',coef:-3.4},
-    {k:10,id:'opp_ft',name:'Opponent free throws',coef:-3.1},
-    {k:9,id:'opp_orb',name:'Opponent off. rebounding',coef:-2.4},
-    {k:5,id:'orb',name:'OKC off. rebounding',coef:2.4},
-    {k:6,id:'ft',name:'OKC free throws',coef:1.9}
-  ];
-  var picker=document.getElementById('picker'),chart=document.getElementById('chart'),readout=document.getElementById('readout'),note=document.getElementById('note');
-  var WIN='#3A5DA6',LOSS='#C25B80',NS='http://www.w3.org/2000/svg';
-  var pct=new Intl.NumberFormat('en-US',{style:'percent',minimumFractionDigits:1,maximumFractionDigits:1});
-  var dfmt=new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
-  var params=new URLSearchParams(location.search);
-  var current=F.find(function(f){return f.id===params.get('factor')})||F[0];
-
-  F.forEach(function(f){
-    var l=document.createElement('label');
-    var i=document.createElement('input'); i.type='radio'; i.name='factor'; i.value=f.id; i.checked=f===current;
-    i.addEventListener('change',function(){current=f;draw();var u=new URL(location.href);u.searchParams.set('factor',f.id);history.replaceState(null,'',u);});
-    l.appendChild(i); l.appendChild(document.createTextNode(f.name)); picker.appendChild(l);
-  });
-
-  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
-  function mean(a){return a.reduce(function(s,x){return s+x},0)/a.length;}
-
-  function draw(){
-    var f=current, vals=G.map(function(g){return g[f.k]});
-    var lo=Math.min.apply(null,vals), hi=Math.max.apply(null,vals), pad=(hi-lo)*0.04; lo-=pad; hi+=pad;
-    var W=1000,H=360,L=70,R=20,rowY={1:110,0:250},band=78;
-    var x=function(v){return L+(v-lo)/(hi-lo)*(W-L-R)};
-    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':f.name+' in each of 329 games'});
-    // rows
-    [[1,'Wins'],[0,'Losses']].forEach(function(r){
-      var t=el('text',{x:0,y:rowY[r[0]]+5,'font-weight':'700'}); t.textContent=r[1]; svg.appendChild(t);
-    });
-    // axis ticks
-    var step=(hi-lo)/5;
-    for(var i=0;i<=5;i++){var v=lo+step*i;var tx=el('text',{x:x(v),y:H-6,'text-anchor':'middle'});tx.textContent=pct.format(v);svg.appendChild(tx);}
-    // beeswarm-ish: bin by x, stack within band
-    var bins={},r=5.2;
-    var gs=G.map(function(g,idx){return {g:g,idx:idx}}).sort(function(a,b){return a.g[f.k]-b.g[f.k]});
-    gs.forEach(function(o){
-      var g=o.g, w=g[2], cx=x(g[f.k]), key=w+':'+Math.round(cx/(r*2.1));
-      var n=bins[key]=(bins[key]||0)+1;
-      var off=(n%2?1:-1)*Math.floor(n/2)*r*2.05; if(Math.abs(off)>band/2) off=(off>0?1:-1)*(band/2)*Math.random();
-      var c=el('circle',{cx:cx.toFixed(1),cy:(rowY[w]+off).toFixed(1),r:r,fill:w?WIN:LOSS,class:'dot',tabindex:'-1'});
-      c.dataset.i=o.idx; svg.appendChild(c);
-    });
-    // means
-    [1,0].forEach(function(w){
-      var m=mean(G.filter(function(g){return g[2]===w}).map(function(g){return g[f.k]}));
-      svg.appendChild(el('rect',{x:x(m)-2,y:rowY[w]-band/2-8,width:4,height:band+16,fill:'#121218'}));
-      var t=el('text',{x:x(m),y:rowY[w]-band/2-14,'text-anchor':'middle','font-weight':'700'}); t.textContent='avg '+pct.format(m); svg.appendChild(t);
-    });
-    chart.replaceChildren(svg);
-    var wm=mean(G.filter(function(g){return g[2]===1}).map(function(g){return g[f.k]}));
-    var lm=mean(G.filter(function(g){return g[2]===0}).map(function(g){return g[f.k]}));
-    readout.innerHTML='<div><b class="num" style="color:#3A5DA6">'+pct.format(wm)+'</b><span>average in 229 wins</span></div>'+
-      '<div><b class="num" style="color:#A8456A">'+pct.format(lm)+'</b><span>average in 100 losses</span></div>'+
-      '<div><b class="num">'+(f.coef>0?'+':'−')+Math.abs(f.coef).toFixed(1)+'</b><span>model effect on win odds</span></div>';
-    note.textContent='Hover or tap a dot to see the game.';
-  }
-  function show(e){
-    var t=e.target; if(!t.classList||!t.classList.contains('dot')) return;
-    var g=G[+t.dataset.i];
-    chart.querySelectorAll('.dot').forEach(function(d){d.style.opacity=d===t?1:0.35});
-    note.textContent=dfmt.format(new Date(g[0]))+' vs. '+g[1]+': OKC '+(g[2]?'won':'lost')+', '+current.name+' '+pct.format(g[current.k])+'.';
-  }
-  function clear(){chart.querySelectorAll('.dot').forEach(function(d){d.style.opacity=''});}
-  chart.addEventListener('pointerover',show);
-  chart.addEventListener('click',show);
-  chart.addEventListener('pointerleave',clear);
-  draw();
-})();
-</script>
+<script src="js/reveal.js" defer></script>
+<script src="data/okc-games.js" defer></script>
+<script src="js/explorer.js" defer></script>
 </body>
 </html>
