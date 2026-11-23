@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heaven Brhanu | Project Case Studies</title>
 <meta name="description" content="Data project case studies by Heaven Brhanu: county 311 analysis in SQL and Power BI, AI review analysis, purchase prediction, sales forecasting, and NBA analytics, with the data, method, results, and what went wrong.">
-<meta name="theme-color" content="#D4E3FA">
+<meta name="theme-color" content="#16181B">
 <meta property="og:title" content="Heaven Brhanu | Project Case Studies">
 <meta property="og:description" content="Data projects with real results, and an interactive look at 329 OKC Thunder games.">
 <meta property="og:image" content="https://heavenb20.github.io/images/og-card.png">
@@ -16,14 +16,14 @@
 <meta property="og:url" content="https://heavenb20.github.io/projects.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://heavenb20.github.io/projects.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23D4E3FA'/%3E%3Crect x='12' y='34' width='9' height='18' fill='%23F8EAB9'/%3E%3Crect x='27' y='22' width='9' height='30' fill='%23F6DCE5'/%3E%3Crect x='42' y='12' width='9' height='40' fill='%231D1C24'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%2316181B'/%3E%3Crect x='13' y='34' width='8' height='17' fill='%235A6168'/%3E%3Crect x='28' y='24' width='8' height='27' fill='%235A6168'/%3E%3Crect x='43' y='13' width='8' height='38' fill='%23B9D15A'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/chivo-var.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="css/site.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<nav class="nav nav-static" aria-label="Main">
+<nav class="nav" aria-label="Main">
   <a class="mark" href="portfolio.html">Heaven Brhanu</a>
   <ul>
     <li class="wide"><a href="portfolio.html#about">About</a></li>
@@ -39,33 +39,33 @@
     <h1>Five projects in depth</h1>
     <p class="lede">Every project here starts with a real question and real data. For each one, I walk through what I built, what I found, and what went wrong along the way. Honestly, the things that went wrong taught me the most.</p>
     <nav class="jump" aria-label="Jump to a project">
-      <a href="#mc311"><span class="j-num">531,108</span><span class="j-name">Montgomery County 311 On-Time Analysis</span><span class="j-tool">MySQL · Power BI · DAX</span></a>
-      <a href="#ai-review-insights"><span class="j-num">22,600+</span><span class="j-name">AI Review Insights Tool</span><span class="j-tool">Python · pandas · generative AI</span></a>
-      <a href="#purchase-intent"><span class="j-num">0.93</span><span class="j-name">Purchase Intent Classification</span><span class="j-tool">Python · scikit-learn</span></a>
-      <a href="#sales-forecast"><span class="j-num">4.8%</span><span class="j-name">Retail Sales &amp; Staffing Forecast</span><span class="j-tool">Python · scikit-learn</span></a>
-      <a href="#okc-four-factors"><span class="j-num">329</span><span class="j-name">OKC Thunder Four Factors</span><span class="j-tool">R · tidyverse · hoopR</span></a>
+      <a href="#mc311"><span class="j-num">531,108</span><span class="j-name">Montgomery County 311 On-Time Analysis</span><span class="j-tool">MySQL, Power BI, DAX</span></a>
+      <a href="#ai-review-insights"><span class="j-num">22,600+</span><span class="j-name">AI Review Insights Tool</span><span class="j-tool">Python, pandas, generative AI</span></a>
+      <a href="#purchase-intent"><span class="j-num">0.93</span><span class="j-name">Purchase Intent Classification</span><span class="j-tool">Python, scikit-learn</span></a>
+      <a href="#sales-forecast"><span class="j-num">4.8%</span><span class="j-name">Retail Sales &amp; Staffing Forecast</span><span class="j-tool">Python, scikit-learn</span></a>
+      <a href="#okc-four-factors"><span class="j-num">329</span><span class="j-name">OKC Thunder Four Factors</span><span class="j-tool">R, tidyverse, hoopR</span></a>
     </nav>
   </section>
   <article class="case" id="mc311">
     <header class="case-head f-pink"><div class="wrap">
       <h2>Montgomery County 311 On-Time Analysis</h2>
-      <p class="tools">MySQL 8.0 · MySQL Workbench · Power BI · DAX · Python (matplotlib)</p>
+      <p class="tools">MySQL 8.0, MySQL Workbench, Power BI, DAX, Python (matplotlib)</p>
       <p class="lede">Every 311 request comes with a promise: a deadline to resolve it. How often does Montgomery County keep that promise, and where does it fall behind?</p>
       <div class="case-links"><a class="button" href="https://github.com/Heavenb20/m311-service-requests-sql">View code on GitHub</a><a class="button" href="https://heavenb20.github.io/mc311-dashboard/">Open the web dashboard</a></div>
     </div></header>
     <div class="wrap case-body">
 
-    <div class="case-stats" data-reveal>
+    <div class="case-stats">
       <div><b>531,108</b><span>service requests from 2025</span></div>
       <div><b>97.7%</b><span>closed on time county-wide</span></div>
       <div><b>52%</b><span>of late requests came from DOT</span></div>
     </div>
 
-    <div class="row" data-reveal><div class="row-label">The question</div><div class="row-body">
+    <div class="row"><div class="row-label">The question</div><div class="row-body">
       <p>MC311 is how Montgomery County, Maryland residents report things like missed trash pickup, potholes, fallen trees, and bus problems. Each request gets a deadline in business days. I wanted to know how often departments meet that deadline, which ones miss it, and when and where they fall behind.</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I did</div><div class="row-body">
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
       <ol>
         <li><b>Loaded the data:</b> all 531,108 requests from 2025 into MySQL with <code>LOAD DATA</code>.</li>
         <li><b>Checked it first:</b> no duplicate IDs, open requests matched &ldquo;In Progress&rdquo; exactly, and the county&rsquo;s on-time flag matched &ldquo;days open is at most the deadline&rdquo; for every closed request.</li>
@@ -75,7 +75,7 @@
       </ol>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I found</div><div class="row-body">
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
       <ul>
         <li><b>One department drives most of the misses.</b> Of 12,309 late requests, the Department of Transportation (DOT) had 6,449. DOT was on time 89.8% of the time, 8.2 points below the average department.</li>
         <li><b>Tree requests are DOT&rsquo;s biggest gap.</b> Tree Maintenance was on time only 77.2% of the time, and &ldquo;Inspect, Remove or Prune County Tree&rdquo; only 66%.</li>
@@ -84,14 +84,14 @@
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">The hard part</div><div class="row-body">
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
       <ul>
         <li><b>Half the requests had no location.</b> 53% had no zip code or council district. Before comparing districts, I tested whether those rows were different, and they were: 99.0% on time vs. 96.1%, because most were questions or referrals, not work at an address. So I compared districts using only requests with a location.</li>
         <li><b>Same city, different spellings.</b> &ldquo;SILVER SPRING&rdquo; and &ldquo;Silver Spring&rdquo; counted as two cities until I standardized them.</li>
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I&rsquo;d recommend</div><div class="row-body">
+    <div class="row"><div class="row-label">What I&rsquo;d recommend</div><div class="row-body">
       <ul>
         <li>Add tree inspection and removal capacity from April through July, before the backlog builds.</li>
         <li>Revisit tree request deadlines. Missing a third of one request type&rsquo;s deadlines suggests the staffing or the promise should change.</li>
@@ -99,7 +99,7 @@
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">If I kept going</div><div class="row-body">
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
       <ul>
         <li>Add more years to confirm the seasonal pattern.</li>
         <li>Connect Power BI straight to the database so the dashboard refreshes with new requests.</li>
@@ -107,9 +107,9 @@
     </div></div>
 
     <div class="figs">
-      <figure data-pic><img src="images/charts/mc311-powerbi.webp" alt="Power BI dashboard: 527,016 closed requests, 12,309 late, 97.66% on time, with charts of late requests by department, on-time rate by month, and DOT late requests by area and council district." loading="lazy" width="1484" height="812"><figcaption><b>The Power BI dashboard.</b> Filter by department or month, or click any bar to filter the whole page.</figcaption></figure>
-      <figure data-pic><img src="images/charts/mc311-by-month.webp" alt="Line chart of on-time rate by month in 2025: DOT drops from 93.3% in January to 85.1% in June while the county overall stays near 97 to 98%." loading="lazy" width="1440" height="800"><figcaption><b>The summer dip.</b> DOT falls behind every spring and summer, then recovers in the fall.</figcaption></figure>
-      <figure data-pic><img src="images/charts/mc311-dot-area.webp" alt="Bar chart of DOT on-time rate by service area: Tree Maintenance is lowest at 77.2%." loading="lazy" width="1440" height="800"><figcaption><b>Where DOT misses.</b> Tree Maintenance has the lowest on-time rate of any DOT area.</figcaption></figure>
+      <figure class="plate wide"><img src="images/charts/mc311-powerbi.webp" alt="Power BI dashboard: 527,016 closed requests, 12,309 late, 97.66% on time, with charts of late requests by department, on-time rate by month, and DOT late requests by area and council district." loading="lazy" width="1484" height="812"><figcaption><b>The Power BI dashboard.</b> Filter by department or month, or click any bar to filter the whole page.</figcaption></figure>
+      <figure class="chart" data-chart="mc311_month" data-type="line" data-min="84" data-max="100" data-unit="%" data-note="DOT low: 85.1%" data-note-at="5" data-aspect="0.62" aria-label="Line chart of on-time rate by month in 2025: Transportation drops from 93.3% in January to 85.1% in June while the county overall stays near 97 to 98%."><div class="plot"></div><figcaption><b>The summer dip.</b> Transportation falls behind every spring and summer, then recovers in the fall. Hover for each month.</figcaption></figure>
+      <figure class="chart" data-chart="mc311_area" data-type="bar" data-unit="%" data-max="100" data-highlight="0" data-dec="1" data-vname="On time" aria-label="Bar chart of Transportation on-time rate by service area: Tree Maintenance 77.2%, Traffic 87.0%, Highway Services 89.7%, Transit 94.9%, Parking 99.5%."><div class="plot"></div><figcaption><b>Where Transportation misses.</b> Tree Maintenance has the lowest on-time rate of any area.</figcaption></figure>
     </div>
     <a class="link back-top" href="#top">Back to all projects</a>
     </div>
@@ -117,27 +117,27 @@
   <article class="case" id="ai-review-insights">
     <header class="case-head f-blue"><div class="wrap">
       <h2>AI Review Insights Tool</h2>
-      <p class="tools">Python · pandas · regex · generative AI · matplotlib</p>
+      <p class="tools">Python, pandas, regex, generative AI, matplotlib</p>
       <p class="lede">Turning thousands of customer reviews into short insight reports with AI, and checking the AI's work with code.</p>
       <div class="case-links"><a class="button" href="https://github.com/Heavenb20/ai-review-insights">View code on GitHub</a></div>
     </div></header>
     <div class="wrap case-body">
 
-    <div class="case-stats" data-reveal>
+    <div class="case-stats">
       <div><b>22,628</b><span>reviews analyzed</span></div>
       <div><b>5</b><span>themes tagged in every review</span></div>
       <div><b>6</b><span>departments, each with its own AI report</span></div>
     </div>
 
-    <div class="row" data-reveal><div class="row-label">The problem</div><div class="row-body">
+    <div class="row"><div class="row-label">The problem</div><div class="row-body">
       <p>Apparel brands get thousands of reviews. Reading them by hand to find what's going wrong, and what customers love, takes days. I wanted to automate that: let code measure the patterns, and let an AI model read the reviews and explain them in plain language for each product department.</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">The data</div><div class="row-body">
+    <div class="row"><div class="row-label">The data</div><div class="row-body">
       <p>The <b>Women's E-Commerce Clothing Reviews</b> dataset from Kaggle: 23,486 anonymized reviews with text, star ratings, and product departments. After removing reviews with no text, 22,628 remained. About 10.5% are negative (1 to 2 stars).</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I did</div><div class="row-body">
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
       <ol>
         <li><b>Explored and cleaned</b> the reviews with pandas.</li>
         <li><b>Tagged five themes</b> with keyword matching: fit &amp; sizing, fabric &amp; quality, comfort, color &amp; style, and price &amp; value.</li>
@@ -147,7 +147,7 @@
       </ol>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I found</div><div class="row-body">
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
       <ul>
         <li><b>The clothes run large, not small.</b> In most departments, negative reviews are about twice as likely to say "too large" (Tops: 26% vs. 9%, Jackets: 27% vs. 15%, Dresses: 23% vs. 13%).</li>
         <li><b>Fabric quality is the clearest complaint signal.</b> It appears in 59% of negative reviews vs. 40% of positive ones, the biggest gap of any theme.</li>
@@ -156,7 +156,7 @@
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">Checking the AI</div><div class="row-body">
+    <div class="row"><div class="row-label">Checking the AI</div><div class="row-body">
       <p>I treated the AI's output as a draft to verify, not a final answer. Comparing its claims to the fit check showed where it went wrong:</p>
       <div class="table-wrap"><table class="data">
         <thead><tr><th>Department</th><th>AI said</th><th>Data shows</th><th>Verdict</th></tr></thead>
@@ -169,7 +169,7 @@
       </table></div>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">The hard part</div><div class="row-body">
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
       <ul>
         <li><b>The first version was generic.</b> Every department got nearly the same complaints, and the AI said items "run large or small" without saying which. When I gave it statistics, it often repeated them back. I rewrote the prompt to ask for department-specific details, and the summaries got much sharper: loose buttons on jackets, a chemical smell on Trend items, holes and snags on bottoms.</li>
         <li><b>The AI was unreliable with numbers and direction.</b> That's what the fit check caught. The design I landed on: <b>code handles the measurements, AI handles the qualitative details, and a person reviews both</b> before anything reaches a decision-maker.</li>
@@ -177,7 +177,7 @@
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">If I kept going</div><div class="row-body">
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
       <ul>
         <li>Try a larger AI model and score its accuracy against the fit check.</li>
         <li>Have code write every numeric claim, and let the AI write only the qualitative details.</li>
@@ -186,8 +186,8 @@
     </div></div>
 
     <div class="figs">
-      <figure data-pic><img src="images/charts/review-fit-check.webp" alt="Bar chart of negative reviews saying items run small versus large, by department. Five of six departments run large." loading="lazy" width="1800" height="1040"><figcaption><b>The fit check.</b> Most departments get far more "runs large" complaints than "runs small." This is the chart the AI got wrong.</figcaption></figure>
-      <figure data-pic><img src="images/charts/review-themes.webp" alt="Bar chart of how often each theme appears in negative versus positive reviews." loading="lazy" width="1800" height="1040"><figcaption><b>Themes by sentiment.</b> Fabric and quality lean negative; comfort leans strongly positive.</figcaption></figure>
+      <figure class="chart" data-chart="review_fit" data-type="pair" data-unit="%" data-keys='[{"k":"large","name":"Says it runs large"},{"k":"small","name":"Says it runs small"}]' aria-label="Paired bar chart of negative reviews saying items run large versus small, by department. Five of six departments run large."><div class="plot"></div><figcaption><b>The fit check.</b> Most departments get far more &ldquo;runs large&rdquo; complaints than &ldquo;runs small.&rdquo; This is the chart the AI got wrong.</figcaption></figure>
+      <figure class="chart" data-chart="review_themes" data-type="pair" data-unit="%" data-keys='[{"k":"neg","name":"Negative reviews"},{"k":"pos","name":"Positive reviews"}]' aria-label="Paired bar chart of how often each theme appears in negative versus positive reviews: fabric and quality 59% vs 40%, comfort 11% vs 35%."><div class="plot"></div><figcaption><b>Themes by sentiment.</b> Share of reviews mentioning each theme. Fabric and quality lean negative; comfort leans strongly positive.</figcaption></figure>
     </div>
     <a class="link back-top" href="#top">Back to all projects</a>
     </div>
@@ -195,28 +195,28 @@
   <article class="case" id="purchase-intent">
     <header class="case-head f-butter"><div class="wrap">
       <h2>Purchase Intent Classification</h2>
-      <p class="tools">Python · pandas · scikit-learn · matplotlib · seaborn</p>
+      <p class="tools">Python, pandas, scikit-learn, matplotlib, seaborn</p>
       <p class="lede">Can you tell whether a shopper will buy, just from how they browse, before they check out or leave?</p>
       <div class="case-links"><a class="button" href="https://github.com/Heavenb20/purchase-intent-classification">View code on GitHub</a></div>
     </div></header>
     <div class="wrap case-body">
 
-    <div class="case-stats" data-reveal>
+    <div class="case-stats">
       <div><b>0.93</b><span>ROC-AUC, Random Forest</span></div>
       <div><b>77%</b><span>of real buyers caught (recall)</span></div>
       <div><b>12,330</b><span>real browsing sessions</span></div>
     </div>
 
-    <div class="row" data-reveal><div class="row-label">The problem</div><div class="row-body">
+    <div class="row"><div class="row-label">The problem</div><div class="row-body">
       <p>If a site could spot likely buyers while they're still browsing, it could decide who sees a discount pop-up or a live-chat offer, putting effort where it changes the outcome. This is a <b>classification</b> problem: predict "purchase" or "no purchase" for each session.</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">The data</div><div class="row-body">
+    <div class="row"><div class="row-label">The data</div><div class="row-body">
       <p>The <b>Online Shoppers Purchasing Intention</b> dataset from the UCI Machine Learning Repository: 12,330 real sessions from an e-commerce site over one year. Each session records pages viewed and time spent by page type, Google Analytics bounce and exit rates, Page Values, month, weekend, and new vs. returning visitor. The target is whether the session ended in a purchase.</p>
       <p>Only <b>15.5%</b> of sessions ended in a purchase. That imbalance shaped every decision after this.</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I did</div><div class="row-body">
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
       <ol>
         <li><b>Cleaned the data:</b> removed 125 exact duplicate rows. There were no missing values.</li>
         <li><b>Explored</b> what separates buyers from non-buyers: Page Values, bounce and exit rates, time on product pages, and purchase rate by month and visitor type.</li>
@@ -227,7 +227,7 @@
       </ol>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">Results</div><div class="row-body">
+    <div class="row"><div class="row-label">Results</div><div class="row-body">
       <div class="table-wrap"><table class="data">
         <thead><tr><th>Model</th><th class="n">Accuracy</th><th class="n">Precision</th><th class="n">Recall</th><th class="n">F1</th><th class="n">ROC-AUC</th></tr></thead>
         <tbody>
@@ -238,7 +238,7 @@
       <p class="after-table">On the test set, the Random Forest caught <b>293 of 382 real buyers</b>. It won on every metric except recall, where Logistic Regression was slightly higher but raised far more false alarms.</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I found</div><div class="row-body">
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
       <ul>
         <li><b>Page Values was the strongest predictor by far</b> (0.49 correlation with purchasing, and the top feature in the model).</li>
         <li><b>New visitors converted more often than returning ones</b>, 25% vs. 14%. I expected the opposite.</li>
@@ -247,14 +247,14 @@
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">The hard part</div><div class="row-body">
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
       <ul>
         <li><b>Accuracy was misleading.</b> A model that always guesses "no purchase" scores 84.4% accuracy and is useless. I judged the models on how well they found the minority class instead.</li>
         <li><b>Choosing between precision and recall.</b> For a discount pop-up, missing a real buyer usually costs more than a wasted pop-up, so recall matters a lot. Random Forest gave up a little recall (77% vs. 79%) in exchange for far fewer false alarms (191 vs. 281), which made it the better trade-off.</li>
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">If I kept going</div><div class="row-body">
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
       <ul>
         <li><b>Check Page Values for leakage.</b> It's calculated from pages that lead to purchases, so it may make the model look stronger than it would be in real time. I'd retrain without it and compare.</li>
         <li>Properly encode browser, operating system, region, and traffic type, which I left as numeric IDs.</li>
@@ -263,8 +263,8 @@
     </div></div>
 
     <div class="figs">
-      <figure data-pic><img src="images/charts/purchase-roc.webp" alt="ROC curve for the Random Forest model on held-out sessions, AUC 0.93, far above the random-guess diagonal." loading="lazy" width="1400" height="1240"><figcaption><b>ROC curve.</b> Random Forest on held-out sessions (AUC 0.93), far above random guessing. Logistic regression scored 0.91.</figcaption></figure>
-      <figure data-pic><img src="images/charts/purchase-features.webp" alt="Bar chart: purchase rate rises from 4% of sessions with zero Page Values to 78% of sessions with Page Values above 50." loading="lazy" width="1600" height="1120"><figcaption><b>Page Values and buying.</b> Sessions with no Page Values almost never ended in a purchase. Above 50, most did. On the test set, Random Forest caught 293 buyers with 191 false alarms; logistic regression caught 300 but with 281 false alarms.</figcaption></figure>
+      <figure class="chart" data-chart="purchase_roc" data-type="roc" aria-label="ROC curve for the Random Forest model on 2,441 held-out sessions, AUC 0.93, far above the random-guess diagonal."><div class="plot"></div><figcaption><b>ROC curve.</b> Random Forest on held-out sessions (AUC 0.93). Logistic regression scored 0.91. Move along the curve to see each cutoff.</figcaption></figure>
+      <figure class="chart" data-chart="purchase_models" data-type="pair" data-keys='[{"k":"caught","name":"Buyers caught"},{"k":"false","name":"False alarms"}]' data-vname="Sessions" aria-label="Paired bar chart of test results: Random Forest caught 293 buyers with 191 false alarms; logistic regression caught 300 with 281 false alarms."><div class="plot"></div><figcaption><b>Two models, same test set.</b> Logistic regression caught 7 more buyers but raised 90 more false alarms, so Random Forest wins. Page Values was the strongest signal: sessions with none almost never bought.</figcaption></figure>
     </div>
     <a class="link back-top" href="#top">Back to all projects</a>
     </div>
@@ -272,27 +272,27 @@
   <article class="case" id="sales-forecast">
     <header class="case-head f-pink"><div class="wrap">
       <h2>Retail Sales &amp; Staffing Forecast</h2>
-      <p class="tools">Python · pandas · scikit-learn · matplotlib · seaborn</p>
+      <p class="tools">Python, pandas, scikit-learn, matplotlib, seaborn</p>
       <p class="lede">Predicting busy weeks ahead of time, so staffing can be planned instead of scrambled.</p>
       <div class="case-links"><a class="button" href="https://github.com/Heavenb20/retail-sales-staffing-forecast">View code on GitHub</a></div>
     </div></header>
     <div class="wrap case-body">
 
-    <div class="case-stats" data-reveal>
+    <div class="case-stats">
       <div><b>4.8%</b><span>average forecast error (MAPE)</span></div>
       <div><b>421,570</b><span>weekly sales records</span></div>
       <div><b>45</b><span>stores forecast, each with its own staffing tiers</span></div>
     </div>
 
-    <div class="row" data-reveal><div class="row-label">Why I built it</div><div class="row-body">
+    <div class="row"><div class="row-label">Why I built it</div><div class="row-body">
       <p>As a Starbucks shift leader, I noticed that staffing is mostly reactive. You make a guess from past experience, then scramble if it's busier or slower than expected. I wanted to test whether busy weeks can be predicted instead, using a real retail dataset.</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">The data</div><div class="row-body">
+    <div class="row"><div class="row-label">The data</div><div class="row-body">
       <p>The <b>Walmart Store Sales Forecasting</b> dataset from Kaggle: 421,570 weekly sales records across 45 stores and 81 departments, February 2010 to October 2012. It comes in three files: sales, store size and type, and weekly outside factors like temperature, fuel price, CPI, and unemployment.</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I did</div><div class="row-body">
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
       <ol>
         <li><b>Merged</b> the three files into one table.</li>
         <li><b>Handled missing promotion data.</b> Markdown columns were empty before November 2011 because Walmart hadn't run those promotions yet, so blanks meant "no promotion." I filled them with 0 instead of dropping rows.</li>
@@ -304,7 +304,7 @@
       </ol>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">Results</div><div class="row-body">
+    <div class="row"><div class="row-label">Results</div><div class="row-body">
       <div class="table-wrap"><table class="data">
         <thead><tr><th>Model</th><th class="n">MAE</th><th class="n">R²</th><th class="n">MAPE</th></tr></thead>
         <tbody>
@@ -324,7 +324,7 @@
       </table></div>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I found</div><div class="row-body">
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
       <ul>
         <li><b>December is the biggest month by far</b>; January and February are the lowest.</li>
         <li><b>Holiday weeks run about 8% higher</b> in sales.</li>
@@ -333,7 +333,7 @@
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">The hard part</div><div class="row-body">
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
       <ul>
         <li><b>Keeping the model from cheating.</b> A random split would let the model learn from weeks after the ones it's tested on. Splitting by time, and building lag features only from past weeks, makes this a real forecast.</li>
         <li><b>An R² of 0.98 looks too good.</b> Weekly store sales are very stable, so last week already explains most of this week. That's why I report the 4.8% error on unseen future weeks as the number that matters.</li>
@@ -341,7 +341,7 @@
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">If I kept going</div><div class="row-body">
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
       <ul>
         <li>Add real labor-hour data to translate predicted sales into how many people to schedule.</li>
         <li>Retrain regularly as new weeks come in; I tested on about seven months of future weeks.</li>
@@ -350,8 +350,8 @@
     </div></div>
 
     <div class="figs">
-      <figure data-pic><img src="images/charts/sales-pred-actual.webp" alt="Scatter plot of predicted versus actual store-week sales for the test weeks, tightly clustered along the diagonal." loading="lazy" width="1400" height="1240"><figcaption><b>Predicted vs. actual sales</b> for unseen test weeks. Points close to the dashed line mean accurate forecasts.</figcaption></figure>
-      <figure data-pic><img src="images/charts/sales-tiers.webp" alt="Bar chart of recommended staffing tiers across store-weeks in the test period." loading="lazy" width="1600" height="1040"><figcaption><b>Staffing tiers.</b> Most weeks need standard or slightly higher staffing; a few need a big boost or a cutback.</figcaption></figure>
+      <figure class="chart wide" data-chart="sales_scatter" data-type="scatter" aria-label="Scatter plot of predicted versus actual weekly sales for 1,260 unseen store-weeks, tightly clustered along the diagonal."><div class="plot"></div><figcaption><b>Predicted vs. actual sales</b> for 1,260 unseen store-weeks. Dots on the dashed line are perfect forecasts. Hover a dot for the store and week.</figcaption></figure>
+      <figure class="chart" data-chart="sales_tiers" data-type="bar" data-highlight="-1" data-vname="Store-weeks" aria-label="Bar chart of recommended staffing tiers: 43 low, 712 standard, 477 medium, and 28 high store-weeks."><div class="plot"></div><figcaption><b>Staffing tiers.</b> Most weeks need standard or slightly higher staffing; a few need a big boost or a cutback.</figcaption></figure>
     </div>
     <a class="link back-top" href="#top">Back to all projects</a>
     </div>
@@ -359,23 +359,23 @@
   <article class="case" id="okc-four-factors">
     <header class="case-head f-blue"><div class="wrap">
       <h2>OKC Thunder Four Factors</h2>
-      <p class="tools">R · tidyverse (dplyr, tidyr, ggplot2) · hoopR · broom</p>
+      <p class="tools">R, tidyverse (dplyr, tidyr, ggplot2), hoopR, broom</p>
       <p class="lede">A Four Factors analysis of every Thunder regular-season game from 2022–23 through 2025–26.</p>
       <div class="case-links"><a class="button" href="https://github.com/Heavenb20/okc-four-factors">View code on GitHub</a></div>
     </div></header>
     <div class="wrap case-body">
 
-    <div class="case-stats" data-reveal>
+    <div class="case-stats">
       <div><b>329</b><span>games modeled</span></div>
       <div><b>8</b><span>factors, OKC and opponents</span></div>
       <div><b>10,582</b><span>team box scores pulled</span></div>
     </div>
 
-    <div class="row" data-reveal><div class="row-label">The question</div><div class="row-body">
+    <div class="row"><div class="row-label">The question</div><div class="row-body">
       <p>Basketball analyst Dean Oliver showed that winning mostly comes down to four things: <b>shooting</b>, <b>turnovers</b>, <b>offensive rebounding</b>, and <b>free throws</b>. I wanted to know which of these matters most for the Thunder, on both offense and defense.</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I did</div><div class="row-body">
+    <div class="row"><div class="row-label">What I did</div><div class="row-body">
       <ol>
         <li><b>Pulled the data:</b> NBA team box scores for 2022–23 to 2025–26 with the hoopR package (10,582 team-game rows).</li>
         <li><b>Reshaped it:</b> kept regular-season games and joined each team's box score to its opponent's, so both sides of every game are in one row.</li>
@@ -385,7 +385,7 @@
       </ol>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">Results</div><div class="row-body">
+    <div class="row"><div class="row-label">Results</div><div class="row-body">
       <div class="table-wrap"><table class="data">
         <thead><tr><th>Factor</th><th class="n">Coefficient (log-odds per 1 SD)</th></tr></thead>
         <tbody>
@@ -402,7 +402,7 @@
       <p class="after-table">All eight effects are statistically significant (p &lt; 0.001).</p>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">What I found</div><div class="row-body">
+    <div class="row"><div class="row-label">What I found</div><div class="row-body">
       <ul>
         <li><b>Shooting on both ends matters most, and defense matters almost as much as offense.</b> OKC's eFG% is 57.7% in wins vs. 51.2% in losses. Opponents shoot 51.0% in OKC wins vs. 57.2% in OKC losses.</li>
         <li><b>Forcing turnovers is the third-biggest driver:</b> 14.4% of opponent possessions in wins vs. 12.8% in losses.</li>
@@ -411,14 +411,14 @@
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">The hard part</div><div class="row-body">
+    <div class="row"><div class="row-label">The hard part</div><div class="row-body">
       <ul>
         <li><b>An extra game in the data.</b> Checking against official standings, 2024–25 had 83 games instead of 82. I traced it to the NBA Cup championship, which is played during the regular season but doesn't count in the standings. I kept it because it's a real game with real stats.</li>
         <li><b>Being honest about accuracy.</b> The model classifies 96.4% of games correctly, but that's in-sample, and the Four Factors nearly determine the score anyway. The real value is the <b>relative weight</b> of each factor, not the prediction.</li>
       </ul>
     </div></div>
 
-    <div class="row" data-reveal><div class="row-label">If I kept going</div><div class="row-body">
+    <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
       <ul>
         <li>Test the model on a season it has never seen.</li>
         <li>Account for opponent strength, home vs. away, rest, and lineups.</li>
@@ -427,8 +427,8 @@
     </div></div>
 
     <div class="figs">
-      <figure data-pic><img src="images/charts/okc-impact.webp" alt="Bar chart of each factor's logistic regression coefficient; OKC shooting and opponent shooting have the largest effects." loading="lazy" width="1800" height="1040"><figcaption><b>What drives wins.</b> Each bar is a factor's effect on winning when it rises by one standard deviation.</figcaption></figure>
-      <figure data-pic><img src="images/charts/okc-by-season.webp" alt="Line chart: OKC's effective field goal percentage has been above its opponents' every season since 2023–24." loading="lazy" width="1800" height="1040"><figcaption><b>Shooting by season.</b> OKC trailed its opponents in 2022–23, then out-shot them every season after.</figcaption></figure>
+      <figure class="chart" data-chart="okc_impact" data-type="div" data-dec="1" data-vname="Effect on win odds" aria-label="Diverging bar chart of each factor's effect on winning: OKC shooting +7.8 and opponent shooting −7.3 are the largest."><div class="plot"></div><figcaption><b>What drives wins.</b> Each bar is a factor&rsquo;s effect on winning when it rises by one standard deviation (log-odds). Right helps, left hurts.</figcaption></figure>
+      <figure class="chart" data-chart="okc_season" data-type="line" data-min="50" data-max="60" data-unit="%" data-xname="Season" data-aspect="0.62" aria-label="Line chart: OKC's effective field goal percentage has been above its opponents' every season since 2023–24."><div class="plot"></div><figcaption><b>Shooting by season.</b> Effective field goal percentage. OKC trailed its opponents in 2022&ndash;23, then out-shot them every season after.</figcaption></figure>
     </div>
     <a class="link back-top" href="#top">Back to all projects</a>
     </div>
@@ -443,6 +443,8 @@
   <p class="name" aria-hidden="true">Heaven Brhanu</p>
   <div class="row"><span><a class="link tel" href="tel:+16672731581">667-273-1581</a> &middot; Silver Spring, MD &middot; Open to full-time roles and internships</span><span class="links"><a class="link" href="https://github.com/Heavenb20">GitHub</a><a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a><a class="link" href="portfolio.html">Portfolio</a><a class="link" href="#top">Back to top</a></span></div>
 </footer>
-<script src="js/reveal.js" defer></script>
+<script src="data/charts.js" defer></script>
+<script src="js/charts.js" defer></script>
+<script src="js/lab.js" defer></script>
 </body>
 </html>

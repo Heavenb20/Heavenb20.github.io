@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heaven Brhanu | Data Portfolio</title>
-<meta name="description" content="Heaven Brhanu, Information Science senior at the University of Maryland. Data projects in Python and R, with real results: 22,628 reviews analyzed, 0.93 ROC-AUC, 4.8% forecast error, 329 NBA games modeled.">
-<meta name="theme-color" content="#D4E3FA">
+<meta name="description" content="Heaven Brhanu, Information Science senior at the University of Maryland. Data projects in SQL, Power BI, Python, and R with real results: 531,108 county service requests analyzed, 0.93 ROC-AUC, 4.8% forecast error, 329 NBA games modeled.">
+<meta name="theme-color" content="#16181B">
 <meta property="og:title" content="Heaven Brhanu | Data Portfolio">
-<meta property="og:description" content="Data projects with real results, and an interactive look at 329 OKC Thunder games.">
+<meta property="og:description" content="Data projects with real results, live charts, and an interactive look at 329 OKC Thunder games.">
 <meta property="og:image" content="https://heavenb20.github.io/images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://heavenb20.github.io/portfolio.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://heavenb20.github.io/portfolio.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23D4E3FA'/%3E%3Crect x='12' y='34' width='9' height='18' fill='%23F8EAB9'/%3E%3Crect x='27' y='22' width='9' height='30' fill='%23F6DCE5'/%3E%3Crect x='42' y='12' width='9' height='40' fill='%231D1C24'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%2316181B'/%3E%3Crect x='13' y='34' width='8' height='17' fill='%235A6168'/%3E%3Crect x='28' y='24' width='8' height='27' fill='%235A6168'/%3E%3Crect x='43' y='13' width='8' height='38' fill='%23B9D15A'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/chivo-var.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="css/site.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -24,8 +24,7 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="hero" id="top">
-  <nav class="nav" aria-label="Main">
+<nav class="nav" aria-label="Main">
     <a class="mark" href="#top">Heaven Brhanu</a>
     <ul>
       <li class="wide"><a href="#about">About</a></li>
@@ -36,191 +35,245 @@
     </ul>
   </nav>
 
-  <h1 class="monument">
-    <span class="w1">Heaven</span>
-    <span class="w2">Brhanu</span>
-  </h1>
+<header class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="status"><span class="pulse" aria-hidden="true"></span>Open to data analyst, BI, and entry-level data science roles, full-time or internship, in the DMV or remote</p>
+      <h1>Heaven Brhanu</h1>
+      <p class="hero-lede">Information Science senior at the University of Maryland. I&rsquo;m happiest figuring out what people actually need and turning it into answers they can use.</p>
+      <p class="hero-sub">I stay steady under pressure, juggle a lot without dropping anything, and make sure no one on my team carries the hard part alone. I ask questions early, learn fast, and own getting things right.</p>
+      <div class="actions">
+        <a class="button" href="#projects">See my projects</a>
+        <a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a>
+      </div>
+    </div>
 
-  <div class="hero-foot">
-    <div class="hero-copy" data-rise style="--i:0">
-      <p>Information Science senior at the University of Maryland. I'm happiest figuring out what people actually need and turning it into answers they can use. I stay steady under pressure, juggle a lot without dropping anything, and make sure no one on my team carries the hard part alone. I ask questions early, learn fast, and own getting things right.</p>
-      <p class="scan">Looking for data analyst, BI, and entry-level data science roles &middot; Full-time or internship &middot; DMV area or remote</p>
-    </div>
-    <div class="actions" data-rise style="--i:1">
-      <a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a>
-      <a class="button" href="#about">Start with my story</a>
-    </div>
+    <figure class="chart hero-chart" data-chart="mc311_month" data-type="line" data-min="84" data-max="100" data-unit="%" data-xname="" data-note="DOT low: 85.1%" data-note-at="5" data-aspect="0.62" aria-label="Line chart: in 2025, Montgomery County closed about 97 to 98 percent of 311 requests on time every month, while the Department of Transportation fell from 93.3 percent in January to 85.1 percent in June, then recovered.">
+      <div class="plot"></div>
+      <figcaption>Share of 311 requests closed on time, by month opened, 2025. The county stays near 98%. Transportation falls behind every spring and summer. <a class="link" href="#mc311">From my newest project</a></figcaption>
+    </figure>
   </div>
+
+  <ul class="index" aria-label="Projects at a glance">
+    <li><a href="#mc311"><b class="num">531,108</b><span>county service requests analyzed in SQL and Power BI</span></a></li>
+    <li><a href="#reviews"><b class="num">22,628</b><span>customer reviews tagged and summarized with Python and a local AI model</span></a></li>
+    <li><a href="#purchase"><b class="num">0.93</b><span>ROC-AUC predicting which online shoppers will buy</span></a></li>
+    <li><a href="#forecast"><b class="num">4.8%</b><span>average error forecasting weekly sales on 7 unseen months</span></a></li>
+    <li><a href="#okc"><b class="num">329</b><span>OKC Thunder games modeled in R to find what wins</span></a></li>
+  </ul>
 </header>
 
 <main id="main">
 
 <section class="story wrap" id="about" aria-labelledby="about-h">
-  <div class="story-grid">
-    <h2 id="about-h" data-reveal>The oldest of five</h2>
-    <div class="story-text">
-      <p class="lede" data-reveal style="--i:1">I moved to Maryland from Ethiopia with my family, and I'm the oldest of five girls.</p>
-      <p data-reveal style="--i:2">When your family is starting over in a new country, the oldest sibling ends up keeping things on track. For me, that meant planning ahead, staying on top of what needed to get done, and looking out for my younger sisters. Being organized wasn't something I learned in a class. It's who I had to be.</p>
-      <p data-reveal style="--i:3">That's a big part of why I love data. I remember what it's like to be new to a system that wasn't built with you in mind, and I want to help make systems work better for the people inside them.</p>
-    </div>
+  <h2 id="about-h">The oldest of five</h2>
+  <div class="story-text">
+    <p class="lede">I moved to Maryland from Ethiopia with my family, and I&rsquo;m the oldest of five girls.</p>
+    <p>When your family is starting over in a new country, the oldest sibling ends up keeping things on track. For me, that meant planning ahead, staying on top of what needed to get done, and looking out for my younger sisters. Being organized wasn&rsquo;t something I learned in a class. It&rsquo;s who I had to be.</p>
+    <p>That&rsquo;s a big part of why I love data. I remember what it&rsquo;s like to be new to a system that wasn&rsquo;t built with you in mind, and I want to help make systems work better for the people inside them.</p>
   </div>
 </section>
 
-<section class="why f-butter" aria-label="Why I do data work">
+<section class="why" aria-label="Why I do data work">
   <div class="wrap">
-    <p class="statement" data-reveal>Data work is taking something messy and making it make sense for someone else. I&rsquo;ve been doing that my whole life.</p>
+    <p class="statement">Data work is taking something messy and making it make sense for someone else. I&rsquo;ve been doing that my whole life.</p>
   </div>
 </section>
 
 <section class="path wrap" id="path" aria-labelledby="path-h">
-  <div class="path-grid">
-    <div class="path-head">
-      <h2 id="path-h" data-reveal>My path into data</h2>
-      <p data-reveal style="--i:1">It wasn't a straight line, and I think that's one of my strengths. Every job taught me the same thing: numbers only matter when they help real people make better decisions.</p>
-    </div>
-    <dl class="lessons">
-      <div data-reveal><dt>Behavior technician</dt><dd>Good decisions depend on careful, honest data. I recorded it every session so the clinical team could see what was working.</dd></div>
-      <div data-reveal style="--i:1"><dt>Starbucks shift leader</dt><dd>How to keep a team calm and moving during a rush.</dd></div>
-      <div data-reveal style="--i:2"><dt>Peer tutor</dt><dd>How to explain something until it clicks, by finding exactly where the confusion is first.</dd></div>
-      <div data-reveal style="--i:3"><dt>President, People for Tigray</dt><dd>A plan only works if people believe in it enough to show up.</dd></div>
-      <div data-reveal style="--i:4"><dt>Data analyst intern</dt><dd>At the National League of Cities, I saw how much better decisions get when reports are organized, trusted, and easy to use.</dd></div>
-    </dl>
+  <div class="path-head">
+    <h2 id="path-h">My path into data</h2>
+    <p>It wasn&rsquo;t a straight line, and I think that&rsquo;s one of my strengths. Every job taught me the same thing: numbers only matter when they help real people make better decisions.</p>
   </div>
+  <dl class="lessons">
+    <div><dt>Behavior technician</dt><dd>Good decisions depend on careful, honest data. I recorded it every session so the clinical team could see what was working.</dd></div>
+    <div><dt>Starbucks shift leader</dt><dd>How to keep a team calm and moving during a rush.</dd></div>
+    <div><dt>Peer tutor</dt><dd>How to explain something until it clicks, by finding exactly where the confusion is first.</dd></div>
+    <div><dt>President, People for Tigray</dt><dd>A plan only works if people believe in it enough to show up.</dd></div>
+    <div><dt>Data analyst intern</dt><dd>At the National League of Cities, I saw how much better decisions get when reports are organized, trusted, and easy to use.</dd></div>
+  </dl>
 </section>
 
-<section class="people f-pink" id="strengths" aria-labelledby="people-h">
+<section class="people" id="strengths" aria-labelledby="people-h">
   <div class="wrap">
     <div class="people-head">
-      <h2 id="people-h" data-reveal>I love working with people</h2>
-      <p class="lede" data-reveal style="--i:1">I do my best work on a team. I like hearing how other people see a problem, figuring out where I can help most, and making sure nobody is carrying the hard part alone. Here's what that looks like in real situations.</p>
+      <h2 id="people-h">I love working with people</h2>
+      <p class="lede">I do my best work on a team. I like hearing how other people see a problem, figuring out where I can help most, and making sure nobody is carrying the hard part alone. Here&rsquo;s what that looks like in real situations.</p>
     </div>
     <div class="cases">
-      <div data-reveal><h3>Leading a team</h3><p>Planning about three events a semester on a student budget means something is always at risk: a venue, a vendor, a timeline. As president of People for Tigray, my job is to catch those problems early and keep everyone moving. We still land around $3,000 a semester for two schools in Tigray, and that only happens because the whole team shows up.</p></div>
-      <div data-reveal style="--i:1"><h3>Keeping a rush on track</h3><p>At Starbucks, I plan who's where during the rush, adjust in real time, and jump in wherever the team is short, from the register to the bar. I also help new baristas get up to speed.</p></div>
-      <div data-reveal style="--i:2"><h3>Communicating clearly</h3><p>Explaining a concept to a classmate who's stuck is a different skill than solving the problem yourself. I use the same skill as a behavior technician when I share progress with families, and when I turn model results into plain-language takeaways. I speak English, Amharic, and Tigrigna.</p></div>
-      <div data-reveal style="--i:3"><h3>Solving problems</h3><p>In my review project, the AI said jackets run small when customers were saying the opposite. I built a check in code, caught the mistake, and redesigned the tool so code handles the numbers and AI only writes the descriptions. I'd rather find a problem myself than have someone else find it later.</p></div>
-      <div data-reveal style="--i:4"><h3>Showing up, every week</h3><p>Right now I'm balancing school, shifts at Starbucks, leading People for Tigray, and a Power BI certification. When I say I'll get something done, I get it done.</p></div>
+      <div><h3>Leading a team</h3><p>Planning about three events a semester on a student budget means something is always at risk: a venue, a vendor, a timeline. As president of People for Tigray, my job is to catch those problems early and keep everyone moving. We still land around $3,000 a semester for two schools in Tigray, and that only happens because the whole team shows up.</p></div>
+      <div><h3>Keeping a rush on track</h3><p>At Starbucks, I plan who&rsquo;s where during the rush, adjust in real time, and jump in wherever the team is short, from the register to the bar. I also help new baristas get up to speed.</p></div>
+      <div><h3>Communicating clearly</h3><p>Explaining a concept to a classmate who&rsquo;s stuck is a different skill than solving the problem yourself. I use the same skill as a behavior technician when I share progress with families, and when I turn model results into plain-language takeaways. I speak English, Amharic, and Tigrigna.</p></div>
+      <div><h3>Solving problems</h3><p>In my review project, the AI said jackets run small when customers were saying the opposite. I built a check in code, caught the mistake, and redesigned the tool so code handles the numbers and AI only writes the descriptions. I&rsquo;d rather find a problem myself than have someone else find it later.</p></div>
+      <div><h3>Showing up, every week</h3><p>Right now I&rsquo;m balancing school, shifts at Starbucks, leading People for Tigray, and a Power BI certification. When I say I&rsquo;ll get something done, I get it done.</p></div>
     </div>
     <div class="process">
-      <h3 data-reveal>How I work through a data problem</h3>
+      <h3>How I work through a data problem</h3>
       <ol>
-        <li data-reveal><b>Ask the real question.</b> Before touching the data, I figure out what decision the answer will help someone make.</li>
-        <li data-reveal style="--i:1"><b>Check the data before trusting it.</b> Duplicates, missing values, an extra game in a season. The small stuff changes the answer.</li>
-        <li data-reveal style="--i:2"><b>Build it, then try to break it.</b> I test on data the model hasn't seen and look for the ways it could be fooling me.</li>
-        <li data-reveal style="--i:3"><b>Explain it plainly.</b> A result nobody understands doesn't help anyone, so I finish with what it means and what to do next.</li>
+        <li><b>Ask the real question.</b> Before touching the data, I figure out what decision the answer will help someone make.</li>
+        <li><b>Check the data before trusting it.</b> Duplicates, missing values, an extra game in a season. The small stuff changes the answer.</li>
+        <li><b>Build it, then try to break it.</b> I test on data the model hasn&rsquo;t seen and look for the ways it could be fooling me.</li>
+        <li><b>Explain it plainly.</b> A result nobody understands doesn&rsquo;t help anyone, so I finish with what it means and what to do next.</li>
       </ol>
     </div>
   </div>
 </section>
 
-<div id="projects">
-<div class="projects-head wrap">
-  <h2 data-reveal>What I&rsquo;ve built</h2>
-  <p data-reveal style="--i:1">Every project starts with a real question and real data. Each one also had something go wrong, and that part taught me the most. <a class="link" href="projects.html">Read every case study</a></p>
+<section class="projects" id="projects" aria-labelledby="projects-h">
+<div class="wrap section-head">
+  <h2 id="projects-h">What I&rsquo;ve built</h2>
+  <p>Every project starts with a real question and real data. Each one also had something go wrong, and that part taught me the most. The charts here are drawn live from each project&rsquo;s actual results. Hover or tap them for the numbers. <a class="link" href="projects.html">Read every case study</a></p>
 </div>
-<ul class="facts wrap" aria-label="Project results">
-  <li data-reveal style="--i:0"><span class="fig num">531,108</span><p class="what">county service requests analyzed in SQL and built into a Power BI dashboard</p></li>
-  <li data-reveal style="--i:1"><span class="fig num">22,628</span><p class="what">customer reviews tagged and summarized with Python and a local AI model</p></li>
-  <li data-reveal style="--i:2"><span class="fig num">0.93</span><p class="what">ROC-AUC predicting which online shoppers will buy</p></li>
-  <li data-reveal style="--i:3"><span class="fig num">4.8%</span><p class="what">average error forecasting weekly sales on 7 unseen months</p></li>
-  <li data-reveal style="--i:4"><span class="fig num">329</span><p class="what">OKC Thunder games modeled in R to find what wins</p></li>
-</ul>
 
-<article class="project f-pink flip" aria-labelledby="p0">
-  <div class="wrap grid">
-    <div class="text">
-      <h3 id="p0" data-reveal>Montgomery County 311 on-time analysis</h3>
-      <p class="tools" data-reveal style="--i:1">MySQL, Power BI, DAX</p>
-      <p data-reveal style="--i:2">Every 311 request in my home county comes with a promise: a deadline to resolve it. I loaded all 531,108 requests from 2025 into MySQL, cleaned them, and checked how often that promise is kept. The county is on time 97.7% of the time, but the Department of Transportation alone caused over half of all late requests, and tree requests were the worst, missing about one in four deadlines.</p>
-      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> 53% of requests had no location. Before comparing council districts, I checked whether those rows were different, and they were (99.0% on time vs. 96.1%), so I compared districts using only requests with a location.</p>
-      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> the county could add tree crews from April through July, before the backlog builds, and start in the districts where residents wait longest.</p>
-      <div class="big" data-reveal style="--i:5"><b class="num">6,449</b><span>of 12,309 late requests came from one department</span></div>
-      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#mc311">Read the case study</a><a class="link" href="https://github.com/Heavenb20/m311-service-requests-sql">View the code</a></div>
+<article class="file" id="mc311" aria-labelledby="t-mc311">
+  <div class="wrap file-grid">
+    <div class="file-text">
+      <h3 id="t-mc311">Montgomery County 311 on-time analysis</h3>
+      <p class="q">Does my home county keep its promise to resolve service requests on time?</p>
+      <p>Every 311 request comes with a deadline. I loaded all 531,108 requests from 2025 into MySQL, cleaned them, and checked how often that deadline is met. The county is on time 97.7% of the time, but the Department of Transportation alone caused over half of all late requests, and tree requests were the worst, missing about one in four deadlines.</p>
+      <p class="hard"><b>The hard part:</b> 53% of requests had no location. Before comparing council districts, I checked whether those rows were different, and they were (99.0% on time vs. 96.1%), so I compared districts using only requests with a location.</p>
+      <p class="sowhat"><b>Why it matters:</b> the county could add tree crews from April through July, before the backlog builds, and start in the districts where residents wait longest.</p>
+      <dl class="spec">
+        <div><dt>Data</dt><dd>531,108 MC311 requests, 2025, county open data</dd></div>
+        <div><dt>Method</dt><dd>Cleaning, aggregation, CTEs, window functions</dd></div>
+        <div><dt>Tools</dt><dd>MySQL, Power BI, DAX</dd></div>
+        <div><dt>Result</dt><dd>6,449 of 12,309 late requests came from one department</dd></div>
+      </dl>
+      <p class="file-links"><a class="link" href="projects.html#mc311">Read the case study</a><a class="link" href="https://github.com/Heavenb20/m311-service-requests-sql">View the code</a></p>
     </div>
-    <div class="pics">
-      <figure data-pic><img src="images/charts/mc311-powerbi.webp" alt="Power BI dashboard: 527,016 closed requests, 12,309 late, 97.66% on time, with charts of late requests by department, on-time rate by month, and DOT late requests by area and council district." width="1484" height="812" loading="lazy"></figure>
-      <figure data-pic style="--i:1"><img src="images/charts/mc311-dot-area.webp" alt="Bar chart of DOT on-time rate by service area: Tree Maintenance is lowest at 77.2%, then Traffic 87.0%, Highway Services 89.7%, Transit 94.9%, Parking 99.5%." width="1440" height="800" loading="lazy"></figure>
+    <div class="file-figs">
+      <figure class="chart" data-chart="mc311_area" data-type="bar" data-unit="%" data-max="100" data-highlight="0" data-dec="1" data-vname="On time" aria-label="Bar chart of Transportation on-time rate by service area: Tree Maintenance 77.2 percent, Traffic 87.0, Highway Services 89.7, Transit 94.9, Parking 99.5.">
+        <div class="plot"></div>
+        <figcaption>Transportation&rsquo;s on-time rate by service area. Tree Maintenance misses most often.</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="images/charts/mc311-powerbi.webp" alt="My Power BI dashboard: 527,016 closed requests, 12,309 late, 97.66% on time, with charts of late requests by department, on-time rate by month, and Transportation late requests by area and council district." width="1484" height="812" loading="lazy">
+        <figcaption>The Power BI dashboard I built from my SQL view, with slicers for department and month.</figcaption>
+      </figure>
     </div>
   </div>
 </article>
 
-<article class="project f-blue" aria-labelledby="p1">
-  <div class="wrap grid">
-    <div class="text">
-      <h3 id="p1" data-reveal>AI review insights tool</h3>
-      <p class="tools" data-reveal style="--i:1">Python, pandas, regex, a local AI model</p>
-      <p data-reveal style="--i:2">Apparel brands get thousands of reviews and no time to read them. I built a pipeline that tags 22,628 clothing reviews by theme, then sends samples from each department to an AI model running on my own laptop, which writes short reports: top complaints, what customers love, and one recommendation.</p>
-      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> the AI said jackets run small. I added a code-based check that counts &ldquo;too small&rdquo; versus &ldquo;too large&rdquo; complaints, and the data said they run large. The final design: code handles the numbers, AI handles the text, and a person reviews both.</p>
-      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> a brand could fix fabric quality first, and update size guides in departments that run large, instead of guessing from a few angry reviews.</p>
-      <div class="big" data-reveal style="--i:5"><b class="num">6</b><span>departments, each with its own AI report checked by code</span></div>
-      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#ai-review-insights">Read the case study</a><a class="link" href="https://github.com/Heavenb20/ai-review-insights">View the code</a></div>
+<article class="file file-rev" id="reviews" aria-labelledby="t-reviews">
+  <div class="wrap file-grid">
+    <div class="file-text">
+      <h3 id="t-reviews">AI review insights tool</h3>
+      <p class="q">What are thousands of customers actually complaining about?</p>
+      <p>Apparel brands get thousands of reviews and no time to read them. I built a pipeline that tags 22,628 clothing reviews by theme, then sends samples from each department to an AI model running on my own laptop, which writes short reports: top complaints, what customers love, and one recommendation.</p>
+      <p class="hard"><b>The hard part:</b> the AI said jackets run small. I added a code-based check that counts &ldquo;too small&rdquo; versus &ldquo;too large&rdquo; complaints, and the data said they run large. The final design: code handles the numbers, AI handles the text, and a person reviews both.</p>
+      <p class="sowhat"><b>Why it matters:</b> a brand could fix fabric quality first, and update size guides in departments that run large, instead of guessing from a few angry reviews.</p>
+      <dl class="spec">
+        <div><dt>Data</dt><dd>22,628 women&rsquo;s clothing reviews</dd></div>
+        <div><dt>Method</dt><dd>Regex theme tagging, sentiment, AI summaries checked by code</dd></div>
+        <div><dt>Tools</dt><dd>Python, pandas, a local AI model</dd></div>
+        <div><dt>Result</dt><dd>6 department reports, every claim checked against the counts</dd></div>
+      </dl>
+      <p class="file-links"><a class="link" href="projects.html#ai-review-insights">Read the case study</a><a class="link" href="https://github.com/Heavenb20/ai-review-insights">View the code</a></p>
     </div>
-    <div class="pics">
-      <figure data-pic><img src="images/charts/review-themes.webp" alt="Bar chart: fabric and quality come up in 59% of negative reviews but 40% of positive ones; comfort comes up far more in positive reviews." width="1800" height="1040" loading="lazy"></figure>
-      <figure data-pic style="--i:1"><img src="images/charts/review-fit-check.webp" alt="Bar chart of fit complaints by department: in five of six departments, more negative reviews say items run large than run small." width="1800" height="1040" loading="lazy"></figure>
-    </div>
-  </div>
-</article>
-
-<article class="project f-butter flip" aria-labelledby="p2">
-  <div class="wrap grid">
-    <div class="text">
-      <h3 id="p2" data-reveal>Purchase intent classification</h3>
-      <p class="tools" data-reveal style="--i:1">Python, scikit-learn, Random Forest, logistic regression</p>
-      <p data-reveal style="--i:2">Using 12,330 real browsing sessions from an online store, I predicted whether a visitor will buy based only on how they browse. Random Forest beat logistic regression on nearly every metric. Page Values was by far the strongest signal, and new visitors converted more often than returning ones (25% vs. 14%).</p>
-      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> only 15.5% of sessions ended in a purchase, so a model that always guesses &ldquo;no&rdquo; is 84% accurate and useless. I balanced the classes in training and judged the models on precision, recall, F1, and ROC-AUC instead.</p>
-      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> a store could show offers only to the visitors most likely to buy, instead of to everyone.</p>
-      <div class="big" data-reveal style="--i:5"><b class="num">77%</b><span>of real buyers caught, with a 0.93 ROC-AUC</span></div>
-      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#purchase-intent">Read the case study</a><a class="link" href="https://github.com/Heavenb20/purchase-intent-classification">View the code</a></div>
-    </div>
-    <div class="pics">
-      <figure data-pic><img src="images/charts/purchase-roc.webp" alt="ROC curve for the Random Forest model, AUC 0.93, far above the random-guess line." width="1400" height="1240" loading="lazy"></figure>
-      <figure data-pic style="--i:1"><img src="images/charts/purchase-features.webp" alt="Bar chart: purchase rate rises from 4% of sessions with zero Page Values to 78% of sessions with Page Values above 50." width="1600" height="1120" loading="lazy"></figure>
+    <div class="file-figs">
+      <figure class="chart" data-chart="review_fit" data-type="pair" data-unit="%" data-keys='[{"k":"large","name":"Says it runs large"},{"k":"small","name":"Says it runs small"}]' aria-label="Paired bar chart of fit complaints in negative reviews by department. In five of six departments more reviews say items run large than small; Jackets: 27 percent large vs 15 percent small.">
+        <div class="plot"></div>
+        <figcaption>The check that caught the AI. Share of negative reviews saying an item runs large or small, by department. Jackets run large, not small.</figcaption>
+      </figure>
     </div>
   </div>
 </article>
 
-<article class="project f-pink" aria-labelledby="p3">
-  <div class="wrap grid">
-    <div class="text">
-      <h3 id="p3" data-reveal>Retail sales &amp; staffing forecast</h3>
-      <p class="tools" data-reveal style="--i:1">Python, scikit-learn, time-based validation</p>
-      <p data-reveal style="--i:2">As a Starbucks shift leader, I saw how reactive staffing is, so I tested whether busy weeks can be predicted. Using 421,000+ weekly Walmart sales records across 45 stores, I forecast each store's sales and grouped the results into four staffing tiers, each based on that store's own average so smaller stores aren't always marked &ldquo;low.&rdquo;</p>
-      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> a random train/test split would let the model learn from weeks after the ones it's tested on. I split by time instead, training on older weeks and testing on the newest 20%.</p>
-      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> a manager could add staff before a busy week and cut hours in slow ones, instead of reacting during the rush.</p>
-      <div class="big" data-reveal style="--i:5"><b class="num">4.8%</b><span>average forecast error (MAPE) on 7 months of unseen weeks</span></div>
-      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#sales-forecast">Read the case study</a><a class="link" href="https://github.com/Heavenb20/retail-sales-staffing-forecast">View the code</a></div>
+<article class="file" id="purchase" aria-labelledby="t-purchase">
+  <div class="wrap file-grid">
+    <div class="file-text">
+      <h3 id="t-purchase">Purchase intent classification</h3>
+      <p class="q">Can you tell who will buy, just from how they browse?</p>
+      <p>Using 12,330 real browsing sessions from an online store, I predicted whether a visitor will buy based only on how they browse. Random Forest beat logistic regression on nearly every metric. Page Values was by far the strongest signal, and new visitors converted more often than returning ones (25% vs. 14%).</p>
+      <p class="hard"><b>The hard part:</b> only 15.5% of sessions ended in a purchase, so a model that always guesses &ldquo;no&rdquo; is 84% accurate and useless. I balanced the classes in training and judged the models on precision, recall, F1, and ROC-AUC instead.</p>
+      <p class="sowhat"><b>Why it matters:</b> a store could show offers only to the visitors most likely to buy, instead of to everyone.</p>
+      <dl class="spec">
+        <div><dt>Data</dt><dd>12,330 sessions, tested on 2,441 held out</dd></div>
+        <div><dt>Method</dt><dd>Random Forest vs. logistic regression, balanced classes</dd></div>
+        <div><dt>Tools</dt><dd>Python, scikit-learn</dd></div>
+        <div><dt>Result</dt><dd>77% of real buyers caught, 0.93 ROC-AUC</dd></div>
+      </dl>
+      <p class="file-links"><a class="link" href="projects.html#purchase-intent">Read the case study</a><a class="link" href="https://github.com/Heavenb20/purchase-intent-classification">View the code</a></p>
     </div>
-    <div class="pics">
-      <figure data-pic><img src="images/charts/sales-pred-actual.webp" alt="Scatter plot of predicted versus actual weekly sales for 1,260 unseen store-weeks; points sit close to the diagonal, 4.8% average error." width="1400" height="1240" loading="lazy"></figure>
-      <figure data-pic style="--i:1"><img src="images/charts/sales-tiers.webp" alt="Bar chart of recommended staffing tiers: 43 low, 712 standard, 477 medium, and 28 high store-weeks." width="1600" height="1040" loading="lazy"></figure>
+    <div class="file-figs file-figs-roc">
+      <figure class="chart" data-chart="purchase_roc" data-type="roc" aria-label="ROC curve for the Random Forest model on 2,441 test sessions, area under the curve 0.93, far above the random-guess diagonal.">
+        <div class="plot"></div>
+        <figcaption>ROC curve on the 2,441 test sessions. Move along the curve to see the trade-off at each cutoff.</figcaption>
+      </figure>
+      <figure class="matrix" aria-labelledby="cm-cap">
+        <table>
+          <caption id="cm-cap">Test results at the 0.5 cutoff</caption>
+          <thead><tr><td></td><th scope="col">Predicted no</th><th scope="col">Predicted buy</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Didn&rsquo;t buy</th><td>1,868</td><td>191</td></tr>
+            <tr><th scope="row">Bought</th><td>89</td><td class="hit">293</td></tr>
+          </tbody>
+        </table>
+        <figcaption>293 of 382 buyers caught (77%). 61% of flagged sessions really bought.</figcaption>
+      </figure>
     </div>
   </div>
 </article>
 
-<article class="project f-blue flip" aria-labelledby="p4">
-  <div class="wrap grid">
-    <div class="text">
-      <h3 id="p4" data-reveal>OKC Thunder four factors</h3>
-      <p class="tools" data-reveal style="--i:1">R, tidyverse, hoopR, logistic regression</p>
-      <p data-reveal style="--i:2">Which of basketball's Four Factors (shooting, turnovers, rebounding, free throws) actually drive wins? I analyzed every Thunder regular-season game from 2022&ndash;23 through 2025&ndash;26, using standardized factors so their effects can be compared directly. Shooting on both ends mattered most, and defense mattered almost as much as offense.</p>
-      <p class="hard" data-reveal style="--i:3"><strong>The hard part:</strong> checking the data against official standings turned up an 83rd game in 2024&ndash;25. I traced it to the NBA Cup final, which doesn't count in the standings, and kept it because it's a real game with real stats.</p>
-      <p class="sowhat" data-reveal style="--i:4"><strong>Why it matters:</strong> for a coaching staff, contesting the other team&rsquo;s shots is worth almost as much as making your own.</p>
-      <div class="big" data-reveal style="--i:5"><b class="num">329</b><span>games modeled. Explore them yourself below.</span></div>
-      <div class="links" data-reveal style="--i:6"><a class="link" href="projects.html#okc-four-factors">Read the case study</a><a class="link" href="https://github.com/Heavenb20/okc-four-factors">View the code</a></div>
+<article class="file file-wide" id="forecast" aria-labelledby="t-forecast">
+  <div class="wrap">
+    <div class="file-top">
+      <h3 id="t-forecast">Retail sales &amp; staffing forecast</h3>
+      <p class="q">Can a store see a busy week coming, and staff for it?</p>
     </div>
-    <div class="pics">
-      <figure data-pic><img src="images/charts/okc-impact.webp" alt="Bar chart of each factor's effect on OKC's odds of winning: OKC shooting +7.8 and opponent shooting −7.3 are the largest." width="1800" height="1040" loading="lazy"></figure>
-      <figure data-pic style="--i:1"><img src="images/charts/okc-by-season.webp" alt="Line chart: OKC's effective field goal percentage has been above its opponents' every season since 2023–24." width="1800" height="1040" loading="lazy"></figure>
+    <figure class="chart" data-chart="sales_scatter" data-type="scatter" aria-label="Scatter plot of predicted versus actual weekly sales for 1,260 unseen store-weeks; points sit close to the perfect-forecast diagonal, with 4.8 percent average error.">
+      <div class="plot"></div>
+      <figcaption>Every dot is one store-week the model never saw: 1,260 in all. Dots on the line are perfect forecasts. Hover a dot for the store and week.</figcaption>
+    </figure>
+    <div class="file-cols">
+      <div>
+        <p>As a Starbucks shift leader, I saw how reactive staffing is, so I tested whether busy weeks can be predicted. Using 421,000+ weekly Walmart sales records across 45 stores, I forecast each store&rsquo;s sales and grouped the results into four staffing tiers, each based on that store&rsquo;s own average so smaller stores aren&rsquo;t always marked &ldquo;low.&rdquo;</p>
+        <p class="hard"><b>The hard part:</b> a random train/test split would let the model learn from weeks after the ones it&rsquo;s tested on. I split by time instead, training on older weeks and testing on the newest 20%.</p>
+        <p class="sowhat"><b>Why it matters:</b> a manager could add staff before a busy week and cut hours in slow ones, instead of reacting during the rush.</p>
+      </div>
+      <div>
+        <dl class="spec">
+          <div><dt>Data</dt><dd>421,000+ weekly sales records, 45 stores</dd></div>
+          <div><dt>Method</dt><dd>Time-based split, per-store staffing tiers</dd></div>
+          <div><dt>Tools</dt><dd>Python, scikit-learn</dd></div>
+          <div><dt>Result</dt><dd>4.8% average error (MAPE) on 7 unseen months</dd></div>
+        </dl>
+        <p class="file-links"><a class="link" href="projects.html#sales-forecast">Read the case study</a><a class="link" href="https://github.com/Heavenb20/retail-sales-staffing-forecast">View the code</a></p>
+      </div>
     </div>
   </div>
 </article>
-</div>
+
+<article class="file file-rev" id="okc" aria-labelledby="t-okc">
+  <div class="wrap file-grid">
+    <div class="file-text">
+      <h3 id="t-okc">OKC Thunder four factors</h3>
+      <p class="q">Which of basketball&rsquo;s four factors actually drive wins?</p>
+      <p>Shooting, turnovers, rebounding, free throws: I analyzed every Thunder regular-season game from 2022&ndash;23 through 2025&ndash;26, using standardized factors so their effects can be compared directly. Shooting on both ends mattered most, and defense mattered almost as much as offense.</p>
+      <p class="hard"><b>The hard part:</b> checking the data against official standings turned up an 83rd game in 2024&ndash;25. I traced it to the NBA Cup final, which doesn&rsquo;t count in the standings, and kept it because it&rsquo;s a real game with real stats.</p>
+      <p class="sowhat"><b>Why it matters:</b> for a coaching staff, contesting the other team&rsquo;s shots is worth almost as much as making your own.</p>
+      <dl class="spec">
+        <div><dt>Data</dt><dd>329 games from 10,582 team box scores</dd></div>
+        <div><dt>Method</dt><dd>Logistic regression on 8 standardized factors</dd></div>
+        <div><dt>Tools</dt><dd>R, tidyverse, hoopR</dd></div>
+        <div><dt>Result</dt><dd>Opponent shooting matters almost as much as OKC&rsquo;s</dd></div>
+      </dl>
+      <p class="file-links"><a class="link" href="#explore">Explore all 329 games</a><a class="link" href="projects.html#okc-four-factors">Read the case study</a><a class="link" href="https://github.com/Heavenb20/okc-four-factors">View the code</a></p>
+    </div>
+    <div class="file-figs">
+      <figure class="chart" data-chart="okc_impact" data-type="div" data-dec="1" data-vname="Effect on win odds" aria-label="Diverging bar chart of each factor's effect on OKC's odds of winning, in log-odds per standard deviation: OKC shooting +7.8, opponent shooting −7.3, turnovers OKC forces +4.5, OKC turnovers −3.4, opponent free throws −3.1, opponent offensive rebounding −2.4, OKC offensive rebounding +2.4, OKC free throws +1.9.">
+        <div class="plot"></div>
+        <figcaption>What moves OKC&rsquo;s odds of winning. Each bar is a factor&rsquo;s effect when it rises by one standard deviation (log-odds). Right helps, left hurts.</figcaption>
+      </figure>
+    </div>
+  </div>
+</article>
+</section>
 
 <section class="explore wrap" id="explore" aria-labelledby="explore-h">
   <div class="explore-head">
-    <h2 id="explore-h" data-reveal>Explore 329 Thunder games</h2>
-    <p data-reveal style="--i:1">Pick a factor. Every dot is one game from my OKC dataset, blue for a win and pink for a loss. Hover or tap a dot to see the game.</p>
+    <h2 id="explore-h">Explore 329 Thunder games</h2>
+    <p>Pick a factor. Every dot is one game from my OKC dataset. Wins sit on the top row, losses on the bottom. Hover or tap a dot to see the game.</p>
   </div>
 
   <div class="explorer">
@@ -250,24 +303,24 @@
   <p class="method">Data: NBA team box scores via hoopR, 2022&ndash;23 to 2025&ndash;26 regular seasons. Model effect is the logistic regression coefficient for a one standard deviation change, in log-odds.</p>
 </section>
 
-<section class="nlc f-butter" id="internship" aria-labelledby="nlc-h">
+<section class="nlc" id="internship" aria-labelledby="nlc-h">
   <div class="wrap">
     <div class="nlc-head">
-      <h2 id="nlc-h" data-reveal>Inside my internship</h2>
-      <p class="lede" data-reveal style="--i:1">Data Analyst Intern, National League of Cities, Summer 2026. NLC serves city leaders across the country, and its teams rely on Power BI and SharePoint reports to track website traffic and internal work.</p>
+      <h2 id="nlc-h">Inside my internship</h2>
+      <p class="lede">Data Analyst Intern, National League of Cities, Summer 2026. NLC serves city leaders across the country, and its teams rely on Power BI and SharePoint reports to track website traffic and internal work.</p>
     </div>
     <div class="nlc-body">
-      <div class="nlc-q" data-reveal>
+      <div class="nlc-q">
         <h3>The question</h3>
         <p>Do NLC&rsquo;s reports give each team what it needs to make decisions, and what would keep them organized and up to date over time?</p>
       </div>
       <ol class="nlc-steps">
-        <li data-reveal><b>Listened first.</b> I interviewed stakeholders across teams to understand and document their business intelligence needs for website traffic and internal SharePoint reporting.</li>
-        <li data-reveal style="--i:1"><b>Reviewed what existed.</b> I went through the organization&rsquo;s Power BI environment, looking at how reports were organized and how easy they were to use for decision-making.</li>
-        <li data-reveal style="--i:2"><b>Designed a fix that lasts.</b> I built a data stewardship process, with an organizational strategy and change management steps, so reports stay organized and up to date after I leave.</li>
-        <li data-reveal style="--i:3"><b>Made the case to leadership.</b> I presented an executive summary of my findings and recommendations to leadership, and delivered a final report on the project.</li>
+        <li><b>Listened first.</b> I interviewed stakeholders across teams to understand and document their business intelligence needs for website traffic and internal SharePoint reporting.</li>
+        <li><b>Reviewed what existed.</b> I went through the organization&rsquo;s Power BI environment, looking at how reports were organized and how easy they were to use for decision-making.</li>
+        <li><b>Designed a fix that lasts.</b> I built a data stewardship process, with an organizational strategy and change management steps, so reports stay organized and up to date after I leave.</li>
+        <li><b>Made the case to leadership.</b> I presented an executive summary of my findings and recommendations to leadership, and delivered a final report on the project.</li>
       </ol>
-      <div class="nlc-q" data-reveal style="--i:1">
+      <div class="nlc-q">
         <h3>What I took from it</h3>
         <p>The tool is rarely the hard part. Good reporting depends on knowing who uses each report, who owns it, and how it stays current. That&rsquo;s why I start every project by asking what decision the data needs to support.</p>
       </div>
@@ -279,13 +332,13 @@
   <div class="exp-wrap">
     <div class="exp-col">
       <h2 class="giant" id="exp-h">Work</h2>
-      <details open data-reveal>
+      <details open>
         <summary><span class="role">Data Analyst Intern</span><span class="when">Summer 2026</span><span class="org">National League of Cities</span></summary>
         <ul>
           <li>Interviewed stakeholders, reviewed the Power BI environment, built a data stewardship process, and presented recommendations to leadership. <a class="link" href="#internship">Read the full story</a></li>
         </ul>
       </details>
-      <details data-reveal style="--i:1">
+      <details>
         <summary><span class="role">Registered Behavior Technician</span><span class="when">Oct 2024 &ndash; Sept 2026</span><span class="org">Behavioral Framework</span></summary>
         <ul>
           <li>Worked one-on-one with a caseload of about 3 clients, following each person's treatment plan.</li>
@@ -293,7 +346,7 @@
           <li>Kept careful, confidential records under HIPAA, and shared progress clearly with families.</li>
         </ul>
       </details>
-      <details data-reveal style="--i:2">
+      <details>
         <summary><span class="role">Shift Leader</span><span class="when">Jul 2025 &ndash; now</span><span class="org">Starbucks</span></summary>
         <ul>
           <li>Plan team positions and breaks around peak traffic, adjusting in real time to keep service fast during rushes.</li>
@@ -301,49 +354,49 @@
           <li>Jump in wherever the team needs support, from the register to the bar, and help new baristas get up to speed.</li>
         </ul>
       </details>
-      <details data-reveal style="--i:3">
+      <details>
         <summary><span class="role">Peer Tutor, Guided Study Sessions</span><span class="when">Spring 2025 &ndash; now</span><span class="org">University of Maryland</span></summary>
         <ul>
           <li>Lead study sessions where I break tough course material into steps that click.</li>
           <li>Adjust how I explain things for each person, which has made me much better at explaining technical ideas to non-technical people.</li>
         </ul>
       </details>
-      <details data-reveal style="--i:4">
+      <details>
         <summary><span class="role">Operations Intern</span><span class="when">Spring 2024</span><span class="org">Byte Back, Washington, DC</span></summary>
         <ul>
           <li>Supported the finance department at a tech education nonprofit providing free digital literacy and IT training to adults.</li>
         </ul>
       </details>
     </div>
-    <div class="exp-aside" data-reveal style="--i:2">
+    <div class="exp-aside">
       <p>Every job taught me the same thing: numbers only matter when they help real people make better decisions.</p>
       <p>Open a role to see what I did there. My full resume has dates, coursework, and earlier jobs. <a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a></p>
     </div>
   </div>
 </section>
 
-<section class="leadership f-blue" id="leadership" aria-labelledby="lead-h">
+<section class="leadership" id="leadership" aria-labelledby="lead-h">
   <div class="wrap">
-    <h2 id="lead-h" data-reveal>Community &amp; leadership</h2>
+    <h2 id="lead-h">Community &amp; leadership</h2>
     <div class="lead-row">
-      <figure data-pic><img src="images/p4t.webp" alt="People for Tigray members holding the Tigray flag on the University of Maryland campus" width="520" height="515" loading="lazy"></figure>
+      <figure><img src="images/p4t.webp" alt="People for Tigray members holding the Tigray flag on the University of Maryland campus" width="520" height="515" loading="lazy"></figure>
       <div class="copy">
-        <h3 data-reveal>People for Tigray</h3>
-        <p class="meta" data-reveal style="--i:1">President &middot; 2024 &ndash; now</p>
-        <p data-reveal style="--i:2">I lead fundraising and advocacy for the Tigray community after the war and humanitarian crisis there. Together we raise about $3,000 each semester for two schools in Tigray and host about three events a semester, including an art show with a Tigrayan artist and a joint culture showcase with EESA.</p>
+        <h3>People for Tigray</h3>
+        <p class="meta">President, 2024 &ndash; now</p>
+        <p>I lead fundraising and advocacy for the Tigray community after the war and humanitarian crisis there. Together we raise about $3,000 each semester for two schools in Tigray and host about three events a semester, including an art show with a Tigrayan artist and a joint culture showcase with EESA.</p>
       </div>
     </div>
     <div class="lead-row flip">
-      <figure data-pic><img src="images/essa.webp" alt="The EESA executive board holding the Ethiopian flag" width="640" height="442" loading="lazy"></figure>
+      <figure><img src="images/essa.webp" alt="The EESA executive board holding the Ethiopian flag" width="640" height="442" loading="lazy"></figure>
       <div class="copy">
-        <h3 data-reveal>Ethiopian Eritrean Student Association</h3>
-        <p class="meta" data-reveal style="--i:1">Treasurer (2023) &rarr; Internal Vice President (2023 &ndash; now)</p>
-        <p data-reveal style="--i:2">I started as treasurer, managing the budget and financial records, and now serve as Internal Vice President, planning cultural programs that bring Ethiopian and Eritrean students together on campus.</p>
+        <h3>Ethiopian Eritrean Student Association</h3>
+        <p class="meta">Treasurer (2023) &rarr; Internal Vice President (2023 &ndash; now)</p>
+        <p>I started as treasurer, managing the budget and financial records, and now serve as Internal Vice President, planning cultural programs that bring Ethiopian and Eritrean students together on campus.</p>
       </div>
     </div>
     <div class="also">
-      <h3 data-reveal>Also involved</h3>
-      <div class="copy" data-reveal style="--i:1">
+      <h3>Also involved</h3>
+      <div class="copy">
         <p><b>MCPS ESOL Program, volunteer.</b> I help multilingual students and families find their way around school resources in Montgomery County. Coming here from Ethiopia, I know what it&rsquo;s like to need someone to explain a whole system, not just translate a sentence. That&rsquo;s why this one matters to me.</p>
         <p>I&rsquo;m also a member of Code: Black, the Association for Women in Computing, and the National Society of Black Engineers (NSBE). They&rsquo;re where I find community, and a reminder that I&rsquo;m not building my career alone.</p>
       </div>
@@ -353,13 +406,13 @@
 
 <section class="skills wrap" id="skills" aria-labelledby="sk-h">
   <div class="grid">
-    <h2 id="sk-h" data-reveal>Skills &amp; coursework</h2>
+    <h2 id="sk-h">Skills &amp; coursework</h2>
     <div class="lists">
-      <div data-reveal><h3>Data and programming</h3><ul class="chips c"><li>Python</li><li>R</li><li>SQL</li><li>Excel</li><li>Power BI</li><li>Git &amp; GitHub</li></ul></div>
-      <div data-reveal style="--i:1"><h3>Libraries and methods from my projects</h3><ul class="chips"><li>pandas</li><li>scikit-learn</li><li>tidyverse</li><li>Random Forest</li><li>Logistic regression</li><li>Forecasting</li><li>Generative AI</li><li>SQL window functions</li><li>DAX</li></ul></div>
-      <div data-reveal style="--i:2"><h3>How I work</h3><ul class="chips"><li>Problem solving</li><li>Clear communication</li><li>Teamwork</li><li>Attention to detail</li><li>English, Amharic, Tigrigna</li></ul></div>
-      <div data-reveal style="--i:3"><h3>Relevant coursework</h3><p>Database Design and Modeling, Data Sources and Manipulation, Information User Needs &amp; Assessment, User-Centered Design, Organizations Management &amp; Teamwork, Information Organization, Technology Socialpreneur, Ethical Hacking.</p></div>
-      <div data-reveal style="--i:4"><h3>Certification</h3><p>Microsoft Power BI Data Analyst, in progress.</p></div>
+      <div><h3>Data and programming</h3><ul class="chips c"><li>Python</li><li>R</li><li>SQL</li><li>Excel</li><li>Power BI</li><li>Git &amp; GitHub</li></ul></div>
+      <div><h3>Libraries and methods from my projects</h3><ul class="chips"><li>pandas</li><li>scikit-learn</li><li>tidyverse</li><li>Random Forest</li><li>Logistic regression</li><li>Forecasting</li><li>Generative AI</li><li>SQL window functions</li><li>DAX</li></ul></div>
+      <div><h3>How I work</h3><ul class="chips"><li>Problem solving</li><li>Clear communication</li><li>Teamwork</li><li>Attention to detail</li><li>English, Amharic, Tigrigna</li></ul></div>
+      <div><h3>Relevant coursework</h3><p>Database Design and Modeling, Data Sources and Manipulation, Information User Needs &amp; Assessment, User-Centered Design, Organizations Management &amp; Teamwork, Information Organization, Technology Socialpreneur, Ethical Hacking.</p></div>
+      <div><h3>Certification</h3><p>Microsoft Power BI Data Analyst, in progress.</p></div>
     </div>
   </div>
 </section>
@@ -372,10 +425,12 @@
 
 <footer class="footer">
   <p class="name" aria-hidden="true">Heaven Brhanu</p>
-  <div class="row"><span><a class="link tel" href="tel:+16672731581">667-273-1581</a> &middot; Silver Spring, MD &middot; Open to full-time roles and internships</span><span class="links"><a class="link" href="https://github.com/Heavenb20">GitHub</a><a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a><a class="link" href="#top">Back to top</a></span></div>
+  <div class="row"><span class="meta-row"><a class="link tel" href="tel:+16672731581">667-273-1581</a><span>Silver Spring, MD</span><span>Open to full-time roles and internships</span></span><span class="links"><a class="link" href="https://github.com/Heavenb20">GitHub</a><a class="link" href="Heaven-Brhanu-Resume.pdf">Resume (PDF)</a><a class="link" href="#top">Back to top</a></span></div>
 </footer>
-<script src="js/reveal.js" defer></script>
+<script src="data/charts.js" defer></script>
+<script src="js/charts.js" defer></script>
 <script src="data/okc-games.js" defer></script>
 <script src="js/explorer.js" defer></script>
+<script src="js/lab.js" defer></script>
 </body>
 </html>
