@@ -160,7 +160,7 @@
     var vals = [].concat.apply([], rows.map(function (r) { return keys ? keys.map(function (k) { return r[k.k]; }) : [r.value]; }));
     var lo = mode === 'div' ? Math.min(0, Math.min.apply(null, vals)) : 0;
     var hi = +fig.dataset.max || Math.max.apply(null, vals);
-    if (mode === 'div') { var ext = Math.max(Math.abs(lo), Math.abs(hi)); lo = -ext; hi = ext; }
+    if (mode === 'div') { var ext = Math.max(Math.abs(lo), Math.abs(hi)) * 1.22; lo = -ext; hi = ext; }
     var x = function (val) { return M.l + (val - lo) / (hi - lo) * (W - M.l - M.r); };
     ticks(lo, hi, narrow ? 4 : 5).forEach(function (t) {
       el('line', { x1: x(t), x2: x(t), y1: M.t, y2: H - M.b + 4, class: t === 0 ? 'zero' : 'grid' }, svg);

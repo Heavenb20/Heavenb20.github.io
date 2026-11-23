@@ -26,9 +26,9 @@
 <nav class="nav" aria-label="Main">
   <a class="mark" href="portfolio.html">Heaven Brhanu</a>
   <ul>
-    <li class="wide"><a href="portfolio.html#about">About</a></li>
     <li><a href="projects.html" aria-current="page">Projects</a></li>
     <li class="wide"><a href="portfolio.html#explore">Explore the data</a></li>
+    <li class="wide"><a href="portfolio.html#about">About</a></li>
     <li class="wide"><a href="portfolio.html#internship">Internship</a></li>
     <li><a href="Heaven-Brhanu-Resume.pdf">Resume</a></li>
   </ul>
@@ -101,6 +101,7 @@
 
     <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
       <ul>
+        <li>Test whether the district gaps are statistically significant. District 3 has only 1,105 Transportation requests, so its higher rate could partly be noise.</li>
         <li>Add more years to confirm the seasonal pattern.</li>
         <li>Connect Power BI straight to the database so the dashboard refreshes with new requests.</li>
       </ul>
@@ -179,6 +180,7 @@
 
     <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
       <ul>
+        <li><b>Check how accurate the theme tags are.</b> &ldquo;Fit &amp; sizing&rdquo; shows up in 69% of negative and 72% of positive reviews, so the keyword patterns are probably too broad. I&rsquo;d hand-label a sample of about 100 reviews and tighten them.</li>
         <li>Try a larger AI model and score its accuracy against the fit check.</li>
         <li>Have code write every numeric claim, and let the AI write only the qualitative details.</li>
         <li>Build a dashboard so teams can filter insights by department and theme.</li>
@@ -279,7 +281,7 @@
     <div class="wrap case-body">
 
     <div class="case-stats">
-      <div><b>4.8%</b><span>average forecast error (MAPE)</span></div>
+      <div><b>4.8%</b><span>one-week-ahead error (MAPE); last-week baseline 4.9%</span></div>
       <div><b>421,570</b><span>weekly sales records</span></div>
       <div><b>45</b><span>stores forecast, each with its own staffing tiers</span></div>
     </div>
@@ -312,6 +314,7 @@
           <tr class="win"><td>Random Forest</td><td class="n">$48,992</td><td class="n">0.983</td><td class="n">4.8%</td></tr>
         </tbody>
       </table></div>
+      <p class="after-table">Compared with the simplest possible forecast, &ldquo;this week will match last week&rdquo;: On the 1,215 test store-weeks where last week is known, that baseline scores 4.9% MAPE ($50,362 MAE) vs. the model&rsquo;s 4.8% ($48,153). The model only just beats it.</p>
       <p class="after-table">Staffing recommendations for the 1,260 store-weeks in the test period:</p>
       <div class="table-wrap"><table class="data">
         <thead><tr><th>Tier</th><th class="n">Store-weeks</th><th>Recommendation</th></tr></thead>
@@ -336,13 +339,14 @@
     <div class="row"><div class="row-label">The hard part</div><div class="row-body">
       <ul>
         <li><b>Keeping the model from cheating.</b> A random split would let the model learn from weeks after the ones it's tested on. Splitting by time, and building lag features only from past weeks, makes this a real forecast.</li>
-        <li><b>An R² of 0.98 looks too good.</b> Weekly store sales are very stable, so last week already explains most of this week. That's why I report the 4.8% error on unseen future weeks as the number that matters.</li>
+        <li><b>An R² of 0.98 looks too good, and it is.</b> Weekly store sales are very stable, so last week already explains most of this week. The model uses last week&rsquo;s sales as a feature, so it forecasts one week ahead, and a plain &ldquo;same as last week&rdquo; guess is almost as accurate (4.9% vs. 4.8%). The forecast is still useful for planning staffing tiers, but the model itself adds little. Next time I&rsquo;d compare against that baseline from the start.</li>
         <li><b>Fairness across store sizes.</b> A single threshold would flag big stores as "high" every week, so each store is compared to its own history.</li>
       </ul>
     </div></div>
 
     <div class="row"><div class="row-label">If I kept going</div><div class="row-body">
       <ul>
+        <li>Forecast 2 to 4 weeks ahead without last week&rsquo;s sales, which is what a manager actually needs for scheduling, and where a simple baseline is much weaker.</li>
         <li>Add real labor-hour data to translate predicted sales into how many people to schedule.</li>
         <li>Retrain regularly as new weeks come in; I tested on about seven months of future weeks.</li>
         <li>Test whether weather matters more for other businesses, like an outdoor venue.</li>

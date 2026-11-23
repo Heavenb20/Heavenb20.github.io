@@ -106,7 +106,7 @@ main>section{position:relative}
 @media (max-width:860px){.section-head{grid-template-columns:1fr}}
 
 /* about */
-.story{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:24px clamp(32px,6vw,96px);padding-block:var(--gap-section)}
+.story{border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:24px clamp(32px,6vw,96px);padding-block:var(--gap-section)}
 .story-text{display:grid;gap:20px;max-width:60ch;color:var(--ink-2)}
 .story-text .lede{color:var(--ink)}
 @media (max-width:860px){.story{grid-template-columns:1fr}}
@@ -140,7 +140,7 @@ main>section{position:relative}
 @media (max-width:640px){.people-head,.process{grid-template-columns:1fr}.cases{grid-template-columns:1fr}.cases>div:nth-child(even){padding-left:0;border-left:0}.cases>div{padding-right:0}}
 
 /* ---------- projects as case files ---------- */
-.projects{padding-top:var(--gap-section)}
+.projects{padding-top:clamp(64px,8vw,112px)}
 .file{padding-block:clamp(64px,8vw,120px);border-bottom:1px solid var(--line)}
 .file:first-of-type{margin-top:clamp(40px,5vw,72px);border-top:1px solid var(--line)}
 .file-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px clamp(32px,5vw,80px);align-items:start}
@@ -379,3 +379,5 @@ table.data tr.win td{color:var(--ink);font-weight:700}
 .notfound .lede{margin-block:16px 32px;color:var(--ink-2)}
 
 @media print{body{background:#fff;color:#000}.nav,.skip{display:none}}
+.fig-title{font-weight:700;font-size:0.98rem;margin-bottom:12px;letter-spacing:-0.005em}
+.projects{border-bottom:0}
